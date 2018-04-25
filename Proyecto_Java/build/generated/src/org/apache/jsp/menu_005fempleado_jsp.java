@@ -193,6 +193,7 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            \n");
       out.write("            .cell:hover{\n");
       out.write("                box-shadow: inset 0px 0px 220px black;\n");
+      out.write("                transform: scale(1.1);\n");
       out.write("            }\n");
       out.write("            /*termina estilos freewall*/\n");
       out.write("        </style>\n");
