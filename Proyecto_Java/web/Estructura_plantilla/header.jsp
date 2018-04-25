@@ -3,7 +3,7 @@
     Created on : 22-abr-2018, 11:05:00
     Author     : Alexx
 --%>
-<header style="position:fixed; width: 100%;top:0;">
+<header style="position:fixed; width: 100%;top:0; z-index: 3">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black !important; height: 90px;">
                 <table>
                     <tr>
