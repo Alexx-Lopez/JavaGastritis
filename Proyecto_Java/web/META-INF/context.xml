@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/Proyecto_Java"/>
+<!--<Context antiJARLocking="true" path="/Proyecto_Java"/>-->
+<Context crossContext="true" debug="5" antiJARLocking="true" path="/Proyecto_Java" relodable="true">
+    <Logger className="org.apache.catalina.logger.FileLogger" prefix="localhost_." suffix=".txt" timestamp="true"/>
+    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" name="jdbc/mysql" password="" 
+              type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/biblioteca?useSSL=false" username="root"/>
+</Context>
+
