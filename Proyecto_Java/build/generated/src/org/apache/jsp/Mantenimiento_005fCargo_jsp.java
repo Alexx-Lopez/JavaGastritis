@@ -6,7 +6,7 @@ import javax.servlet.jsp.*;
 import java.sql.ResultSet;
 import Herramientas.Conexion;
 
-public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Mantenimiento_005fCargo_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -84,48 +84,48 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!--Seleccion de idioma del usuario-->\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!--Seleccion de idioma del usuario-->\n");
       if (_jspx_meth_c_if_0(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!--Consulta SQL para alimentar el select-->\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!--Consulta SQL para alimentar el select-->\n");
       if (_jspx_meth_sql_query_0(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("\n");
+      out.write("    \n");
+      out.write('\n');
+      out.write('\n');
 
     HttpSession sesionOk = request.getSession();
     if (sesionOk.getAttribute("usuario") == null){
 
-      out.write("        \r\n");
+      out.write("        \n");
       if (true) {
         _jspx_page_context.forward("index.jsp" + "?" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("error", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Es obligatorio identificarse", request.getCharacterEncoding()));
         return;
       }
-      out.write('\r');
       out.write('\n');
 
     } 
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <!-- css y js a ocupar-->\r\n");
+      out.write('\n');
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <!-- css y js a ocupar-->\n");
       out.write("        ");
       out.write("\n");
       out.write("\n");
@@ -174,160 +174,147 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
       out.write("            text-align: center;\n");
       out.write("        }\n");
       out.write("    </style>");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n");
-      out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n");
-      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\r\n");
-      out.write("\r\n");
-      out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n");
-      out.write("\r\n");
-      out.write("        <style type=\"text/css\">\r\n");
-      out.write("            .selector{\r\n");
-      out.write("                height: 35px !important;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            legend{\r\n");
-      out.write("                border-bottom: 0px !important;\r\n");
-      out.write("                width: auto !important;\r\n");
-      out.write("                margin-bottom: 0px !important;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            fieldset{\r\n");
-      out.write("                border: 1px solid black !important;\r\n");
-      out.write("                padding: 10px;\r\n");
-      out.write("            }\r\n");
-      out.write("            /*estilos tabla de registros*/\r\n");
-      out.write("            #tabla_registro table, #tabla_registro th, #tabla_registro td \r\n");
-      out.write("            {\r\n");
-      out.write("                border: 1px solid black;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            #tabla_registro thead\r\n");
-      out.write("            {\r\n");
-      out.write("                height: 50px;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            #tabla_registro\r\n");
-      out.write("            {\r\n");
-      out.write("                background-color: #1ABC9C !important;\r\n");
-      out.write("                width: 100%;\r\n");
-      out.write("                display: table !important;\r\n");
-      out.write("                border-collapse: separate !important;\r\n");
-      out.write("                border-spacing: 1px !important;\r\n");
-      out.write("                border-color: black !important;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            #tabla_registro tr:hover\r\n");
-      out.write("            {\r\n");
-      out.write("                background-color: #08463a !important;\r\n");
-      out.write("                color:white !important;\r\n");
-      out.write("                border-color: white !important;\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("        </style>\r\n");
-      out.write("        <script type=\"text/javascript\">\r\n");
-      out.write("            function iniciar() {\r\n");
-      out.write("                var elements = document.getElementsByName('control');\r\n");
-      out.write("                elements[0].checked = true;\r\n");
-      out.write("\r\n");
-      out.write("                nuevo();\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            function nuevo() {\r\n");
-      out.write("\r\n");
-      out.write("                var b_nuevo = document.getElementById('btn_guardar');\r\n");
-      out.write("                var b_modificar = document.getElementById('btn_modificar');\r\n");
-      out.write("                var b_eliminar = document.getElementById('btn_eliminar');\r\n");
-      out.write("                var txt_turno = document.getElementById('txt_turno');\r\n");
-      out.write("                var select = document.getElementById('select_turno');\r\n");
-      out.write("\r\n");
-      out.write("                b_nuevo.disabled = false;\r\n");
-      out.write("                b_modificar.disabled = true;\r\n");
-      out.write("                b_eliminar.disabled = true;\r\n");
-      out.write("\r\n");
-      out.write("                txt_turno.style.display = 'block';\r\n");
-      out.write("                select.style.display = 'none';\r\n");
-      out.write("\r\n");
-      out.write("                document.datos.txt_hora_inicio.value = \"\";\r\n");
-      out.write("                document.datos.txt_hora_fin.value = \"\";\r\n");
-      out.write("\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            function editar() {\r\n");
-      out.write("\r\n");
-      out.write("                var b_nuevo = document.getElementById('btn_guardar');\r\n");
-      out.write("                var b_modificar = document.getElementById('btn_modificar');\r\n");
-      out.write("                var b_eliminar = document.getElementById('btn_eliminar');\r\n");
-      out.write("                var txt_turno = document.getElementById('txt_turno');\r\n");
-      out.write("                var select = document.getElementById('select_turno');\r\n");
-      out.write("\r\n");
-      out.write("                b_nuevo.disabled = true;\r\n");
-      out.write("                b_modificar.disabled = false;\r\n");
-      out.write("                b_eliminar.disabled = false;\r\n");
-      out.write("\r\n");
-      out.write("                txt_turno.style.display = 'none';\r\n");
-      out.write("                select.style.display = 'block';\r\n");
-      out.write("\r\n");
-      out.write("                document.datos.txt_hora_inicio.value = \"\";\r\n");
-      out.write("                document.datos.txt_hora_fin.value = \"\";\r\n");
-      out.write("\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            function seleccionar() {\r\n");
-      out.write("                var cmb_turno = document.getElementById(\"select_turno\");\r\n");
-      out.write("                if (cmb_turno.value != \"\") {\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
+      out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
+      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
+      out.write("\n");
+      out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n");
+      out.write("\n");
+      out.write("        <style type=\"text/css\">\n");
+      out.write("            .selector{\n");
+      out.write("                height: 35px !important;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            legend{\n");
+      out.write("                border-bottom: 0px !important;\n");
+      out.write("                width: auto !important;\n");
+      out.write("                margin-bottom: 0px !important;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            fieldset{\n");
+      out.write("                border: 1px solid black !important;\n");
+      out.write("                padding: 10px;\n");
+      out.write("            }\n");
+      out.write("            /*estilos tabla de registros*/\n");
+      out.write("            #tabla_registro table, #tabla_registro th, #tabla_registro td \n");
+      out.write("            {\n");
+      out.write("                border: 1px solid black;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            #tabla_registro thead\n");
+      out.write("            {\n");
+      out.write("                height: 50px;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            #tabla_registro\n");
+      out.write("            {\n");
+      out.write("                background-color: #1ABC9C !important;\n");
+      out.write("                width: 100%;\n");
+      out.write("                display: table !important;\n");
+      out.write("                border-collapse: separate !important;\n");
+      out.write("                border-spacing: 1px !important;\n");
+      out.write("                border-color: black !important;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            #tabla_registro tr:hover\n");
+      out.write("            {\n");
+      out.write("                background-color: #08463a !important;\n");
+      out.write("                color:white !important;\n");
+      out.write("                border-color: white !important;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            #regresar{\n");
+      out.write("                background-color: #7d8384;\n");
+      out.write("            }\n");
+      out.write("            \n");
+      out.write("            #regresar:hover{\n");
+      out.write("                background-color: #535b5d;\n");
+      out.write("            }\n");
+      out.write("        </style>\n");
+      out.write("        <script type=\"text/javascript\">\n");
+      out.write("            function iniciar() {\n");
+      out.write("                var elements = document.getElementsByName('control');\n");
+      out.write("                elements[0].checked = true;\n");
+      out.write("                nuevo();\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            function nuevo() {\n");
+      out.write("\n");
+      out.write("                var b_nuevo = document.getElementById('btn_guardar');\n");
+      out.write("                var b_modificar = document.getElementById('btn_modificar');\n");
+      out.write("                var b_eliminar = document.getElementById('btn_eliminar');\n");
+      out.write("                var txt_cargo = document.getElementById('txt_cargo');\n");
+      out.write("                var select = document.getElementById('select_cargo');\n");
+      out.write("                b_nuevo.disabled = false;\n");
+      out.write("                b_modificar.disabled = true;\n");
+      out.write("                b_eliminar.disabled = true;\n");
+      out.write("                txt_cargo.style.display = 'block';\n");
+      out.write("                select.style.display = 'none';\n");
+      out.write("                document.datos.txt_descripcion.value = \"\";\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            function editar() {\n");
+      out.write("\n");
+      out.write("                var b_nuevo = document.getElementById('btn_guardar');\n");
+      out.write("                var b_modificar = document.getElementById('btn_modificar');\n");
+      out.write("                var b_eliminar = document.getElementById('btn_eliminar');\n");
+      out.write("                var txt_cargo = document.getElementById('txt_cargo');\n");
+      out.write("                var select = document.getElementById('select_cargo');\n");
+      out.write("                b_nuevo.disabled = true;\n");
+      out.write("                b_modificar.disabled = false;\n");
+      out.write("                b_eliminar.disabled = false;\n");
+      out.write("                txt_cargo.style.display = 'none';\n");
+      out.write("                select.style.display = 'block';\n");
+      out.write("                document.datos.txt_descripcion.value = \"\";\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            function seleccionar() {\n");
+      out.write("                var cmb_cargo = document.getElementById(\"select_cargo\");\n");
+      out.write("                if (cmb_cargo.value != \"\") {\n");
       out.write("            ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("                } else\r\n");
-      out.write("                {\r\n");
-      out.write("                    document.datos.txt_hora_inicio.value = \"\";\r\n");
-      out.write("                    document.datos.txt_hora_fin.value = \"\";\r\n");
-      out.write("                }\r\n");
-      out.write("\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            /*funcion para cerrar la ventana de aviso*/\r\n");
-      out.write("            window.setTimeout(function () {\r\n");
-      out.write("                $(\".alert\").fadeTo(500, 0).slideUp(500, function () {\r\n");
-      out.write("                    $(this).remove();\r\n");
-      out.write("                });\r\n");
-      out.write("            }, 4000);\r\n");
-      out.write("\r\n");
-      out.write("            //quitar los required\r\n");
-      out.write("            //\r\n");
-      out.write("            //guardar\r\n");
-      out.write("            function guardar() {\r\n");
-      out.write("                $(\"#select_turno\").removeAttr(\"required\");\r\n");
-      out.write("\r\n");
-      out.write("                $(\"#txt_turno\").attr(\"required\");\r\n");
-      out.write("                $(\"#txt_hora_inicio\").attr(\"required\");\r\n");
-      out.write("                $(\"#txt_hora_fin\").attr(\"required\");\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            function actualizar() {\r\n");
-      out.write("                $(\"#txt_turno\").removeAttr(\"required\");\r\n");
-      out.write("\r\n");
-      out.write("                $(\"#select_turno\").attr(\"required\");\r\n");
-      out.write("                $(\"#txt_hora_inicio\").attr(\"required\");\r\n");
-      out.write("                $(\"#txt_hora_fin\").attr(\"required\");\r\n");
-      out.write("            }\r\n");
-      out.write("\r\n");
-      out.write("            function eliminar() {\r\n");
-      out.write("                $(\"#select_turno\").attr(\"required\");\r\n");
-      out.write("\r\n");
-      out.write("                $(\"#txt_turno\").removeAttr(\"required\");\r\n");
-      out.write("                $(\"#txt_hora_inicio\").removeAttr(\"required\");\r\n");
-      out.write("                $(\"#txt_hora_fin\").removeAttr(\"required\");\r\n");
-      out.write("                //alert(\"hola\");\r\n");
-      out.write("            }\r\n");
-      out.write("        </script>\r\n");
-      out.write("    </head>\r\n");
-      out.write("\r\n");
-      out.write("    <body onload=\"iniciar();\">\r\n");
-      out.write("        <!--codigo del header-->\r\n");
+      out.write("\n");
+      out.write("                } else\n");
+      out.write("                {\n");
+      out.write("                    document.datos.txt_descripcion.value = \"\";\n");
+      out.write("                }\n");
+      out.write("\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            /*funcion para cerrar la ventana de aviso*/\n");
+      out.write("            window.setTimeout(function () {\n");
+      out.write("                $(\".alert\").fadeTo(500, 0).slideUp(500, function () {\n");
+      out.write("                    $(this).remove();\n");
+      out.write("                });\n");
+      out.write("            }, 4000);\n");
+      out.write("            //quitar los required\n");
+      out.write("            //\n");
+      out.write("            //guardar\n");
+      out.write("            function guardar() {\n");
+      out.write("                $(\"#select_cargo\").removeAttr(\"required\");\n");
+      out.write("                $(\"#txt_cargo\").attr(\"required\");\n");
+      out.write("                $(\"#txt_descripcion\").attr(\"required\");\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            function actualizar() {\n");
+      out.write("                $(\"#txt_cargo\").removeAttr(\"required\");\n");
+      out.write("                $(\"#select_cargo\").attr(\"required\");\n");
+      out.write("                $(\"#txt_descripcion\").attr(\"required\");\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            function eliminar() {\n");
+      out.write("                $(\"#select_cargo\").attr(\"required\");\n");
+      out.write("                $(\"#txt_cargo\").removeAttr(\"required\");\n");
+      out.write("                $(\"#txt_descripcion\").removeAttr(\"required\");\n");
+      out.write("                //alert(\"hola\");\n");
+      out.write("            }\n");
+      out.write("        </script>\n");
+      out.write("    </head>\n");
+      out.write("    <body onload=\"iniciar();\">\n");
+      out.write("        <!--codigo del header-->\n");
       out.write("        ");
       out.write("\n");
       out.write("\n");
@@ -401,169 +388,161 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
       out.write("            </div>\n");
       out.write("        </nav>\n");
       out.write("    </header>\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("        <!--contenedor-->\r\n");
-      out.write("        <form name=\"datos\" role=\"form\" action=\"Consultas_Turno.jsp\" method=\"POST\" accept-charset=\"ISO-8859-1\">\r\n");
-      out.write("            <div style=\"width:95%; height:auto; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px\">\r\n");
-      out.write("                <div style=\"width:32%; margin:0 auto;\">\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("        <!--contenedor-->\n");
+      out.write("        <form name=\"datos\" role=\"form\" action=\"Consultas_Cargo.jsp\" method=\"POST\" accept-charset=\"ISO-8859-1\">\n");
+      out.write("            <div style=\"width:95%; height:auto; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; z-index:10;\">\n");
+      out.write("                \n");
+      out.write("                <a href=\"menu_admin.jsp\" class=\"btn btn-info\" role=\"button\" id=\"regresar\">\n");
+      out.write("                    <img alt=\"Regresar\" width=\"40px\" height=\"30px\" onmouseout=\"this.src='imagenes/flecha-de-deshacer.png';\" onmouseover=\"this.src='imagenes/flecha_azul.png';\" src=\"imagenes/flecha-de-deshacer.png\"/>\n");
+      out.write("                </a>\n");
+      out.write("                \n");
+      out.write("                <div style=\"width:32%; margin:0 auto;\">\n");
       out.write("                    <h1 style=\"text-align:center;\"><b>");
       if (_jspx_meth_fmt_message_6(_jspx_page_context))
         return;
-      out.write("</b></h1>\r\n");
-      out.write("                    <hr style=\"border:2px solid grey;\">\r\n");
-      out.write("\r\n");
+      out.write("</b></h1>\n");
+      out.write("                    <hr style=\"border:2px solid grey;\">\n");
+      out.write("\n");
       out.write("                    ");
-      out.write("\r\n");
+      out.write("\n");
       out.write("                    ");
       if (_jspx_meth_c_if_1(_jspx_page_context))
         return;
-      out.write(" \r\n");
-      out.write("                    <br>\r\n");
-      out.write("                    <div>\r\n");
-      out.write("                        <fieldset>\r\n");
+      out.write(" \n");
+      out.write("                    <br>\n");
+      out.write("                    <div>\n");
+      out.write("                        <fieldset>\n");
       out.write("                            <legend style=\"font-size: smaller;\"><b>");
       if (_jspx_meth_fmt_message_11(_jspx_page_context))
         return;
-      out.write("</b></legend>\r\n");
-      out.write("                            <table style=\"width: 100%;\">\r\n");
-      out.write("                                <tr>\r\n");
-      out.write("                                    <td align=\"center\">\r\n");
+      out.write("</b></legend>\n");
+      out.write("                            <table style=\"width: 100%;\">\n");
+      out.write("                                <tr>\n");
+      out.write("                                    <td align=\"center\">\n");
       out.write("                                        <input type=\"radio\" name=\"control\" value=\"\" onclick=\"nuevo();\"> ");
       if (_jspx_meth_fmt_message_12(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("                                    </td>\r\n");
-      out.write("\r\n");
-      out.write("                                    <td align=\"center\">\r\n");
+      out.write("\n");
+      out.write("                                    </td>\n");
+      out.write("\n");
+      out.write("                                    <td align=\"center\">\n");
       out.write("                                        <input type=\"radio\" name=\"control\" value=\"\" onclick=\"editar();\"> ");
       if (_jspx_meth_fmt_message_13(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("                                    </td>\r\n");
-      out.write("                                </tr>\r\n");
-      out.write("                            </table>\r\n");
-      out.write("                        </fieldset>\r\n");
-      out.write("\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <br>\r\n");
+      out.write("\n");
+      out.write("                                    </td>\n");
+      out.write("                                </tr>\n");
+      out.write("                            </table>\n");
+      out.write("                        </fieldset>\n");
+      out.write("\n");
+      out.write("                    </div>\n");
+      out.write("                    <br>\n");
       out.write("                    <b>");
       if (_jspx_meth_fmt_message_14(_jspx_page_context))
         return;
-      out.write(":</b>\r\n");
-      out.write("                    <div class=\"input-group\">\r\n");
+      out.write(":</b>\n");
+      out.write("                    <div class=\"input-group\">\n");
       out.write("                        <input type=\"text\" class=\"form-control\"  placeholder=\"");
       if (_jspx_meth_fmt_message_15(_jspx_page_context))
         return;
-      out.write("\" id=\"txt_turno\" name=\"txt_turno\" required=\"\">\r\n");
-      out.write("                        <select class=\"form-control selector\" name=\"cmb_turno\" id=\"select_turno\" onchange=\"seleccionar();\" required=\"\">\r\n");
+      out.write("\" id=\"txt_cargo\" name=\"txt_cargo\" required=\"\">\n");
+      out.write("                        <select class=\"form-control selector\" name=\"cmb_cargo\" id=\"select_cargo\" onchange=\"seleccionar();\" required=\"\">\n");
       out.write("                            <option value=\"\">");
       if (_jspx_meth_fmt_message_16(_jspx_page_context))
         return;
-      out.write("</option>\r\n");
-      out.write("\r\n");
+      out.write("</option>\n");
+      out.write("\n");
       out.write("                            ");
       if (_jspx_meth_c_forEach_1(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("                        </select>\r\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></span>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <br>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                        </select>\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-briefcase\"></i></span>\n");
+      out.write("                    </div>\n");
+      out.write("                    <br>\n");
+      out.write("\n");
+      out.write("\n");
       out.write("                    <b>");
       if (_jspx_meth_fmt_message_17(_jspx_page_context))
         return;
-      out.write(":</b>\r\n");
-      out.write("                    <div class=\"input-group\">\r\n");
-      out.write("                        <input type=\"time\" class=\"form-control\" id=\"txt_hora_inicio\" name=\"txt_hora_inicio\" value=\"\" required=\"\">\r\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-time\"></i></span>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <br>\r\n");
-      out.write("\r\n");
-      out.write("                    <b>");
+      out.write(":</b>\n");
+      out.write("                    <div class=\"input-group\">\n");
+      out.write("                        <textarea rows=\"5\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\"></textarea>\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></span>\n");
+      out.write("                    </div>\n");
+      out.write("                    <br>\n");
+      out.write("                    \n");
+      out.write("                    <table style=\"width:100%;\">\n");
+      out.write("                        <tr>\n");
+      out.write("                            <td align=\"center\">\n");
+      out.write("                                <button type=\"submit\" class=\"btn btn-primary\" id=\"btn_guardar\" name=\"Guardar\" onclick=\"guardar();\">");
       if (_jspx_meth_fmt_message_18(_jspx_page_context))
         return;
-      out.write(":</b>\r\n");
-      out.write("                    <div class=\"input-group\">\r\n");
-      out.write("                        <input type=\"time\" class=\"form-control\" id=\"txt_hora_fin\" name=\"txt_hora_fin\" value=\"\" required=\"\">\r\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-time\"></i></span>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <br>\r\n");
-      out.write("                    <table style=\"width:100%;\">\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <td align=\"center\">\r\n");
-      out.write("                                <button type=\"submit\" class=\"btn btn-primary\" id=\"btn_guardar\" name=\"Guardar\" onclick=\"guardar();\">");
+      out.write("</button>\n");
+      out.write("                            </td>\n");
+      out.write("                            <td align=\"center\">\n");
+      out.write("                                <button type=\"submit\" class=\"btn btn-warning\" id=\"btn_modificar\" name=\"Modificar\" onclick=\"actualizar();\">");
       if (_jspx_meth_fmt_message_19(_jspx_page_context))
         return;
-      out.write("</button>\r\n");
-      out.write("                            </td>\r\n");
-      out.write("                            <td align=\"center\">\r\n");
-      out.write("                                <button type=\"submit\" class=\"btn btn-warning\" id=\"btn_modificar\" name=\"Modificar\" onclick=\"actualizar();\">");
+      out.write("</button>\n");
+      out.write("                            </td>\n");
+      out.write("                            <td align=\"center\">\n");
+      out.write("                                <button type=\"submit\" class=\"btn btn-danger\" id=\"btn_eliminar\" name=\"Eliminar\" onclick=\"eliminar();\">");
       if (_jspx_meth_fmt_message_20(_jspx_page_context))
         return;
-      out.write("</button>\r\n");
-      out.write("                            </td>\r\n");
-      out.write("                            <td align=\"center\">\r\n");
-      out.write("                                <button type=\"submit\" class=\"btn btn-danger\" id=\"btn_eliminar\" name=\"Eliminar\" onclick=\"eliminar();\">");
+      out.write("</button>\n");
+      out.write("                            </td>\n");
+      out.write("                        </tr>\n");
+      out.write("                    </table>\n");
+      out.write("                </div>\n");
+      out.write("\n");
+      out.write("                <br>\n");
+      out.write("                <div class=\"panel-group\" style=\"width:80%; margin:0 auto;\">\n");
+      out.write("                    <div class=\"panel panel-default\">\n");
+      out.write("                        <a data-toggle=\"collapse\" href=\"#collapse1\" style=\"text-decoration: none;\">\n");
+      out.write("                            <div class=\"panel-heading\">\n");
+      out.write("                                <h4 class=\"panel-title\" style=\"text-align:center;color:black;\">\n");
+      out.write("                                    <b>");
       if (_jspx_meth_fmt_message_21(_jspx_page_context))
         return;
-      out.write("</button>\r\n");
-      out.write("                            </td>\r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                    </table>\r\n");
-      out.write("                </div>\r\n");
-      out.write("\r\n");
-      out.write("                <br>\r\n");
-      out.write("                <div class=\"panel-group\" style=\"width:80%; margin:0 auto;\">\r\n");
-      out.write("                    <div class=\"panel panel-default\">\r\n");
-      out.write("                        <a data-toggle=\"collapse\" href=\"#collapse1\" style=\"text-decoration: none;\">\r\n");
-      out.write("                            <div class=\"panel-heading\">\r\n");
-      out.write("                                <h4 class=\"panel-title\" style=\"text-align:center;color:black;\">\r\n");
-      out.write("                                    <b>");
+      out.write("</b>\n");
+      out.write("                                </h4>\n");
+      out.write("                            </div>\n");
+      out.write("                        </a>\n");
+      out.write("                        <div id=\"collapse1\" class=\"panel-collapse collapse\">\n");
+      out.write("                            <div class=\"panel-body\">\n");
+      out.write("                                <table id=\"tabla_registro\" class=\"table table-striped table-hover table-bordered\">\n");
+      out.write("                                    <thead>\n");
+      out.write("                                        <tr>\n");
+      out.write("                                            <td align=\"center\"><b>ID</b></td>\n");
+      out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_22(_jspx_page_context))
         return;
-      out.write("</b>\r\n");
-      out.write("                                </h4>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </a>\r\n");
-      out.write("                        <div id=\"collapse1\" class=\"panel-collapse collapse\">\r\n");
-      out.write("                            <div class=\"panel-body\">\r\n");
-      out.write("                                <table id=\"tabla_registro\" class=\"table table-striped table-hover table-bordered\">\r\n");
-      out.write("                                    <thead>\r\n");
-      out.write("                                        <tr>\r\n");
-      out.write("                                            <td align=\"center\"><b>ID</b></td>\r\n");
+      out.write("</b></td>\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_23(_jspx_page_context))
         return;
-      out.write("</b></td>\r\n");
-      out.write("                                            <td align=\"center\"><b>");
-      if (_jspx_meth_fmt_message_24(_jspx_page_context))
-        return;
-      out.write("</b></td>\r\n");
-      out.write("                                            <td align=\"center\"><b>");
-      if (_jspx_meth_fmt_message_25(_jspx_page_context))
-        return;
-      out.write("</b></td>\r\n");
-      out.write("                                        </tr>\r\n");
-      out.write("                                    </thead>\r\n");
-      out.write("                                    <tbody>\r\n");
+      out.write("</b></td>\n");
+      out.write("                                        </tr>\n");
+      out.write("                                    </thead>\n");
+      out.write("                                    <tbody>\n");
       out.write("                                        ");
       if (_jspx_meth_c_forEach_2(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("                                    </tbody>\r\n");
-      out.write("                                </table>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>   \r\n");
-      out.write("            </div>                        \r\n");
-      out.write("        </form>\r\n");
-      out.write("\r\n");
-      out.write("        <!--codigo del footer-->\r\n");
+      out.write("\n");
+      out.write("                                    </tbody>\n");
+      out.write("                                </table>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>   \n");
+      out.write("            </div>                        \n");
+      out.write("        </form>\n");
+      out.write("\n");
+      out.write("        <!--codigo del footer-->\n");
       out.write("        ");
       out.write("\n");
       out.write("\n");
@@ -573,26 +552,27 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
       out.write("        <a href=\"");
       out.print(request.getRequestURL());
       out.write("?locale=en\"><b>");
-      if (_jspx_meth_fmt_message_26(_jspx_page_context))
+      if (_jspx_meth_fmt_message_24(_jspx_page_context))
         return;
       out.write("</b></a>\n");
       out.write("        &nbsp;&nbsp;&nbsp;&nbsp;\n");
       out.write("        <a href=\"");
       out.print(request.getRequestURL());
       out.write("?locale=es\"><b>");
-      if (_jspx_meth_fmt_message_27(_jspx_page_context))
+      if (_jspx_meth_fmt_message_25(_jspx_page_context))
         return;
       out.write("</b></a>\n");
       out.write("    </div>\n");
       out.write("    <br>\n");
       out.write("    <h5>");
-      if (_jspx_meth_fmt_message_28(_jspx_page_context))
+      if (_jspx_meth_fmt_message_26(_jspx_page_context))
         return;
       out.write("</h5>\n");
       out.write("</footer>\n");
-      out.write("\r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -618,11 +598,10 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
     if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\r\n");
+        out.write("\n");
         out.write("    ");
         if (_jspx_meth_fmt_setLocale_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
           return true;
-        out.write('\r');
         out.write('\n');
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -677,8 +656,8 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
           _jspx_th_sql_query_0.doInitBody();
         }
         do {
-          out.write("\r\n");
-          out.write("    select * from turno\r\n");
+          out.write("\n");
+          out.write("    select * from cargo\n");
           int evalDoAfterBody = _jspx_th_sql_query_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -716,22 +695,18 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
       int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\r\n");
+          out.write("\n");
           out.write("                    var nombre = '");
           if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("';\r\n");
-          out.write("                    if (nombre == cmb_turno.value) {\r\n");
-          out.write("                        //colocar valores en los imput \r\n");
-          out.write("                        document.datos.txt_hora_inicio.value = '");
+          out.write("';\n");
+          out.write("                    if (nombre == cmb_cargo.value) {\n");
+          out.write("                        //colocar valores en los imput \n");
+          out.write("                        document.datos.txt_descripcion.value = '");
           if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("';\r\n");
-          out.write("                        document.datos.txt_hora_fin.value = '");
-          if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-            return true;
-          out.write("';\r\n");
-          out.write("                    }\r\n");
+          out.write("';\n");
+          out.write("                    }\n");
           out.write("            ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -778,31 +753,13 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_1 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_out_1.setPageContext(_jspx_page_context);
     _jspx_th_c_out_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_out_1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Horario_Inicio}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_out_1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Descripcion}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_out_1 = _jspx_th_c_out_1.doStartTag();
     if (_jspx_th_c_out_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_1);
       return true;
     }
     _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_1);
-    return false;
-  }
-
-  private boolean _jspx_meth_c_out_2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_2 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_2.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_out_2.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Horario_Final}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_2 = _jspx_th_c_out_2.doStartTag();
-    if (_jspx_th_c_out_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_2);
-      return true;
-    }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_2);
     return false;
   }
 
@@ -922,7 +879,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_6 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_6.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_6.setParent(null);
-    _jspx_th_fmt_message_6.setKey("turno_lbl_tema");
+    _jspx_th_fmt_message_6.setKey("cargo_lbl_tema");
     int _jspx_eval_fmt_message_6 = _jspx_th_fmt_message_6.doStartTag();
     if (_jspx_th_fmt_message_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_6);
@@ -944,11 +901,11 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\r\n");
+        out.write("\n");
         out.write("                        ");
         if (_jspx_meth_c_choose_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_1, _jspx_page_context))
           return true;
-        out.write("\r\n");
+        out.write("\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -974,23 +931,23 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     int _jspx_eval_c_choose_0 = _jspx_th_c_choose_0.doStartTag();
     if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\r\n");
+        out.write("\n");
         out.write("                            ");
         if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\r\n");
+        out.write("\n");
         out.write("                            ");
         if (_jspx_meth_c_when_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\r\n");
+        out.write("\n");
         out.write("                            ");
         if (_jspx_meth_c_when_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\r\n");
+        out.write("\n");
         out.write("                            ");
         if (_jspx_meth_c_when_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\r\n");
+        out.write("\n");
         out.write("                        ");
         int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1017,18 +974,18 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     int _jspx_eval_c_when_0 = _jspx_th_c_when_0.doStartTag();
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\r\n");
-        out.write("                                <div class=\"alert alert-danger alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\r\n");
-        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n");
+        out.write("\n");
+        out.write("                                <div class=\"alert alert-danger alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\n");
+        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n");
         out.write("                                    ");
         if (_jspx_meth_fmt_message_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
-        out.write("\r\n");
+        out.write("\n");
         out.write("                                    <span>");
-        if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
+        if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
-        out.write("</span>\r\n");
-        out.write("                                </div>\r\n");
+        out.write("</span>\n");
+        out.write("                                </div>\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1051,7 +1008,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_7 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_var_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_7.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_0);
-    _jspx_th_fmt_message_7.setKey("turno_mensaje_registro_repetido");
+    _jspx_th_fmt_message_7.setKey("cargo_mensaje_registro_repetido");
     _jspx_th_fmt_message_7.setVar("mensaje");
     int _jspx_eval_fmt_message_7 = _jspx_th_fmt_message_7.doStartTag();
     if (_jspx_th_fmt_message_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -1062,21 +1019,21 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     return false;
   }
 
-  private boolean _jspx_meth_c_out_3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_0, PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_out_2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_3 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_3.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_0);
-    _jspx_th_c_out_3.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensaje}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_3 = _jspx_th_c_out_3.doStartTag();
-    if (_jspx_th_c_out_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_3);
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_2 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_0);
+    _jspx_th_c_out_2.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensaje}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_2 = _jspx_th_c_out_2.doStartTag();
+    if (_jspx_th_c_out_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_2);
       return true;
     }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_3);
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_2);
     return false;
   }
 
@@ -1092,18 +1049,18 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     int _jspx_eval_c_when_1 = _jspx_th_c_when_1.doStartTag();
     if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\r\n");
-        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\r\n");
-        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n");
+        out.write("\n");
+        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\n");
+        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n");
         out.write("                                    ");
         if (_jspx_meth_fmt_message_8((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
           return true;
-        out.write("\r\n");
+        out.write("\n");
         out.write("                                    <span>");
-        if (_jspx_meth_c_out_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
+        if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
           return true;
-        out.write("</span>\r\n");
-        out.write("                                </div>\r\n");
+        out.write("</span>\n");
+        out.write("                                </div>\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1126,7 +1083,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_8 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_var_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_8.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_1);
-    _jspx_th_fmt_message_8.setKey("turno_mensaje_ingreso");
+    _jspx_th_fmt_message_8.setKey("cargo_mensaje_ingreso");
     _jspx_th_fmt_message_8.setVar("mensaje");
     int _jspx_eval_fmt_message_8 = _jspx_th_fmt_message_8.doStartTag();
     if (_jspx_th_fmt_message_8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -1137,21 +1094,21 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     return false;
   }
 
-  private boolean _jspx_meth_c_out_4(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_1, PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_out_3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_1, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_4 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_4.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_1);
-    _jspx_th_c_out_4.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensaje}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_4 = _jspx_th_c_out_4.doStartTag();
-    if (_jspx_th_c_out_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_4);
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_3 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_3.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_1);
+    _jspx_th_c_out_3.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensaje}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_3 = _jspx_th_c_out_3.doStartTag();
+    if (_jspx_th_c_out_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_3);
       return true;
     }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_4);
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_3);
     return false;
   }
 
@@ -1167,18 +1124,18 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     int _jspx_eval_c_when_2 = _jspx_th_c_when_2.doStartTag();
     if (_jspx_eval_c_when_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\r\n");
-        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\r\n");
-        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n");
+        out.write("\n");
+        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\n");
+        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n");
         out.write("                                    ");
         if (_jspx_meth_fmt_message_9((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_2, _jspx_page_context))
           return true;
-        out.write("\r\n");
+        out.write("\n");
         out.write("                                    <span>");
-        if (_jspx_meth_c_out_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_2, _jspx_page_context))
+        if (_jspx_meth_c_out_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_2, _jspx_page_context))
           return true;
-        out.write("</span>\r\n");
-        out.write("                                </div>\r\n");
+        out.write("</span>\n");
+        out.write("                                </div>\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_when_2.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1201,7 +1158,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_9 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_var_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_9.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_2);
-    _jspx_th_fmt_message_9.setKey("turno_mensaje_actualizacion");
+    _jspx_th_fmt_message_9.setKey("cargo_mensaje_actualizacion");
     _jspx_th_fmt_message_9.setVar("mensaje");
     int _jspx_eval_fmt_message_9 = _jspx_th_fmt_message_9.doStartTag();
     if (_jspx_th_fmt_message_9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -1212,21 +1169,21 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     return false;
   }
 
-  private boolean _jspx_meth_c_out_5(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_2, PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_out_4(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_2, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_5 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_5.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_2);
-    _jspx_th_c_out_5.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensaje}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_5 = _jspx_th_c_out_5.doStartTag();
-    if (_jspx_th_c_out_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_5);
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_4 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_4.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_2);
+    _jspx_th_c_out_4.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensaje}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_4 = _jspx_th_c_out_4.doStartTag();
+    if (_jspx_th_c_out_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_4);
       return true;
     }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_5);
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_4);
     return false;
   }
 
@@ -1242,18 +1199,18 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     int _jspx_eval_c_when_3 = _jspx_th_c_when_3.doStartTag();
     if (_jspx_eval_c_when_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\r\n");
-        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\r\n");
-        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n");
+        out.write("\n");
+        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\n");
+        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n");
         out.write("                                    ");
         if (_jspx_meth_fmt_message_10((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_3, _jspx_page_context))
           return true;
-        out.write("\r\n");
+        out.write("\n");
         out.write("                                    <span>");
-        if (_jspx_meth_c_out_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_3, _jspx_page_context))
+        if (_jspx_meth_c_out_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_3, _jspx_page_context))
           return true;
-        out.write("</span>\r\n");
-        out.write("                                </div>\r\n");
+        out.write("</span>\n");
+        out.write("                                </div>\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_when_3.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1276,7 +1233,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_10 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_var_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_10.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_3);
-    _jspx_th_fmt_message_10.setKey("turno_mensaje_eliminacion");
+    _jspx_th_fmt_message_10.setKey("cargo_mensaje_eliminacion");
     _jspx_th_fmt_message_10.setVar("mensaje");
     int _jspx_eval_fmt_message_10 = _jspx_th_fmt_message_10.doStartTag();
     if (_jspx_th_fmt_message_10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -1287,21 +1244,21 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     return false;
   }
 
-  private boolean _jspx_meth_c_out_6(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_3, PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_out_5(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_3, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_6 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_6.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_3);
-    _jspx_th_c_out_6.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensaje}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_6 = _jspx_th_c_out_6.doStartTag();
-    if (_jspx_th_c_out_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_6);
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_5 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_5.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_3);
+    _jspx_th_c_out_5.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensaje}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_5 = _jspx_th_c_out_5.doStartTag();
+    if (_jspx_th_c_out_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_5);
       return true;
     }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_6);
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_5);
     return false;
   }
 
@@ -1313,7 +1270,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_11 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_11.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_11.setParent(null);
-    _jspx_th_fmt_message_11.setKey("turno_lbl_control");
+    _jspx_th_fmt_message_11.setKey("cargo_lbl_control");
     int _jspx_eval_fmt_message_11 = _jspx_th_fmt_message_11.doStartTag();
     if (_jspx_th_fmt_message_11.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_11);
@@ -1331,7 +1288,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_12 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_12.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_12.setParent(null);
-    _jspx_th_fmt_message_12.setKey("turno_rbtn_nuevo");
+    _jspx_th_fmt_message_12.setKey("cargo_rbtn_nuevo");
     int _jspx_eval_fmt_message_12 = _jspx_th_fmt_message_12.doStartTag();
     if (_jspx_th_fmt_message_12.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_12);
@@ -1349,7 +1306,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_13 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_13.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_13.setParent(null);
-    _jspx_th_fmt_message_13.setKey("turno_rbtn_editar");
+    _jspx_th_fmt_message_13.setKey("cargo_rbtn_editar");
     int _jspx_eval_fmt_message_13 = _jspx_th_fmt_message_13.doStartTag();
     if (_jspx_th_fmt_message_13.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_13);
@@ -1367,7 +1324,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_14 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_14.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_14.setParent(null);
-    _jspx_th_fmt_message_14.setKey("turno_lbl_turno");
+    _jspx_th_fmt_message_14.setKey("cargo_lbl_cargo");
     int _jspx_eval_fmt_message_14 = _jspx_th_fmt_message_14.doStartTag();
     if (_jspx_th_fmt_message_14.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_14);
@@ -1385,7 +1342,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_15 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_15.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_15.setParent(null);
-    _jspx_th_fmt_message_15.setKey("turno_placeholder_turno");
+    _jspx_th_fmt_message_15.setKey("cargo_placeholder_cargo");
     int _jspx_eval_fmt_message_15 = _jspx_th_fmt_message_15.doStartTag();
     if (_jspx_th_fmt_message_15.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_15);
@@ -1403,7 +1360,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_16 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_16.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_16.setParent(null);
-    _jspx_th_fmt_message_16.setKey("turno_select_turno");
+    _jspx_th_fmt_message_16.setKey("cargo_select_cargo");
     int _jspx_eval_fmt_message_16 = _jspx_th_fmt_message_16.doStartTag();
     if (_jspx_th_fmt_message_16.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_16);
@@ -1428,11 +1385,11 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
       int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
       if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\r\n");
+          out.write("\n");
           out.write("                                <option>");
-          if (_jspx_meth_c_out_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
+          if (_jspx_meth_c_out_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
-          out.write("</option>\r\n");
+          out.write("</option>\n");
           out.write("                            ");
           int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1453,21 +1410,21 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     return false;
   }
 
-  private boolean _jspx_meth_c_out_7(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_1)
+  private boolean _jspx_meth_c_out_6(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_1)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_7 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_7.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_1);
-    _jspx_th_c_out_7.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Nombre}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_7 = _jspx_th_c_out_7.doStartTag();
-    if (_jspx_th_c_out_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_7);
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_6 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_6.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_1);
+    _jspx_th_c_out_6.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Nombre}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_6 = _jspx_th_c_out_6.doStartTag();
+    if (_jspx_th_c_out_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_6);
       return true;
     }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_7);
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_6);
     return false;
   }
 
@@ -1479,7 +1436,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_17 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_17.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_17.setParent(null);
-    _jspx_th_fmt_message_17.setKey("turno_lbl_horario_inicio");
+    _jspx_th_fmt_message_17.setKey("cargo_lbl_descripcion");
     int _jspx_eval_fmt_message_17 = _jspx_th_fmt_message_17.doStartTag();
     if (_jspx_th_fmt_message_17.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_17);
@@ -1497,7 +1454,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_18 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_18.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_18.setParent(null);
-    _jspx_th_fmt_message_18.setKey("turno_lbl_horario_fin");
+    _jspx_th_fmt_message_18.setKey("cargo_btn_guardar");
     int _jspx_eval_fmt_message_18 = _jspx_th_fmt_message_18.doStartTag();
     if (_jspx_th_fmt_message_18.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_18);
@@ -1515,7 +1472,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_19 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_19.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_19.setParent(null);
-    _jspx_th_fmt_message_19.setKey("turno_btn_guardar");
+    _jspx_th_fmt_message_19.setKey("cargo_btn_modificar");
     int _jspx_eval_fmt_message_19 = _jspx_th_fmt_message_19.doStartTag();
     if (_jspx_th_fmt_message_19.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_19);
@@ -1533,7 +1490,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_20 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_20.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_20.setParent(null);
-    _jspx_th_fmt_message_20.setKey("turno_btn_modificar");
+    _jspx_th_fmt_message_20.setKey("cargo_btn_eliminar");
     int _jspx_eval_fmt_message_20 = _jspx_th_fmt_message_20.doStartTag();
     if (_jspx_th_fmt_message_20.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_20);
@@ -1551,7 +1508,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_21 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_21.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_21.setParent(null);
-    _jspx_th_fmt_message_21.setKey("turno_btn_eliminar");
+    _jspx_th_fmt_message_21.setKey("cargo_lbl_tabla_registro_tema");
     int _jspx_eval_fmt_message_21 = _jspx_th_fmt_message_21.doStartTag();
     if (_jspx_th_fmt_message_21.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_21);
@@ -1569,7 +1526,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_22 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_22.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_22.setParent(null);
-    _jspx_th_fmt_message_22.setKey("turno_lbl_tabla_registro_tema");
+    _jspx_th_fmt_message_22.setKey("cargo_thead_tabla_Nombre");
     int _jspx_eval_fmt_message_22 = _jspx_th_fmt_message_22.doStartTag();
     if (_jspx_th_fmt_message_22.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_22);
@@ -1587,49 +1544,13 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_23 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_23.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_23.setParent(null);
-    _jspx_th_fmt_message_23.setKey("turno_thead_tabla_Turno");
+    _jspx_th_fmt_message_23.setKey("cargo_thead_tabla_Descripcion");
     int _jspx_eval_fmt_message_23 = _jspx_th_fmt_message_23.doStartTag();
     if (_jspx_th_fmt_message_23.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_23);
       return true;
     }
     _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_23);
-    return false;
-  }
-
-  private boolean _jspx_meth_fmt_message_24(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  fmt:message
-    org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_24 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
-    _jspx_th_fmt_message_24.setPageContext(_jspx_page_context);
-    _jspx_th_fmt_message_24.setParent(null);
-    _jspx_th_fmt_message_24.setKey("turno_thead_tabla_hora_inicio");
-    int _jspx_eval_fmt_message_24 = _jspx_th_fmt_message_24.doStartTag();
-    if (_jspx_th_fmt_message_24.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_24);
-      return true;
-    }
-    _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_24);
-    return false;
-  }
-
-  private boolean _jspx_meth_fmt_message_25(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  fmt:message
-    org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_25 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
-    _jspx_th_fmt_message_25.setPageContext(_jspx_page_context);
-    _jspx_th_fmt_message_25.setParent(null);
-    _jspx_th_fmt_message_25.setKey("turno_thead_tabla_hora_final");
-    int _jspx_eval_fmt_message_25 = _jspx_th_fmt_message_25.doStartTag();
-    if (_jspx_th_fmt_message_25.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_25);
-      return true;
-    }
-    _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_25);
     return false;
   }
 
@@ -1648,25 +1569,21 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
       int _jspx_eval_c_forEach_2 = _jspx_th_c_forEach_2.doStartTag();
       if (_jspx_eval_c_forEach_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\r\n");
-          out.write("                                            <tr>\r\n");
+          out.write("\n");
+          out.write("                                            <tr>\n");
+          out.write("                                                <td align=\"center\">");
+          if (_jspx_meth_c_out_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_2, _jspx_page_context, _jspx_push_body_count_c_forEach_2))
+            return true;
+          out.write("</td>\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_8((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_2, _jspx_page_context, _jspx_push_body_count_c_forEach_2))
             return true;
-          out.write("</td>\r\n");
+          out.write("</td>\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_9((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_2, _jspx_page_context, _jspx_push_body_count_c_forEach_2))
             return true;
-          out.write("</td>\r\n");
-          out.write("                                                <td align=\"center\">");
-          if (_jspx_meth_c_out_10((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_2, _jspx_page_context, _jspx_push_body_count_c_forEach_2))
-            return true;
-          out.write("</td>\r\n");
-          out.write("                                                <td align=\"center\">");
-          if (_jspx_meth_c_out_11((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_2, _jspx_page_context, _jspx_push_body_count_c_forEach_2))
-            return true;
-          out.write("</td>\r\n");
-          out.write("                                            </tr>\r\n");
+          out.write("</td>\n");
+          out.write("                                            </tr>\n");
           out.write("                                        ");
           int evalDoAfterBody = _jspx_th_c_forEach_2.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1687,6 +1604,24 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     return false;
   }
 
+  private boolean _jspx_meth_c_out_7(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_2, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_2)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:out
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_7 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_7.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_2);
+    _jspx_th_c_out_7.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.idCargo}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_7 = _jspx_th_c_out_7.doStartTag();
+    if (_jspx_th_c_out_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_7);
+      return true;
+    }
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_7);
+    return false;
+  }
+
   private boolean _jspx_meth_c_out_8(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_2, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_2)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -1695,7 +1630,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_8 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_out_8.setPageContext(_jspx_page_context);
     _jspx_th_c_out_8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_2);
-    _jspx_th_c_out_8.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.idTurno}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_out_8.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Nombre}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_out_8 = _jspx_th_c_out_8.doStartTag();
     if (_jspx_th_c_out_8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_8);
@@ -1713,7 +1648,7 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_9 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_out_9.setPageContext(_jspx_page_context);
     _jspx_th_c_out_9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_2);
-    _jspx_th_c_out_9.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Nombre}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_out_9.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Descripcion}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_out_9 = _jspx_th_c_out_9.doStartTag();
     if (_jspx_th_c_out_9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_9);
@@ -1723,39 +1658,39 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     return false;
   }
 
-  private boolean _jspx_meth_c_out_10(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_2, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_2)
+  private boolean _jspx_meth_fmt_message_24(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_10 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_10.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_2);
-    _jspx_th_c_out_10.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Horario_Inicio}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_10 = _jspx_th_c_out_10.doStartTag();
-    if (_jspx_th_c_out_10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_10);
+    //  fmt:message
+    org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_24 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
+    _jspx_th_fmt_message_24.setPageContext(_jspx_page_context);
+    _jspx_th_fmt_message_24.setParent(null);
+    _jspx_th_fmt_message_24.setKey("footer_lbl_idioma_ingles");
+    int _jspx_eval_fmt_message_24 = _jspx_th_fmt_message_24.doStartTag();
+    if (_jspx_th_fmt_message_24.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_24);
       return true;
     }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_10);
+    _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_24);
     return false;
   }
 
-  private boolean _jspx_meth_c_out_11(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_2, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_2)
+  private boolean _jspx_meth_fmt_message_25(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_11 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_11.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_11.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_2);
-    _jspx_th_c_out_11.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${name.Horario_Final}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_11 = _jspx_th_c_out_11.doStartTag();
-    if (_jspx_th_c_out_11.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_11);
+    //  fmt:message
+    org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_25 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
+    _jspx_th_fmt_message_25.setPageContext(_jspx_page_context);
+    _jspx_th_fmt_message_25.setParent(null);
+    _jspx_th_fmt_message_25.setKey("footer_lbl_idioma_español");
+    int _jspx_eval_fmt_message_25 = _jspx_th_fmt_message_25.doStartTag();
+    if (_jspx_th_fmt_message_25.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_25);
       return true;
     }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_11);
+    _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_25);
     return false;
   }
 
@@ -1767,49 +1702,13 @@ public final class Mantenimiento_005fTurno_jsp extends org.apache.jasper.runtime
     org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_26 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
     _jspx_th_fmt_message_26.setPageContext(_jspx_page_context);
     _jspx_th_fmt_message_26.setParent(null);
-    _jspx_th_fmt_message_26.setKey("footer_lbl_idioma_ingles");
+    _jspx_th_fmt_message_26.setKey("footer_lbl_derechos_de_autor");
     int _jspx_eval_fmt_message_26 = _jspx_th_fmt_message_26.doStartTag();
     if (_jspx_th_fmt_message_26.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_26);
       return true;
     }
     _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_26);
-    return false;
-  }
-
-  private boolean _jspx_meth_fmt_message_27(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  fmt:message
-    org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_27 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
-    _jspx_th_fmt_message_27.setPageContext(_jspx_page_context);
-    _jspx_th_fmt_message_27.setParent(null);
-    _jspx_th_fmt_message_27.setKey("footer_lbl_idioma_español");
-    int _jspx_eval_fmt_message_27 = _jspx_th_fmt_message_27.doStartTag();
-    if (_jspx_th_fmt_message_27.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_27);
-      return true;
-    }
-    _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_27);
-    return false;
-  }
-
-  private boolean _jspx_meth_fmt_message_28(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  fmt:message
-    org.apache.taglibs.standard.tag.rt.fmt.MessageTag _jspx_th_fmt_message_28 = (org.apache.taglibs.standard.tag.rt.fmt.MessageTag) _jspx_tagPool_fmt_message_key_nobody.get(org.apache.taglibs.standard.tag.rt.fmt.MessageTag.class);
-    _jspx_th_fmt_message_28.setPageContext(_jspx_page_context);
-    _jspx_th_fmt_message_28.setParent(null);
-    _jspx_th_fmt_message_28.setKey("footer_lbl_derechos_de_autor");
-    int _jspx_eval_fmt_message_28 = _jspx_th_fmt_message_28.doStartTag();
-    if (_jspx_th_fmt_message_28.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_28);
-      return true;
-    }
-    _jspx_tagPool_fmt_message_key_nobody.reuse(_jspx_th_fmt_message_28);
     return false;
   }
 }

@@ -5,6 +5,12 @@
 --%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<jsp:scriptlet>
+    String usuario = "";
+    HttpSession sesion_u = request.getSession();
+    usuario = (String) sesion_u.getAttribute("usuario");
+</jsp:scriptlet>        
+
 <header style="position:fixed; width: 100%;top:0; z-index: 3;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black !important; height: 90px;">
                 <table>
@@ -27,7 +33,7 @@
                     </li>
                     <li class="nav-item">
                         <p style="color: white; font-size: small; margin-top: 20px;">
-                            <span class="glyphicon glyphicon-user"></span> <fmt:message key="header_lbl_usuario"/>
+                            <span class="glyphicon glyphicon-user"></span> <fmt:message key="header_lbl_usuario"/>: <%=usuario%>
                         </p>
                     </li>
                     <li class="nav-item" style="margin-left:5px; margin-top: 15px;">
@@ -38,7 +44,7 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="#"><h5><fmt:message key="header_lbl_perfil"/></h5></a>
                                     <a class="dropdown-item" href="#"><h5><fmt:message key="header_lbl_Configuración"/></h5></a>
-                                    <a class="dropdown-item" href="#"><h5><fmt:message key="header_lbl_Salir"/></h5></a>
+                                    <a class="dropdown-item" href="Check_Logout.jsp"><h5><fmt:message key="header_lbl_Salir"/></h5></a>
                                     </div>
                               </div>
                     </li>

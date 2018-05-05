@@ -3,7 +3,6 @@
     Created on : 22-abr-2018, 11:53:43
     Author     : Alexx
 --%>
-
 <%@page import="java.sql.ResultSet"%>
 <%@page import="Herramientas.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,12 +16,25 @@
     <fmt:setLocale value="${param.locale}" scope="session"/>
 </c:if>
 
-
 <!--Consulta SQL para alimentar el select-->
 <sql:query dataSource="jdbc/mysql" var="consulta">
     select * from turno
 </sql:query>
     
+<%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
+<%@ page session="true" %>
+<jsp:scriptlet>
+    HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("usuario") == null){
+</jsp:scriptlet>        
+<jsp:forward page="index.jsp">
+    <jsp:param name="error" value="Es obligatorio identificarse"/>
+</jsp:forward>
+<jsp:scriptlet>
+    } 
+</jsp:scriptlet>
+<%----------------------------------------------------------------------------%>
+
 <!DOCTYPE html>
 
 <html>
@@ -79,7 +91,14 @@
                 color:white !important;
                 border-color: white !important;
             }
-
+            
+            #regresar{
+                background-color: #7d8384;
+            }
+            
+            #regresar:hover{
+                background-color: #535b5d;
+            }
         </style>
         <script type="text/javascript">
             function iniciar() {
@@ -192,6 +211,11 @@
         <!--contenedor-->
         <form name="datos" role="form" action="Consultas_Turno.jsp" method="POST" accept-charset="ISO-8859-1">
             <div style="width:95%; height:auto; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px">
+                
+                <a href="menu_admin.jsp" class="btn btn-info" role="button" id="regresar">
+                    <img alt="Regresar" width="40px" height="30px" onmouseout="this.src='imagenes/flecha-de-deshacer.png';" onmouseover="this.src='imagenes/flecha_azul.png';" src="imagenes/flecha-de-deshacer.png"/>
+                </a>
+                
                 <div style="width:32%; margin:0 auto;">
                     <h1 style="text-align:center;"><b><fmt:message key="turno_lbl_tema"/></b></h1>
                     <hr style="border:2px solid grey;">
@@ -330,7 +354,6 @@
                 </div>   
             </div>                        
         </form>
-        
         <!--codigo del footer-->
         <%@include file="Estructura_plantilla/footer.jsp"%>
     </body>
