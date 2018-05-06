@@ -11,7 +11,7 @@
 <%@ page session="true"%>
 <jsp:scriptlet>
     HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null){
+    if (sesionOk.getAttribute("usuario") == null) {
 </jsp:scriptlet>        
 <jsp:forward page="index.jsp">
     <jsp:param name="error" value="Es obligatorio identificarse"/>
@@ -24,7 +24,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
         <!--freewall-->
         <script type="text/javascript" src="freewall/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="freewall/freewall.js"></script>
@@ -37,7 +37,7 @@
         <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
 
         <!--<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>-->
-        
+
         <!-- css y js a ocupar-->
         <%@include file="Estructura_plantilla/head.jsp"%>
 
@@ -160,24 +160,24 @@
             .cover{
                 height: 100%;
             }
-            
+
             .cell:hover{
                 box-shadow: inset 0px 0px 220px black;
                 transform: scale(1.1);
             }
             /*termina estilos freewall*/
         </style>
-        
+
         <script>
-             /*funcion para cerrar la ventana de aviso*/
+            /*funcion para cerrar la ventana de aviso*/
             window.setTimeout(function () {
                 $(".alert").fadeTo(500, 0).slideUp(500, function () {
                     $(this).remove();
                 });
             }, 4000);
-            
+
         </script>
-        
+
     </head>
     <body>
         <!--codigo del header-->
@@ -186,14 +186,14 @@
 
 
         <div style="width:95%; min-height:550px; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; color:white;">
-            
+
             <c:if test='${param.inicio!=null}'>
                 <div class="alert alert-info alert-dismissible" style="width: 30%;margin: 0 auto; float: none;font-size: initial;text-align: center;">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <span><c:out value="${param.inicio}"/></span>
                 </div>
             </c:if>
-            
+
             <div class="layout" style="margin: 0 auto;">
                 <div id="freewall" class="free-wall">
 
@@ -246,13 +246,17 @@
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <h4>
-                                <strong>Roles</strong>
-                            </h4>
-                            <br>
-                            <div class="con_div">
-                                <img src="imagenes/cliente.png" class="icono_cuadro">
-                            </div>
+                            <a href="Mantenimiento_Rol.jsp" style="text-decoration:none;color:white;">
+                                <div style="height:100%;width:100%;">
+                                    <h4>
+                                        <strong>Roles</strong>
+                                    </h4>
+                                    <br>
+                                    <div class="con_div">
+                                        <img src="imagenes/cliente.png" class="icono_cuadro">
+                                    </div>
+                                </div>
+                            </a>
 
                         </div>
                     </div>
