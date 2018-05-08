@@ -3,17 +3,28 @@
     Created on : 22-abr-2018, 10:13:24
     Author     : Alexx
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ page session="true"%>
+<jsp:scriptlet>
+    HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("usuario") == null){
+</jsp:scriptlet>        
+<jsp:forward page="index.jsp">
+    <jsp:param name="error" value="Es obligatorio identificarse"/>
+</jsp:forward>
+<jsp:scriptlet>
+    }
+</jsp:scriptlet>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Biblioteca</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="initial-scale=0.5; maximum-scale=0.5; user-scalable=0;" />
-        <meta name="keywords" content="javascript, dynamic, grid, layout, jquery plugin, flex layouts" />
-
+        
         <!--freewall-->
         <script type="text/javascript" src="freewall/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="freewall/freewall.js"></script>
@@ -21,22 +32,20 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <!--********-->
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/tooplate-style.css">
-
-
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-
         <!--fuentes-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <!--<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>-->
+        
+        <!-- css y js a ocupar-->
+        <%@include file="Estructura_plantilla/head.jsp"%>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!--css propio-->
         <link rel="stylesheet" href="style.css">
@@ -129,7 +138,7 @@
             }
 
             .icono_cuadro{
-                margin-top: -40px;
+                margin-top: -20px;
                 margin-left: -40px;
                 left: 50%;
                 top: 50%;
@@ -158,61 +167,33 @@
             }
             /*termina estilos freewall*/
         </style>
+        
+        <script>
+             /*funcion para cerrar la ventana de aviso*/
+            window.setTimeout(function () {
+                $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                    $(this).remove();
+                });
+            }, 4000);
+            
+        </script>
+        
     </head>
     <body>
-        <header style="width: 100%;top:0;">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black !important; height: 90px;">
+        <!--codigo del header-->
+        <%@include file="Estructura_plantilla/header.jsp"%>
 
 
-                <table>
-                    <tr>
-                        <td Style="vertical-align:middle; text-align:center;">
-                            <img src="imagenes/estudiar.png" style="margin:0 auto;">
-                        </td>
-                        <td>
-                            <h2 style="font-family:'Marck Script',cursive;font-size: 50px;color:white"> &nbsp; Biblioteca</h2>
-                        </td>
-                    </tr>
-                </table>
 
-                <div class="collapse navbar-collapse" id="navbarText" style="padding: 0px;">
-                    <ul class="navbar-nav mr-auto justify-content-end" style="width: 100%;padding: 0px;">
-                        <li class="nav-item">
-                            <p style="color: white; font-size: small; margin-top: 20px;">
-                                <span class="glyphicon glyphicon-search"></span> Busqueda
-                            </p>
-                        </li>
-                        <li class="nav-item">
-                            <p style="color: white; font-size: small; margin-top: 20px;">
-                                <span class="glyphicon glyphicon-user"></span> Usuario
-                            </p>
-                        </li>
-                        <li class="nav-item" style="margin-left:5px; margin-top: 15px;">
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle btn_salir" data-toggle="dropdown" style="color: white; font-size: large; background-color: transparent; box-shadow: 0px !important;">
-
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">
-                                        <h5>Perfil</h5>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <h5>Configuración</h5>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <h5>Salir</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+        <div style="width:95%; min-height:550px; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; color:white;">
+            
+            <c:if test='${param.inicio!=null}'>
+                <div class="alert alert-info alert-dismissible" style="width: 30%;margin: 0 auto; float: none;font-size: initial;text-align: center;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <span><c:out value="${param.inicio}"/></span>
                 </div>
-            </nav>
-        </header>
-
-
-
-        <div style="width:95%; min-height:550px; background-color:#f3e8e8ab; margin:0 auto; margin-top:20px; padding: 5px; color:white;">
+            </c:if>
+            
             <div class="layout" style="margin: 0 auto;">
                 <div id="freewall" class="free-wall">
 
@@ -252,7 +233,7 @@
                                 <span class="material-icons">open_with</span>
                             </div>
                             <h4>
-                                <strong>Categorías</strong>
+                                <strong style="font-size:small;">Categorías</strong>
                             </h4>
                             <br>
                             <div class="con_div">
@@ -275,19 +256,20 @@
 
                         </div>
                     </div>
+                    
                     <div class="cell size11" style="background-color:rgb(173, 14, 14);" data-position="0-3" data-handle=".handle">
                         <div class='cover'>
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <h4>
-                                <strong>Idiomas</strong>
-                            </h4>
-                            <br>
-                            <div class="con_div">
-                                <img src="imagenes/etiqueta-de-letra.png" class="icono_cuadro">
-                            </div>
-
+                            <a href="Mantenimiento_Idiomas.jsp" style="text-decoration:none;color:white;">
+                                <div style="height:100%;width:100%;">
+                                    <h4><strong>Idiomas</strong></h4>
+                                    <div class="con_div">
+                                        <img src="imagenes/etiqueta-de-letra.png" class="icono_cuadro">
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="cell size21" style="background-color:rgb(13, 103, 130)" data-position="0-5" data-handle=".handle">
@@ -369,9 +351,7 @@
             </div>
         </div>
 
-        <footer style="margin-top: 20px;">
-            <h5>&copy; 2018 . Todos los derechos reservados</h5>
-        </footer>
+        <%@include file="Estructura_plantilla/footer.jsp"%>
 
         <!--script-->
         <script type="text/javascript">
@@ -396,8 +376,6 @@
             wall.fitWidth();
             // for scroll bar appear;
             $(window).trigger("resize");
-
-
         </script>
     </body>
 </html>
