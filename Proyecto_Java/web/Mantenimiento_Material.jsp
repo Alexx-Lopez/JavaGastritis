@@ -20,7 +20,6 @@
 <sql:query dataSource="jdbc/mysql" var="consulta">
     select * from idiomas
 </sql:query>
-    
 <%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
 <%@ page session="true" %>
 <jsp:scriptlet>
@@ -151,6 +150,8 @@
                     f_tesis.style.display = 'none';
                     p_coddisco.style.display = 'none';
                     p_tipodisco.style.display = 'none';
+                    
+
                 }
                 if(x == selectBox.value)
                 {
@@ -159,6 +160,7 @@
                     f_tesis.style.display = 'none';
                     p_coddisco.style.display = 'none';
                     p_tipodisco.style.display = 'none';
+                   
                 }
                 if(c == selectBox.value)
                 {
@@ -167,6 +169,7 @@
                     f_tesis.style.display = 'block';
                     p_coddisco.style.display = 'none';
                     p_tipodisco.style.display = 'none';
+
                 }
                 if(v == selectBox.value)
                 {
@@ -175,6 +178,7 @@
                     f_tesis.style.display = 'none';
                     p_coddisco.style.display = 'block';
                     p_tipodisco.style.display = 'block';
+
                 }
                 if(b == selectBox.value)
                 {
@@ -183,6 +187,7 @@
                     f_tesis.style.display = 'none';
                     p_coddisco.style.display = 'none';
                     p_tipodisco.style.display = 'none';
+
                 }
            }
 
@@ -269,7 +274,7 @@
                     <div>
                         <fieldset>  
                             <div class="container col-lg-12" style="position: relative; left: 35px">                      
-            <form role="form" action="ingresar.jsp" method="POST">
+                                <form role="form" action="ingresar.jsp" method="POST" id="inicial">
                 <div class="col-md-10">
                 <div class="form-group">
                     <label for="nombre"><fmt:message key="material_lbl_codigo"/></label>
@@ -377,7 +382,7 @@
                 </div>
                         </div>
                         
-                        
+                               
                         </fieldset>
                         
                     </div>
