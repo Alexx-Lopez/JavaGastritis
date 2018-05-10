@@ -256,19 +256,20 @@
 
                         </div>
                     </div>
+                    
                     <div class="cell size11" style="background-color:rgb(173, 14, 14);" data-position="0-3" data-handle=".handle">
                         <div class='cover'>
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <h4>
-                                <strong>Idiomas</strong>
-                            </h4>
-                            <br>
-                            <div class="con_div">
-                                <img src="imagenes/etiqueta-de-letra.png" class="icono_cuadro">
-                            </div>
-
+                            <a href="Mantenimiento_Idiomas.jsp" style="text-decoration:none;color:white;">
+                                <div style="height:100%;width:100%;">
+                                    <h4><strong>Idiomas</strong></h4>
+                                    <div class="con_div">
+                                        <img src="imagenes/etiqueta-de-letra.png" class="icono_cuadro">
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="cell size21" style="background-color:rgb(13, 103, 130)" data-position="0-5" data-handle=".handle">
@@ -276,6 +277,7 @@
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
+                            <a href="Mantenimiento_Material.jsp" style="text-decoration:none;color:white;">
                             <h4>
                                 <strong>Ejemplares</strong>
                             </h4>
@@ -283,7 +285,7 @@
                             <div class="con_div">
                                 <img src="imagenes/anadir-pagina.png" class="icono_cuadro">
                             </div>
-
+                            </a>
                         </div>
                     </div>
                     <div class="cell size21" style="background-color:rgb(191, 91, 5);" data-position="2-5" data-handle=".handle">
