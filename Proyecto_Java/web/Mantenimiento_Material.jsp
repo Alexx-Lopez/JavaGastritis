@@ -110,12 +110,12 @@
                 var b_nuevo = document.getElementById('btn_guardar');
                 var b_modificar = document.getElementById('btn_modificar');
                 var b_eliminar = document.getElementById('btn_eliminar');
-                var txt_idiomas = document.getElementById('txt_idiomas');
+
                 
                 b_nuevo.disabled = false;
                 b_modificar.disabled = true;
                 b_eliminar.disabled = true;
-                txt_idiomas.style.display = 'block';
+
                 
             }
 
@@ -124,12 +124,12 @@
                 var b_nuevo = document.getElementById('btn_guardar');
                 var b_modificar = document.getElementById('btn_modificar');
                 var b_eliminar = document.getElementById('btn_eliminar');
-                var txt_idiomas = document.getElementById('txt_idiomas');
+
                 var select = document.getElementById('select_idiomas');
                 b_nuevo.disabled = true;
                 b_modificar.disabled = false;
                 b_eliminar.disabled = false;
-                txt_idiomas.style.display = 'none';
+
                 select.style.display = 'block';
                 document.datos.txt_descripcion.value = "";
             }
@@ -143,41 +143,54 @@
                 var p_coddisco = document.getElementById('p_coddisco');
                 var p_tipodisco = document.getElementById('p_tipodisco');
                 var z = 1, x= 2, c = 3, v = 4, b = 0;
-                if(z == selectBox.value)
+                if("Book" == selectBox.value || "Libro" == selectBox.value)
                 {
                     p_issn.style.display = 'none';
                     p_isbn.style.display = 'block';
                     f_tesis.style.display = 'none';
                     p_coddisco.style.display = 'none';
                     p_tipodisco.style.display = 'none';
-                    
-
+                    $("#txt_isbn").attr("required");
+                    $("#txt_issn").removeAttr("required");
+                    $("#txt_coddisco").removeAttr("required");
+                    $("#tesis_codigo").removeAttr("required");
                 }
-                if(x == selectBox.value)
+                if("Revista" == selectBox.value || "Magazine" == selectBox.value)
                 {
                     p_issn.style.display = 'block';
                     p_isbn.style.display = 'none';
                     f_tesis.style.display = 'none';
                     p_coddisco.style.display = 'none';
                     p_tipodisco.style.display = 'none';
+                    $("#txt_isbn").removeAttr("required");
+                    $("#txt_issn").attr("required");
+                    $("#txt_coddisco").removeAttr("required");
+                    $("#tesis_codigo").removeAttr("required");
                    
                 }
-                if(c == selectBox.value)
+                if("Tesis" == selectBox.value || "Thesis" == selectBox.value)
                 {
                     p_issn.style.display = 'none';
                     p_isbn.style.display = 'none';
                     f_tesis.style.display = 'block';
                     p_coddisco.style.display = 'none';
                     p_tipodisco.style.display = 'none';
-
+                    $("#txt_isbn").removeAttr("required");
+                    $("#txt_issn").removeAttr("required");
+                    $("#txt_coddisco").removeAttr("required");
+                    $("#tesis_codigo").attr("required");
                 }
-                if(v == selectBox.value)
+                if("Disco" == selectBox.value || "Disk" == selectBox.value)
                 {
                     p_issn.style.display = 'none';
                     p_isbn.style.display = 'none';
                     f_tesis.style.display = 'none';
                     p_coddisco.style.display = 'block';
                     p_tipodisco.style.display = 'block';
+                    $("#txt_isbn").removeAttr("required");
+                    $("#txt_issn").removeAttr("required");
+                    $("#txt_coddisco").attr("required");
+                    $("#tesis_codigo").removeAttr("required");
 
                 }
                 if(b == selectBox.value)
@@ -187,7 +200,7 @@
                     f_tesis.style.display = 'none';
                     p_coddisco.style.display = 'none';
                     p_tipodisco.style.display = 'none';
-
+                    $("#selectBox").attr("required");
                 }
            }
 
@@ -202,15 +215,14 @@
             //guardar
             function guardar() {
                 
-                $("#txt_idiomas").attr("required");
-                $("#select_idiomas").attr("required");
+                $("#CodigoL").attr("required");
+                $("#selectBox").attr("required");
                 
             }
 
             function actualizar() {
                 $("#txt_idiomas").removeAttr("required");
-                $("#select_idiomas").attr("required");
-                
+                $("#select_idiomas").attr("required");  
             }
 
             function eliminar() {
@@ -307,15 +319,15 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="material_select_material"/></label>
                                         <div class="input-group">
-                                            <select class="form-control selector" name="selectBox" id="selectBox" onchange="changeFunc();" required="">
+                                            <select class="form-control selector" name="selectBox" id="selectBox" onchange="changeFunc();" required>
                                                 <option value="0"><fmt:message key="material_select_material"/></option>
-                                                    <option value="1"><fmt:message key="material_lbl_libro"/></option>
-                                                    <option value="2"><fmt:message key="material_lbl_revista"/></option>
-                                                    <option value="3"><fmt:message key="material_lbl_tesis"/></option>
-                                                    <option value="4"><fmt:message key="material_lbl_disco"/></option>
+                                                    <option value="<fmt:message key="material_lbl_libro"/>"><fmt:message key="material_lbl_libro"/></option>
+                                                    <option value="<fmt:message key="material_lbl_revista"/>"><fmt:message key="material_lbl_revista"/></option>
+                                                    <option value="<fmt:message key="material_lbl_tesis"/>"><fmt:message key="material_lbl_tesis"/></option>
+                                                    <option value="<fmt:message key="material_lbl_disco"/>"><fmt:message key="material_lbl_disco"/></option>
                                             </select>
                                             <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-barcode">                                
+                                                <span class="glyphicon glyphicon-list">                                
                                                 </span>
                                             </span>
                                         </div>
@@ -325,7 +337,7 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="descripcion" name="Descripcion" placeholder="<fmt:message key="in_descripcion"/>" >
                                             <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-barcode">                                
+                                                <span class="glyphicon glyphicon-pencil">                                
                                                 </span>
                                             </span>
                                         </div>
@@ -335,7 +347,7 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="precio" name="Precio" placeholder="<fmt:message key="in_precio"/>">
                                             <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-barcode">                                
+                                                <span class="glyphicon glyphicon-usd">                                
                                                 </span>
                                             </span>
                                         </div>
@@ -345,7 +357,7 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="fecha" name="Fecha" placeholder="<fmt:message key="in_fecha"/>">
                                             <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-barcode">                                
+                                                <span class="glyphicon glyphicon-calendar">                                
                                                 </span>
                                             </span>
                                         </div>
@@ -355,7 +367,7 @@
                                       <div class="input-group">
                                           <input type="text" class="form-control" id="volumen" name="Volumen" placeholder="<fmt:message key="in_volumen"/>">
                                           <span class="input-group-addon">
-                                              <span class="glyphicon glyphicon-barcode">                                
+                                              <span class="glyphicon glyphicon-sound-5-1">                                
                                               </span>
                                           </span>
                                       </div>
@@ -365,7 +377,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="notas" name="Notas" placeholder="<fmt:message key="in_notas"/>">
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-barcode">                                
+                                            <span class="glyphicon glyphicon-font">                                
                                             </span>
                                         </span>
                                     </div>
@@ -381,7 +393,7 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="editorial" name="editorial" placeholder="<fmt:message key="in_editorial"/>">
                                             <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-barcode">                                
+                                                <span class="glyphicon glyphicon-font">                                
                                                 </span>
                                             </span>
                                         </div>
@@ -391,7 +403,7 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="editorial_place" name="editorial_place" placeholder="<fmt:message key="in_ubicacion"/>">
                                             <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-barcode">                                
+                                                <span class="glyphicon glyphicon-globe">                                
                                                 </span>
                                             </span>
                                         </div>
@@ -401,7 +413,7 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="editorial_anio" name="editorial_anio" placeholder="<fmt:message key="in_anio"/>">
                                             <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-barcode">                                
+                                                <span class="glyphicon glyphicon-calendar">                                
                                                 </span>
                                             </span>
                                         </div>
@@ -415,7 +427,7 @@
                                 <div class="form-group">
                                     <label for="telefono"><fmt:message key="material_lbl_codtesis"/></label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="tesis_codigo" name="tesis_codigo" placeholder="<fmt:message key="in_codtesis"/>">
+                                        <input type="text" class="form-control" id="tesis_codigo" name="tesis_codigo" placeholder="<fmt:message key="in_codtesis"/>" required>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-barcode">                                
                                             </span>
@@ -427,7 +439,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="tesis_tipo" name="tesis_tipo" placeholder="<fmt:message key="in_tipoinves"/>">
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-barcode">                                
+                                            <span class="glyphicon glyphicon-tasks">                                
                                             </span>
                                         </span>
                                     </div>
@@ -437,7 +449,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="tesis_lugar" name="tesis_lugar" placeholder="<fmt:message key="in_lugar"/>">
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-barcode">                                
+                                            <span class="glyphicon glyphicon-globe">                                
                                             </span>
                                         </span>
                                     </div>
@@ -447,7 +459,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="tesis_grado" name="tesis_grado" placeholder="<fmt:message key="in_grado"/>">
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-barcode">                                
+                                            <span class="glyphicon glyphicon-education">                                
                                             </span>
                                         </span>
                                     </div>
@@ -457,41 +469,42 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="tesis_institucion" name="tesis_institucion" placeholder="<fmt:message key="in_institucion"/>">
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-barcode">                                
+                                            <span class="glyphicon glyphicon-home">                                
                                             </span>
                                         </span>
                                     </div>
                                 </div>         
                         </fieldset>
-                        <br>
-                        <div id="p_isbn" style="display: none">
-                            <b id="lbl_isbn"><fmt:message key="material_lbl_isbn"/>:</b>
+                        <fieldset>
+                        <div class="form-group" id="p_isbn" style="display: none">
+                            <label id="lbl_isbn"><fmt:message key="material_lbl_isbn"/>:</label>
                                 <div class="input-group" id="div_isbn" >
-                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_isbn"/>" id="txt_isbn" name="txt_isbn" required="">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_isbn"/>" id="txt_isbn" name="txt_isbn" required>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
                                 </div>
                         </div>
-                        <div id="p_issn" style="display: none">
-                            <b id="lbl_issn" ><fmt:message key="material_lbl_issn"/>:</b>
+                        <div class="form-group" id="p_issn" style="display: none">
+                            <label id="lbl_issn" ><fmt:message key="material_lbl_issn"/>:</label>
                                 <div class="input-group" id="div_issn" >
-                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_issn"/>" id="txt_issn" name="txt_issn" required="">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_issn"/>" id="txt_issn" name="txt_issn" required>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
                                 </div>
                         </div> 
-                        <div id="p_coddisco" style="display: none">
-                            <b id="lbl_coddisco"><fmt:message key="material_lbl_coddisco"/>:</b>
+                        <div class="form-group" id="p_coddisco" style="display: none">
+                            <label id="lbl_coddisco"><fmt:message key="material_lbl_coddisco"/>:</label>
                                 <div class="input-group" id="div_coddisco" >
-                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_coddisco"/>" id="txt_isbn" name="txt_isbn" required="">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_coddisco"/>" id="txt_coddisco" name="txt_coddisco" required>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
                                 </div>
                         </div>
-                        <div id="p_tipodisco" style="display: none">
-                            <b id="lbl_tipodisco" ><fmt:message key="material_lbl_tipodisco"/>:</b>
+                                    <div class="form-group" id="p_tipodisco" style="display: none">
+                            <label id="lbl_tipodisco" ><fmt:message key="material_lbl_tipodisco"/>:</label>
                                 <div class="input-group" id="div_tipodisco" >
-                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_tipodisco"/>" id="tipodisco" name="tipodisco" required="">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_tipodisco"/>" id="tipodisco" name="tipodisco">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-tasks"></i></span>
                                 </div>
                         </div>
+                        </fieldset>
                         <br>
                         <table style="width:100%;">
                         <tr>

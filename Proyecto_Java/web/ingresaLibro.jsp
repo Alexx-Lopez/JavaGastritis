@@ -9,7 +9,7 @@
 
 <!DOCTYPE html>
 
-<html>
+
  <head>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <title>Ingresar libro</title>
@@ -18,8 +18,21 @@
      
 </script>
  </head>
- <body>
-     <h1>BTN FUNCIONA</h1>
- </body>
-</html>
+ <c:set var="selectValor" value="${param.selectBox}"/>
+ 
+     <h1>Valor: </h1>
+     <c:if test="${selectValor == 'Book' || selectValor == 'Libro'}">
+     <h1><%=request.getParameter("editorial")%></h1>
+     </c:if>
+     <c:if test="${selectValor == 'Revista' || selectValor == 'Magazine'}">
+     <h1><%=request.getParameter("txt_issn")%></h1>
+     </c:if>
+     <c:if test="${selectValor == 'Tesis' || selectValor == 'Thesis'}">
+     <h1><%=request.getParameter("tesis_codigo")%></h1>
+     </c:if>
+     <c:if test="${selectValor == 'Disco' || selectValor == 'Disk'}">
+     <h1><%=request.getParameter("txt_coddisco")%></h1>
+     </c:if>
+ 
+
 
