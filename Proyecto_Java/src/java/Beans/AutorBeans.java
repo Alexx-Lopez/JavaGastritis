@@ -7,7 +7,7 @@ package Beans;
 
 /**
  *
- * @author Alexx
+ * @author karin
  */
 public class AutorBeans {
 
