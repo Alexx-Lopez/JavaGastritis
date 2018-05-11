@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Mantenimiento_Idiomas
-    Created on : 05-may-2018, 19:35:17
+    Document   : Mantenimiento_Autor
+    Created on : 10-may-2018, 14:35:17
     Author     : karin
 --%>
 <%@page import="java.sql.ResultSet"%>
@@ -16,9 +16,9 @@
     <fmt:setLocale value="${param.locale}" scope="session"/>
 </c:if>
 
-<!--Consulta SQL para alimentar el select---->
+<!--Consulta SQL para alimentar el select-->
 <sql:query dataSource="jdbc/mysql" var="consulta">
-    select * from idiomas
+    select * from autor
 </sql:query>
     
 <%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
@@ -107,17 +107,17 @@
             }
 
             function nuevo() {
-
+               
                 var b_nuevo = document.getElementById('btn_guardar');
                 var b_modificar = document.getElementById('btn_modificar');
                 var b_eliminar = document.getElementById('btn_eliminar');
-                var txt_idiomas = document.getElementById('txt_idiomas');
-                var select = document.getElementById('select_idiomas');
+                var txt_autor = document.getElementById('txt_autor');
+                var select = document.getElementById('select_autor');
                 
                 b_nuevo.disabled = false;
                 b_modificar.disabled = true;
                 b_eliminar.disabled = true;
-                txt_idiomas.style.display = 'block';
+                txt_autor.style.display = 'block';
                 select.style.display = 'none';
                 
             }
@@ -127,25 +127,24 @@
                 var b_nuevo = document.getElementById('btn_guardar');
                 var b_modificar = document.getElementById('btn_modificar');
                 var b_eliminar = document.getElementById('btn_eliminar');
-                var txt_idiomas = document.getElementById('txt_idiomas');
-                var select = document.getElementById('select_idiomas');
+                var txt_autor = document.getElementById('txt_autor');
+                var select = document.getElementById('select_autor');
+                
                 b_nuevo.disabled = true;
                 b_modificar.disabled = false;
                 b_eliminar.disabled = false;
-                txt_idiomas.style.display = 'block';
+                txt_autor.style.display = 'block';
                 select.style.display = 'block';
-                //document.datos.txt_descripcion.value = "";
+                
             }
 
             function seleccionar() {
-                var cmb_idiomas = document.getElementById("select_idiomas");
-                if (cmb_idiomas.value != "") {
+                var cmb_autor = document.getElementById("select_autor");
+                if (cmb_autor.value != "") {
             <c:forEach var="name" items="${consulta.rows}">
-                    var nombre = '<c:out value="${name.nombre_idioma}"/>';
+                    var nombre = '<c:out value="${name.Nombre_Autor}"/>';
                     
             </c:forEach>
-                } 
-
             }
 
             /*funcion para cerrar la ventana de aviso*/
@@ -154,26 +153,20 @@
                     $(this).remove();
                 });
             }, 4000);
-            //quitar los required
-            //
-            //guardar
+
             function guardar() {
-                
-                $("#txt_idiomas").attr("required");
-                $("#select_idiomas").removeAttr("required");
-                
+                $("#select_autor").removeAttr("required");
+                $("#txt_autor").attr("required");
             }
 
             function actualizar() {
-                $("#txt_idiomas").removeAttr("required");
-                $("#select_idiomas").removeAttr("required");
-                
+                $("#txt_autor").removeAttr("required");
+                $("#select_autor").removeAttr("required");
             }
 
             function eliminar() {
-                $("#select_idiomas").attr("required");
-                $("#txt_idiomas").removeAttr("required");
-
+                $("#select_autor").attr("required");
+                $("#txt_autor").removeAttr("required");
             }
         </script>
     </head>
@@ -182,7 +175,7 @@
         <%@include file="Estructura_plantilla/header.jsp"%>
 
         <!--contenedor-->
-        <form name="datos" role="form" action="Consultas_Idiomas.jsp" method="POST" accept-charset="ISO-8859-1">
+        <form name="datos" role="form" action="Consultas_Autor.jsp" method="POST" accept-charset="ISO-8859-1">
             <div style="width:95%; height:auto; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; z-index:10;">
                 
                 <a href="menu_empleado.jsp" class="btn btn-info" role="button" id="regresar">
@@ -190,7 +183,7 @@
                 </a>
                 
                 <div style="width:32%; margin:0 auto;">
-                    <h1 style="text-align:center;"><b><fmt:message key="idioma_lbl_tema"/></b></h1>
+                    <h1 style="text-align:center;"><b><fmt:message key="autor_lbl_tema"/></b></h1>
                     <hr style="border:2px solid grey;">
 
                     <%-- Area de mensaje o avisos --%>
@@ -199,28 +192,28 @@
                             <c:when test='${param.resultado=="Registro_existente"}'>
                                 <div class="alert alert-danger alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="idioma_mensaje_registro_repetido" var="mensaje"/>
+                                    <fmt:message key="autor_mensaje_registro_repetido" var="mensaje"/>
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
                             <c:when test='${param.resultado=="datos_ingresados"}'>
                                 <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="idiomas_mensaje_ingreso" var="mensaje"/>
+                                    <fmt:message key="autor_mensaje_ingreso" var="mensaje"/>
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
                             <c:when test='${param.resultado=="datos_actualizados"}'>
                                 <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="idiomas_mensaje_actualizacion" var="mensaje"/>
+                                    <fmt:message key="autor_mensaje_actualizacion" var="mensaje"/>
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
                             <c:when test='${param.resultado=="datos_eliminados"}'>
                                 <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="idiomas_mensaje_eliminacion" var="mensaje"/>
+                                    <fmt:message key="autor_mensaje_eliminacion" var="mensaje"/>
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
@@ -229,15 +222,15 @@
                     <br>
                     <div>
                         <fieldset>
-                            <legend style="font-size: smaller;"><b><fmt:message key="idiomas_lbl_control"/></b></legend>
+                            <legend style="font-size: smaller;"><b><fmt:message key="autor_lbl_control"/></b></legend>
                             <table style="width: 100%;">
                                 <tr>
                                     <td align="center">
-                                        <input type="radio" name="control" value="" onclick="nuevo();"> <fmt:message key="idiomas_rbtn_nuevo"/>
+                                        <input type="radio" name="control" value="" onclick="nuevo();"> <fmt:message key="autor_rbtn_nuevo"/>
                                     </td>
 
                                     <td align="center">
-                                        <input type="radio" name="control" value="" onclick="editar();"> <fmt:message key="idiomas_rbtn_editar"/>
+                                        <input type="radio" name="control" value="" onclick="editar();"> <fmt:message key="autor_rbtn_editar"/>
                                     </td>
                                 </tr>
                             </table>
@@ -245,43 +238,43 @@
 
                     </div>
                     <br>
-                    <b><fmt:message key="idiomas_lbl_idiomas"/>:</b>
+                    <b><fmt:message key="autor_lbl_autor"/>:</b>
                     <div class="input-group">
-                        <input type="text" class="form-control"  placeholder="<fmt:message key="idiomas_placeholder_idiomas"/>" id="txt_idiomas" name="txt_idiomas" required="">
-                        <select class="form-control selector" name="cmb_idiomas" id="select_idiomas" onchange="seleccionar();" required="">
-                            <option value=""><fmt:message key="idiomas_select_idiomas"/></option>
+                        <input type="text" class="form-control"  placeholder="<fmt:message key="autor_placeholder_autor"/>" id="txt_autor" name="txt_autor" required="">
+                        <select class="form-control selector" name="cmb_autor" id="select_cargo" onchange="seleccionar();" required="">
+                            <option value=""><fmt:message key="autor_select_autor"/></option>
 
                             <c:forEach var="name" items="${consulta.rows}">
-                                <option><c:out value="${name.nombre_idioma}"/></option>
+                                <option><c:out value="${name.Nombre_Autor}"/></option>
                             </c:forEach>
 
                         </select>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-sort-by-alphabet"></i></span>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     </div>
                     <br>
                     
                     <table style="width:100%;">
                         <tr>
                             <td align="center">
-                                <button type="submit" class="btn btn-primary" id="btn_guardar" name="Guardar" onclick="guardar();"><fmt:message key="idiomas_btn_guardar"/></button>
+                                <button type="submit" class="btn btn-primary" id="btn_guardar" name="Guardar" onclick="guardar();"><fmt:message key="autor_btn_guardar"/></button>
                             </td>
                             <td align="center">
-                                <button type="submit" class="btn btn-warning" id="btn_modificar" name="Modificar" onclick="actualizar();"><fmt:message key="idiomas_btn_modificar"/></button>
+                                <button type="submit" class="btn btn-warning" id="btn_modificar" name="Modificar" onclick="actualizar();"><fmt:message key="autor_btn_modificar"/></button>
                             </td>
                             <td align="center">
-                                <button type="submit" class="btn btn-danger" id="btn_eliminar" name="Eliminar" onclick="eliminar();"><fmt:message key="idiomas_btn_eliminar"/></button>
+                                <button type="submit" class="btn btn-danger" id="btn_eliminar" name="Eliminar" onclick="eliminar();"><fmt:message key="autor_btn_eliminar"/></button>
                             </td>
                         </tr>
                     </table>
                 </div>
 
                 <br>
-                <div class="panel-group" style="width:30%; margin:0 auto;">
+                <div class="panel-group" style="width:50%; margin:0 auto;">
                     <div class="panel panel-default">
                         <a data-toggle="collapse" href="#collapse1" style="text-decoration: none;">
                             <div class="panel-heading">
                                 <h4 class="panel-title" style="text-align:center;color:black;">
-                                    <b><fmt:message key="idiomas_lbl_tabla_registro_tema"/></b>
+                                    <b><fmt:message key="autor_lbl_tabla_registro_tema"/></b>
                                 </h4>
                             </div>
                         </a>
@@ -291,16 +284,16 @@
                                     <thead>
                                         <tr>
                                             <td align="center"><b>ID</b></td>
-                                            <td align="center"><b><fmt:message key="idiomas_thead_tabla_nombre"/></b></td>
-                                            
+                                            <td align="center"><b><fmt:message key="autor_thead_tabla_nombre"/></b></td>
+                                            <td align="center"><b><fmt:message key="autor_thead_tabla_Cod_Mat"/></b></td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <c:forEach var="name" items="${consulta.rows}">
                                             <tr>
-                                                <td align="center"><c:out value="${name.id_idioma}"/></td>
-                                                <td align="center"><c:out value="${name.nombre_idioma}"/></td>
-                                                
+                                                <td align="center"><c:out value="${name.idAutor}"/></td>
+                                                <td align="center"><c:out value="${name.Nombre_Autor}"/></td>
+                                                <td align="center"><c:out value="${name.Codigo_Material}"/></td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
