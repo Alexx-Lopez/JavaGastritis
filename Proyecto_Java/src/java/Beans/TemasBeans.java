@@ -7,13 +7,10 @@ package Beans;
 
 /**
  *
- * @author Alexx
+ * @author karin
  */
 public class TemasBeans {
-    private String cmb_turno;
-    private String txt_turno;
-    private String txt_hora_inicio;
-    private String txt_hora_fin;
-    
+    private String cmb_tema;
+    private String txt_tema;    
     
 }
