@@ -84,42 +84,42 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<$@ taglib prefix=\"f\" uri=\"http://java.sun.com/jsf/core\"%>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!--Seleccion de idioma del usuario-->\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<$@ taglib prefix=\"f\" uri=\"http://java.sun.com/jsf/core\"%>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!--Seleccion de idioma del usuario-->\r\n");
       if (_jspx_meth_c_if_0(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("\n");
-      out.write("<!--Consulta SQL para alimentar la tabla-->\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!--Consulta SQL para alimentar la tabla-->\r\n");
       if (_jspx_meth_sql_query_0(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("\n");
-      out.write("<!--Consulta SQL para alimentar el select turno-->\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!--Consulta SQL para alimentar el select turno-->\r\n");
       if (_jspx_meth_sql_query_1(_jspx_page_context))
         return;
-      out.write("    \n");
-      out.write("    \n");
-      out.write("<!--Consulta SQL para alimentar el select cargo-->\n");
+      out.write("    \r\n");
+      out.write("    \r\n");
+      out.write("<!--Consulta SQL para alimentar el select cargo-->\r\n");
       if (_jspx_meth_sql_query_2(_jspx_page_context))
         return;
-      out.write("   \n");
-      out.write("    \n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <!-- css y js a ocupar-->\n");
+      out.write("   \r\n");
+      out.write("    \r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <!-- css y js a ocupar-->\r\n");
       out.write("        ");
       out.write("\r\n");
       out.write("\r\n");
@@ -168,150 +168,150 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
       out.write("            text-align: center;\r\n");
       out.write("        }\r\n");
       out.write("    </style>");
-      out.write("\n");
-      out.write("\n");
-      out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
-      out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
-      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
-      out.write("\n");
-      out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n");
-      out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n");
-      out.write("\n");
-      out.write("        <style type=\"text/css\">\n");
-      out.write("            .selector{\n");
-      out.write("                height: 35px !important;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            legend{\n");
-      out.write("                border-bottom: 0px !important;\n");
-      out.write("                width: auto !important;\n");
-      out.write("                margin-bottom: 0px !important;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            fieldset{\n");
-      out.write("                border: 1px solid black !important;\n");
-      out.write("                padding: 10px;\n");
-      out.write("            }\n");
-      out.write("            /*estilos tabla de registros*/\n");
-      out.write("            #tabla_registro table, #tabla_registro th, #tabla_registro td \n");
-      out.write("            {\n");
-      out.write("                border: 1px solid black;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            #tabla_registro thead\n");
-      out.write("            {\n");
-      out.write("                height: 50px;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            #tabla_registro\n");
-      out.write("            {\n");
-      out.write("                background-color: #1ABC9C !important;\n");
-      out.write("                width: 100%;\n");
-      out.write("                display: table !important;\n");
-      out.write("                border-collapse: separate !important;\n");
-      out.write("                border-spacing: 1px !important;\n");
-      out.write("                border-color: black !important;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            #tabla_registro tr:hover\n");
-      out.write("            {\n");
-      out.write("                background-color: #08463a !important;\n");
-      out.write("                color:white !important;\n");
-      out.write("                border-color: white !important;\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            #regresar{\n");
-      out.write("                background-color: #7d8384;\n");
-      out.write("            }\n");
-      out.write("            \n");
-      out.write("            #regresar:hover{\n");
-      out.write("                background-color: #535b5d;\n");
-      out.write("            }\n");
-      out.write("        </style>\n");
-      out.write("        <script type=\"text/javascript\">\n");
-      out.write("            function iniciar() {\n");
-      out.write("                var elements = document.getElementsByName('control');\n");
-      out.write("                elements[0].checked = true;\n");
-      out.write("                nuevo();\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            function nuevo() {\n");
-      out.write("\n");
-      out.write("                var b_nuevo = document.getElementById('btn_guardar');\n");
-      out.write("                var b_modificar = document.getElementById('btn_modificar');\n");
-      out.write("                var b_eliminar = document.getElementById('btn_eliminar');\n");
-      out.write("                var txt_cargo = document.getElementById('txt_cargo');\n");
-      out.write("                var select = document.getElementById('select_cargo');\n");
-      out.write("                b_nuevo.disabled = false;\n");
-      out.write("                b_modificar.disabled = true;\n");
-      out.write("                b_eliminar.disabled = true;\n");
-      out.write("                txt_cargo.style.display = 'block';\n");
-      out.write("                select.style.display = 'none';\n");
-      out.write("                document.datos.txt_descripcion.value = \"\";\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            function editar() {\n");
-      out.write("\n");
-      out.write("                var b_nuevo = document.getElementById('btn_guardar');\n");
-      out.write("                var b_modificar = document.getElementById('btn_modificar');\n");
-      out.write("                var b_eliminar = document.getElementById('btn_eliminar');\n");
-      out.write("                var txt_cargo = document.getElementById('txt_cargo');\n");
-      out.write("                var select = document.getElementById('select_cargo');\n");
-      out.write("                b_nuevo.disabled = true;\n");
-      out.write("                b_modificar.disabled = false;\n");
-      out.write("                b_eliminar.disabled = false;\n");
-      out.write("                txt_cargo.style.display = 'none';\n");
-      out.write("                select.style.display = 'block';\n");
-      out.write("                document.datos.txt_descripcion.value = \"\";\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            \n");
-      out.write("            function seleccionar_turno() {\n");
-      out.write("                var cmb_turno = document.getElementById(\"select_turno\");\n");
-      out.write("                if (cmb_turno.value != \"\") {\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n");
+      out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n");
+      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n");
+      out.write("\r\n");
+      out.write("        <style type=\"text/css\">\r\n");
+      out.write("            .selector{\r\n");
+      out.write("                height: 35px !important;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            legend{\r\n");
+      out.write("                border-bottom: 0px !important;\r\n");
+      out.write("                width: auto !important;\r\n");
+      out.write("                margin-bottom: 0px !important;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            fieldset{\r\n");
+      out.write("                border: 1px solid black !important;\r\n");
+      out.write("                padding: 10px;\r\n");
+      out.write("            }\r\n");
+      out.write("            /*estilos tabla de registros*/\r\n");
+      out.write("            #tabla_registro table, #tabla_registro th, #tabla_registro td \r\n");
+      out.write("            {\r\n");
+      out.write("                border: 1px solid black;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            #tabla_registro thead\r\n");
+      out.write("            {\r\n");
+      out.write("                height: 50px;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            #tabla_registro\r\n");
+      out.write("            {\r\n");
+      out.write("                background-color: #1ABC9C !important;\r\n");
+      out.write("                width: 100%;\r\n");
+      out.write("                display: table !important;\r\n");
+      out.write("                border-collapse: separate !important;\r\n");
+      out.write("                border-spacing: 1px !important;\r\n");
+      out.write("                border-color: black !important;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            #tabla_registro tr:hover\r\n");
+      out.write("            {\r\n");
+      out.write("                background-color: #08463a !important;\r\n");
+      out.write("                color:white !important;\r\n");
+      out.write("                border-color: white !important;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            #regresar{\r\n");
+      out.write("                background-color: #7d8384;\r\n");
+      out.write("            }\r\n");
+      out.write("            \r\n");
+      out.write("            #regresar:hover{\r\n");
+      out.write("                background-color: #535b5d;\r\n");
+      out.write("            }\r\n");
+      out.write("        </style>\r\n");
+      out.write("        <script type=\"text/javascript\">\r\n");
+      out.write("            function iniciar() {\r\n");
+      out.write("                var elements = document.getElementsByName('control');\r\n");
+      out.write("                elements[0].checked = true;\r\n");
+      out.write("                nuevo();\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            function nuevo() {\r\n");
+      out.write("\r\n");
+      out.write("                var b_nuevo = document.getElementById('btn_guardar');\r\n");
+      out.write("                var b_modificar = document.getElementById('btn_modificar');\r\n");
+      out.write("                var b_eliminar = document.getElementById('btn_eliminar');\r\n");
+      out.write("                var txt_cargo = document.getElementById('txt_cargo');\r\n");
+      out.write("                var select = document.getElementById('select_cargo');\r\n");
+      out.write("                b_nuevo.disabled = false;\r\n");
+      out.write("                b_modificar.disabled = true;\r\n");
+      out.write("                b_eliminar.disabled = true;\r\n");
+      out.write("                txt_cargo.style.display = 'block';\r\n");
+      out.write("                select.style.display = 'none';\r\n");
+      out.write("                document.datos.txt_descripcion.value = \"\";\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            function editar() {\r\n");
+      out.write("\r\n");
+      out.write("                var b_nuevo = document.getElementById('btn_guardar');\r\n");
+      out.write("                var b_modificar = document.getElementById('btn_modificar');\r\n");
+      out.write("                var b_eliminar = document.getElementById('btn_eliminar');\r\n");
+      out.write("                var txt_cargo = document.getElementById('txt_cargo');\r\n");
+      out.write("                var select = document.getElementById('select_cargo');\r\n");
+      out.write("                b_nuevo.disabled = true;\r\n");
+      out.write("                b_modificar.disabled = false;\r\n");
+      out.write("                b_eliminar.disabled = false;\r\n");
+      out.write("                txt_cargo.style.display = 'none';\r\n");
+      out.write("                select.style.display = 'block';\r\n");
+      out.write("                document.datos.txt_descripcion.value = \"\";\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            \r\n");
+      out.write("            function seleccionar_turno() {\r\n");
+      out.write("                var cmb_turno = document.getElementById(\"select_turno\");\r\n");
+      out.write("                if (cmb_turno.value != \"\") {\r\n");
       out.write("            ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("                } else\n");
-      out.write("                {\n");
-      out.write("                    document.datos.txt_hora_inicio.value = \"\";\n");
-      out.write("                    document.datos.txt_hora_fin.value = \"\";\n");
-      out.write("                }\n");
-      out.write("\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            /*funcion para cerrar la ventana de aviso*/\n");
-      out.write("            window.setTimeout(function () {\n");
-      out.write("                $(\".alert\").fadeTo(500, 0).slideUp(500, function () {\n");
-      out.write("                    $(this).remove();\n");
-      out.write("                });\n");
-      out.write("            }, 4000);\n");
-      out.write("            //quitar los required\n");
-      out.write("            //\n");
-      out.write("            //guardar\n");
-      out.write("            function guardar() {\n");
-      out.write("                $(\"#select_cargo\").removeAttr(\"required\");\n");
-      out.write("                $(\"#txt_cargo\").attr(\"required\");\n");
-      out.write("                $(\"#txt_descripcion\").attr(\"required\");\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            function actualizar() {\n");
-      out.write("                $(\"#txt_cargo\").removeAttr(\"required\");\n");
-      out.write("                $(\"#select_cargo\").attr(\"required\");\n");
-      out.write("                $(\"#txt_descripcion\").attr(\"required\");\n");
-      out.write("            }\n");
-      out.write("\n");
-      out.write("            function eliminar() {\n");
-      out.write("                $(\"#select_cargo\").attr(\"required\");\n");
-      out.write("                $(\"#txt_cargo\").removeAttr(\"required\");\n");
-      out.write("                $(\"#txt_descripcion\").removeAttr(\"required\");\n");
-      out.write("                //alert(\"hola\");\n");
-      out.write("            }\n");
-      out.write("        </script>\n");
-      out.write("    </head>\n");
-      out.write("    <body onload=\"iniciar();\">\n");
-      out.write("        <!--codigo del header-->\n");
+      out.write("\r\n");
+      out.write("                } else\r\n");
+      out.write("                {\r\n");
+      out.write("                    document.datos.txt_hora_inicio.value = \"\";\r\n");
+      out.write("                    document.datos.txt_hora_fin.value = \"\";\r\n");
+      out.write("                }\r\n");
+      out.write("\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            /*funcion para cerrar la ventana de aviso*/\r\n");
+      out.write("            window.setTimeout(function () {\r\n");
+      out.write("                $(\".alert\").fadeTo(500, 0).slideUp(500, function () {\r\n");
+      out.write("                    $(this).remove();\r\n");
+      out.write("                });\r\n");
+      out.write("            }, 4000);\r\n");
+      out.write("            //quitar los required\r\n");
+      out.write("            //\r\n");
+      out.write("            //guardar\r\n");
+      out.write("            function guardar() {\r\n");
+      out.write("                $(\"#select_cargo\").removeAttr(\"required\");\r\n");
+      out.write("                $(\"#txt_cargo\").attr(\"required\");\r\n");
+      out.write("                $(\"#txt_descripcion\").attr(\"required\");\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            function actualizar() {\r\n");
+      out.write("                $(\"#txt_cargo\").removeAttr(\"required\");\r\n");
+      out.write("                $(\"#select_cargo\").attr(\"required\");\r\n");
+      out.write("                $(\"#txt_descripcion\").attr(\"required\");\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            function eliminar() {\r\n");
+      out.write("                $(\"#select_cargo\").attr(\"required\");\r\n");
+      out.write("                $(\"#txt_cargo\").removeAttr(\"required\");\r\n");
+      out.write("                $(\"#txt_descripcion\").removeAttr(\"required\");\r\n");
+      out.write("                //alert(\"hola\");\r\n");
+      out.write("            }\r\n");
+      out.write("        </script>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body onload=\"iniciar();\">\r\n");
+      out.write("        <!--codigo del header-->\r\n");
       out.write("        ");
       out.write("\r\n");
       out.write("\r\n");
@@ -385,299 +385,299 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
       out.write("            </div>\r\n");
       out.write("        </nav>\r\n");
       out.write("    </header>\r\n");
-      out.write("\n");
-      out.write("        \n");
-      out.write("         <!--contenedor-->\n");
-      out.write("        <form name=\"datos\" role=\"form\" action=\"C\" method=\"POST\" accept-charset=\"ISO-8859-1\">\n");
-      out.write("            <div style=\"width:95%; height:auto; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; z-index:10;\">\n");
-      out.write("                \n");
-      out.write("                <a href=\"menu_admin.jsp\" class=\"btn btn-info\" role=\"button\" id=\"regresar\">\n");
-      out.write("                    <img alt=\"Regresar\" width=\"40px\" height=\"30px\" onmouseout=\"this.src='imagenes/flecha-de-deshacer.png';\" onmouseover=\"this.src='imagenes/flecha_azul.png';\" src=\"imagenes/flecha-de-deshacer.png\"/>\n");
-      out.write("                </a>\n");
-      out.write("                \n");
-      out.write("                <div style=\"width:32%; margin:0 auto;\">\n");
+      out.write("\r\n");
+      out.write("        \r\n");
+      out.write("         <!--contenedor-->\r\n");
+      out.write("        <form name=\"datos\" role=\"form\" action=\"C\" method=\"POST\" accept-charset=\"ISO-8859-1\">\r\n");
+      out.write("            <div style=\"width:95%; height:auto; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; z-index:10;\">\r\n");
+      out.write("                \r\n");
+      out.write("                <a href=\"menu_admin.jsp\" class=\"btn btn-info\" role=\"button\" id=\"regresar\">\r\n");
+      out.write("                    <img alt=\"Regresar\" width=\"40px\" height=\"30px\" onmouseout=\"this.src='imagenes/flecha-de-deshacer.png';\" onmouseover=\"this.src='imagenes/flecha_azul.png';\" src=\"imagenes/flecha-de-deshacer.png\"/>\r\n");
+      out.write("                </a>\r\n");
+      out.write("                \r\n");
+      out.write("                <div style=\"width:32%; margin:0 auto;\">\r\n");
       out.write("                    <h1 style=\"text-align:center;\"><b>");
       if (_jspx_meth_fmt_message_6(_jspx_page_context))
         return;
-      out.write("</b></h1>\n");
-      out.write("                    <hr style=\"border:2px solid grey;\">\n");
-      out.write("\n");
+      out.write("</b></h1>\r\n");
+      out.write("                    <hr style=\"border:2px solid grey;\">\r\n");
+      out.write("\r\n");
       out.write("                    ");
-      out.write("\n");
+      out.write("\r\n");
       out.write("                    ");
       if (_jspx_meth_c_if_1(_jspx_page_context))
         return;
-      out.write(" \n");
-      out.write("                    <br>\n");
-      out.write("                    <div>\n");
-      out.write("                        <fieldset>\n");
+      out.write(" \r\n");
+      out.write("                    <br>\r\n");
+      out.write("                    <div>\r\n");
+      out.write("                        <fieldset>\r\n");
       out.write("                            <legend style=\"font-size: smaller;\"><b>");
       if (_jspx_meth_fmt_message_11(_jspx_page_context))
         return;
-      out.write("</b></legend>\n");
-      out.write("                            <table style=\"width: 100%;\">\n");
-      out.write("                                <tr>\n");
-      out.write("                                    <td align=\"center\">\n");
+      out.write("</b></legend>\r\n");
+      out.write("                            <table style=\"width: 100%;\">\r\n");
+      out.write("                                <tr>\r\n");
+      out.write("                                    <td align=\"center\">\r\n");
       out.write("                                        <input type=\"radio\" name=\"control\" value=\"\" onclick=\"nuevo();\"> ");
       if (_jspx_meth_fmt_message_12(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("                                    </td>\n");
-      out.write("\n");
-      out.write("                                    <td align=\"center\">\n");
+      out.write("\r\n");
+      out.write("                                    </td>\r\n");
+      out.write("\r\n");
+      out.write("                                    <td align=\"center\">\r\n");
       out.write("                                        <input type=\"radio\" name=\"control\" value=\"\" onclick=\"editar();\"> ");
       if (_jspx_meth_fmt_message_13(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("                                    </td>\n");
-      out.write("                                </tr>\n");
-      out.write("                            </table>\n");
-      out.write("                        </fieldset>\n");
-      out.write("\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("                    <b>ID:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\" pattern=\"[0-9]{5}\">\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"material-icons\" style=\"font-size:18px\">assignment_ind</i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("                    \n");
-      out.write("                       <b>Nombre:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\">\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("                       <b>Apellido:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\">\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("                       <b>Correo:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <input type=\"email\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\">\n");
-      out.write("                        <span class=\"input-group-addon\"><b><i class=\"fa fa-at\" style=\"font-size:18px\"></i></b></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("                    <b>Telefono:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\">\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-phone\"></i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("                    <b>Documento Único de Identidad:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\">\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"fa fa-id-card\" style=\"font-size:18px\"></i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("                    <b>Número de Identificación Tributaria:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\">\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"fa fa-id-card-o\" style=\"font-size:18px\"></i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("                    <b>Cargo:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <select class=\"form-control selector\" name=\"cmb_cargo\" id=\"select_cargo\" onchange=\"seleccionar();\" required=\"\">\n");
+      out.write("\r\n");
+      out.write("                                    </td>\r\n");
+      out.write("                                </tr>\r\n");
+      out.write("                            </table>\r\n");
+      out.write("                        </fieldset>\r\n");
+      out.write("\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("                    <b>ID:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\" pattern=\"[0-9]{9}\">\r\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"material-icons\" style=\"font-size:18px\">assignment_ind</i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("                    \r\n");
+      out.write("                       <b>Nombre:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\">\r\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                       <b>Apellido:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\">\r\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                       <b>Correo:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <input type=\"email\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\">\r\n");
+      out.write("                        <span class=\"input-group-addon\"><b><i class=\"fa fa-at\" style=\"font-size:18px\"></i></b></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                    <b>Telefono:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" pattern=\"[0-9]{9}\">\r\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-phone\"></i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                    <b>Documento Único de Identidad:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\" pattern=\"[0-9]{8}(-)[0-9]{1}\">\r\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"fa fa-id-card\" style=\"font-size:18px\"></i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                    <b>Número de Identificación Tributaria:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\">\r\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"fa fa-id-card-o\" style=\"font-size:18px\"></i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                    <b>Cargo:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <select class=\"form-control selector\" name=\"cmb_cargo\" id=\"select_cargo\" onchange=\"seleccionar();\" required=\"\">\r\n");
       out.write("                            <option value=\"\">");
       if (_jspx_meth_fmt_message_14(_jspx_page_context))
         return;
-      out.write("</option>\n");
-      out.write("\n");
+      out.write("</option>\r\n");
+      out.write("\r\n");
       out.write("                            ");
       if (_jspx_meth_c_forEach_1(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("\n");
-      out.write("                        </select>\n");
-      out.write("                            <span class=\"input-group-addon\"><i class=\"fa fa-group\" style=\"font-size:18px\"></i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("                    <b>Turno:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <select class=\"form-control selector\" name=\"cmb_turno\" id=\"select_turno\" onchange=\"seleccionar_turno();\" required=\"\">\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                        </select>\r\n");
+      out.write("                            <span class=\"input-group-addon\"><i class=\"fa fa-group\" style=\"font-size:18px\"></i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                    <b>Turno:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <select class=\"form-control selector\" name=\"cmb_turno\" id=\"select_turno\" onchange=\"seleccionar_turno();\" required=\"\">\r\n");
       out.write("                            <option value=\"\">");
       if (_jspx_meth_fmt_message_15(_jspx_page_context))
         return;
-      out.write("</option>\n");
-      out.write("\n");
+      out.write("</option>\r\n");
+      out.write("\r\n");
       out.write("                            ");
       if (_jspx_meth_c_forEach_2(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("\n");
-      out.write("                        </select>\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("                    <table style=\"width:100%;\">\n");
-      out.write("                        <thead>\n");
-      out.write("                            <tr>\n");
-      out.write("                                <td align=\"center\"><b>Hora Inicio</b></td>\n");
-      out.write("                                <td align=\"center\"><b>Hora Fin</b></td>\n");
-      out.write("                            </tr>\n");
-      out.write("                        </thead>\n");
-      out.write("                        <body>\n");
-      out.write("                        <tr>\n");
-      out.write("                            <td align=\"center\">\n");
-      out.write("                                <div class=\"input-group\"  style=\"width:80%\">\n");
-      out.write("                                    <input type=\"text\" class=\"form-control\" id=\"txt_hora_inicio\" name=\"txt_hora_inicio\" value=\"\" disabled>\n");
-      out.write("                                    <span class=\"input-group-addon\"><i class=\"material-icons\" style=\"font-size:18px\">schedule</i></span>\n");
-      out.write("                                </div>\n");
-      out.write("                            </td>\n");
-      out.write("                            <td align=\"center\">\n");
-      out.write("                                <div class=\"input-group\"  style=\"width:80%\">\n");
-      out.write("                                    <input type=\"text\" class=\"form-control\" id=\"txt_hora_fin\" name=\"txt_hora_fin\" value=\"\" disabled>\n");
-      out.write("                                    <span class=\"input-group-addon\"><i class=\"material-icons\" style=\"font-size:18px\">schedule</i></span>\n");
-      out.write("                                </div>\n");
-      out.write("                            </td>\n");
-      out.write("                        </tr>\n");
-      out.write("                        </body>\n");
-      out.write("                    </table>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("                       <b>Salario:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\"></textarea>\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-usd\"></i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("                    <b>Estado:</b>\n");
-      out.write("                    <table style=\"width:100%; background-color: white; border-radius: 5px;\">\n");
-      out.write("                        <tr>\n");
-      out.write("                            <td align=\"center\">\n");
-      out.write("                                <div class=\"radio\">\n");
-      out.write("                                    <label><input type=\"radio\" name=\"optradio\" required=\"\">Activo</label>\n");
-      out.write("                                </div>\n");
-      out.write("                            </td>\n");
-      out.write("                            <td align=\"center\">\n");
-      out.write("                                <div class=\"radio\">\n");
-      out.write("                                    <label><input type=\"radio\" name=\"optradio\" required=\"\">Inactivo</label>\n");
-      out.write("                                </div>\n");
-      out.write("                            </td>\n");
-      out.write("                        </tr>\n");
-      out.write("                    </table>\n");
-      out.write("                    \n");
-      out.write("                    <br>\n");
-      out.write("                       <b>Clave:</b>\n");
-      out.write("                    <div class=\"input-group\">\n");
-      out.write("                        <input type=\"password\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\">\n");
-      out.write("                        <span class=\"input-group-addon\"><i class=\"fa fa-lock\" style=\"font-size:18px\"></i></span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <br>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("                    <table style=\"width:100%;\">\n");
-      out.write("                        <tr>\n");
-      out.write("                            <td align=\"center\">\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                        </select>\r\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-pencil\"></i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("                    <table style=\"width:100%;\">\r\n");
+      out.write("                        <thead>\r\n");
+      out.write("                            <tr>\r\n");
+      out.write("                                <td align=\"center\"><b>Hora Inicio</b></td>\r\n");
+      out.write("                                <td align=\"center\"><b>Hora Fin</b></td>\r\n");
+      out.write("                            </tr>\r\n");
+      out.write("                        </thead>\r\n");
+      out.write("                        <body>\r\n");
+      out.write("                        <tr>\r\n");
+      out.write("                            <td align=\"center\">\r\n");
+      out.write("                                <div class=\"input-group\"  style=\"width:80%\">\r\n");
+      out.write("                                    <input type=\"text\" class=\"form-control\" id=\"txt_hora_inicio\" name=\"txt_hora_inicio\" value=\"\" disabled>\r\n");
+      out.write("                                    <span class=\"input-group-addon\"><i class=\"material-icons\" style=\"font-size:18px\">schedule</i></span>\r\n");
+      out.write("                                </div>\r\n");
+      out.write("                            </td>\r\n");
+      out.write("                            <td align=\"center\">\r\n");
+      out.write("                                <div class=\"input-group\"  style=\"width:80%\">\r\n");
+      out.write("                                    <input type=\"text\" class=\"form-control\" id=\"txt_hora_fin\" name=\"txt_hora_fin\" value=\"\" disabled>\r\n");
+      out.write("                                    <span class=\"input-group-addon\"><i class=\"material-icons\" style=\"font-size:18px\">schedule</i></span>\r\n");
+      out.write("                                </div>\r\n");
+      out.write("                            </td>\r\n");
+      out.write("                        </tr>\r\n");
+      out.write("                        </body>\r\n");
+      out.write("                    </table>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                       <b>Salario:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\"></textarea>\r\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-usd\"></i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                    <b>Estado:</b>\r\n");
+      out.write("                    <table style=\"width:100%; background-color: white; border-radius: 5px;\">\r\n");
+      out.write("                        <tr>\r\n");
+      out.write("                            <td align=\"center\">\r\n");
+      out.write("                                <div class=\"radio\">\r\n");
+      out.write("                                    <label><input type=\"radio\" name=\"optradio\" required=\"\">Activo</label>\r\n");
+      out.write("                                </div>\r\n");
+      out.write("                            </td>\r\n");
+      out.write("                            <td align=\"center\">\r\n");
+      out.write("                                <div class=\"radio\">\r\n");
+      out.write("                                    <label><input type=\"radio\" name=\"optradio\" required=\"\">Inactivo</label>\r\n");
+      out.write("                                </div>\r\n");
+      out.write("                            </td>\r\n");
+      out.write("                        </tr>\r\n");
+      out.write("                    </table>\r\n");
+      out.write("                    \r\n");
+      out.write("                    <br>\r\n");
+      out.write("                       <b>Clave:</b>\r\n");
+      out.write("                    <div class=\"input-group\">\r\n");
+      out.write("                        <input type=\"password\" class=\"form-control\" id=\"txt_descripcion\" name=\"txt_descripcion\" value=\"\" required=\"\">\r\n");
+      out.write("                        <span class=\"input-group-addon\"><i class=\"fa fa-lock\" style=\"font-size:18px\"></i></span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                    <table style=\"width:100%;\">\r\n");
+      out.write("                        <tr>\r\n");
+      out.write("                            <td align=\"center\">\r\n");
       out.write("                                <button type=\"submit\" class=\"btn btn-primary\" id=\"btn_guardar\" name=\"Guardar\" onclick=\"guardar();\">");
       if (_jspx_meth_fmt_message_16(_jspx_page_context))
         return;
-      out.write("</button>\n");
-      out.write("                            </td>\n");
-      out.write("                            <td align=\"center\">\n");
+      out.write("</button>\r\n");
+      out.write("                            </td>\r\n");
+      out.write("                            <td align=\"center\">\r\n");
       out.write("                                <button type=\"submit\" class=\"btn btn-warning\" id=\"btn_modificar\" name=\"Modificar\" onclick=\"actualizar();\">");
       if (_jspx_meth_fmt_message_17(_jspx_page_context))
         return;
-      out.write("</button>\n");
-      out.write("                            </td>\n");
-      out.write("                            <td align=\"center\">\n");
+      out.write("</button>\r\n");
+      out.write("                            </td>\r\n");
+      out.write("                            <td align=\"center\">\r\n");
       out.write("                                <button type=\"submit\" class=\"btn btn-danger\" id=\"btn_eliminar\" name=\"Eliminar\" onclick=\"eliminar();\">");
       if (_jspx_meth_fmt_message_18(_jspx_page_context))
         return;
-      out.write("</button>\n");
-      out.write("                            </td>\n");
-      out.write("                        </tr>\n");
-      out.write("                    </table>\n");
-      out.write("                </div>\n");
-      out.write("\n");
-      out.write("                <br>\n");
-      out.write("                <div class=\"panel-group\" style=\"width:100%; margin:0 auto;\">\n");
-      out.write("                    <div class=\"panel panel-default\">\n");
-      out.write("                        <a data-toggle=\"collapse\" href=\"#collapse1\" style=\"text-decoration: none;\">\n");
-      out.write("                            <div class=\"panel-heading\">\n");
-      out.write("                                <h4 class=\"panel-title\" style=\"text-align:center;color:black;\">\n");
+      out.write("</button>\r\n");
+      out.write("                            </td>\r\n");
+      out.write("                        </tr>\r\n");
+      out.write("                    </table>\r\n");
+      out.write("                </div>\r\n");
+      out.write("\r\n");
+      out.write("                <br>\r\n");
+      out.write("                <div class=\"panel-group\" style=\"width:100%; margin:0 auto;\">\r\n");
+      out.write("                    <div class=\"panel panel-default\">\r\n");
+      out.write("                        <a data-toggle=\"collapse\" href=\"#collapse1\" style=\"text-decoration: none;\">\r\n");
+      out.write("                            <div class=\"panel-heading\">\r\n");
+      out.write("                                <h4 class=\"panel-title\" style=\"text-align:center;color:black;\">\r\n");
       out.write("                                    <b>");
       if (_jspx_meth_fmt_message_19(_jspx_page_context))
         return;
-      out.write("</b>\n");
-      out.write("                                </h4>\n");
-      out.write("                            </div>\n");
-      out.write("                        </a>\n");
-      out.write("                        <div id=\"collapse1\" class=\"panel-collapse collapse\">\n");
-      out.write("                            <div class=\"panel-body\">\n");
-      out.write("                                <table id=\"tabla_registro\" class=\"table table-striped table-hover table-bordered\">\n");
-      out.write("                                    <thead>\n");
-      out.write("                                        <tr>\n");
-      out.write("                                            <td align=\"center\"><b>ID</b></td>\n");
+      out.write("</b>\r\n");
+      out.write("                                </h4>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                        <div id=\"collapse1\" class=\"panel-collapse collapse\">\r\n");
+      out.write("                            <div class=\"panel-body\">\r\n");
+      out.write("                                <table id=\"tabla_registro\" class=\"table table-striped table-hover table-bordered\">\r\n");
+      out.write("                                    <thead>\r\n");
+      out.write("                                        <tr>\r\n");
+      out.write("                                            <td align=\"center\"><b>ID</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_20(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
+      out.write("</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_21(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
+      out.write("</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_22(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
+      out.write("</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_23(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
+      out.write("</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_24(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
+      out.write("</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_25(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
+      out.write("</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_26(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
+      out.write("</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_27(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
+      out.write("</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_28(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
+      out.write("</b></td>\r\n");
       out.write("                                            <td align=\"center\"><b>");
       if (_jspx_meth_fmt_message_29(_jspx_page_context))
         return;
-      out.write("</b></td>\n");
-      out.write("                                        </tr>\n");
-      out.write("                                    </thead>\n");
-      out.write("                                    <tbody>\n");
+      out.write("</b></td>\r\n");
+      out.write("                                        </tr>\r\n");
+      out.write("                                    </thead>\r\n");
+      out.write("                                    <tbody>\r\n");
       out.write("                                        ");
       if (_jspx_meth_c_forEach_3(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("                                    </tbody>\n");
-      out.write("                                </table>\n");
-      out.write("                            </div>\n");
-      out.write("                        </div>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>   \n");
-      out.write("            </div>                        \n");
-      out.write("        </form>\n");
-      out.write("        \n");
-      out.write("         <!--codigo del footer-->\n");
+      out.write("\r\n");
+      out.write("                                    </tbody>\r\n");
+      out.write("                                </table>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>   \r\n");
+      out.write("            </div>                        \r\n");
+      out.write("        </form>\r\n");
+      out.write("        \r\n");
+      out.write("         <!--codigo del footer-->\r\n");
       out.write("        ");
       out.write("\r\n");
       out.write("\r\n");
@@ -704,9 +704,9 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
         return;
       out.write("</h5>\r\n");
       out.write("</footer>\r\n");
-      out.write("\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -732,10 +732,11 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
     int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
     if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
+        out.write("\r\n");
         out.write("    ");
         if (_jspx_meth_fmt_setLocale_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
           return true;
+        out.write('\r');
         out.write('\n');
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -790,8 +791,8 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
           _jspx_th_sql_query_0.doInitBody();
         }
         do {
-          out.write("\n");
-          out.write("    select * from empleado\n");
+          out.write("\r\n");
+          out.write("    select * from empleado\r\n");
           int evalDoAfterBody = _jspx_th_sql_query_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -835,8 +836,8 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
           _jspx_th_sql_query_1.doInitBody();
         }
         do {
-          out.write("\n");
-          out.write("    select * from turno\n");
+          out.write("\r\n");
+          out.write("    select * from turno\r\n");
           int evalDoAfterBody = _jspx_th_sql_query_1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -880,8 +881,8 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
           _jspx_th_sql_query_2.doInitBody();
         }
         do {
-          out.write("\n");
-          out.write("    select * from cargo\n");
+          out.write("\r\n");
+          out.write("    select * from cargo\r\n");
           int evalDoAfterBody = _jspx_th_sql_query_2.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -919,22 +920,22 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
       int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\n");
+          out.write("\r\n");
           out.write("                    var nombre = '");
           if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("';\n");
-          out.write("                    if (nombre == cmb_turno.value) {\n");
-          out.write("                        //colocar valores en los imput \n");
+          out.write("';\r\n");
+          out.write("                    if (nombre == cmb_turno.value) {\r\n");
+          out.write("                        //colocar valores en los imput \r\n");
           out.write("                        document.datos.txt_hora_inicio.value = '");
           if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("';\n");
+          out.write("';\r\n");
           out.write("                        document.datos.txt_hora_fin.value = '");
           if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("';\n");
-          out.write("                    }\n");
+          out.write("';\r\n");
+          out.write("                    }\r\n");
           out.write("            ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1147,11 +1148,11 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
     int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
+        out.write("\r\n");
         out.write("                        ");
         if (_jspx_meth_c_choose_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_1, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1177,23 +1178,23 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
     int _jspx_eval_c_choose_0 = _jspx_th_c_choose_0.doStartTag();
     if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
+        out.write("\r\n");
         out.write("                            ");
         if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                            ");
         if (_jspx_meth_c_when_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                            ");
         if (_jspx_meth_c_when_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                            ");
         if (_jspx_meth_c_when_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                        ");
         int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1220,18 +1221,18 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
     int _jspx_eval_c_when_0 = _jspx_th_c_when_0.doStartTag();
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
-        out.write("                                <div class=\"alert alert-danger alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\n");
-        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n");
+        out.write("\r\n");
+        out.write("                                <div class=\"alert alert-danger alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\r\n");
+        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n");
         out.write("                                    ");
         if (_jspx_meth_fmt_message_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                                    <span>");
         if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
-        out.write("</span>\n");
-        out.write("                                </div>\n");
+        out.write("</span>\r\n");
+        out.write("                                </div>\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1295,18 +1296,18 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
     int _jspx_eval_c_when_1 = _jspx_th_c_when_1.doStartTag();
     if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
-        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\n");
-        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n");
+        out.write("\r\n");
+        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\r\n");
+        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n");
         out.write("                                    ");
         if (_jspx_meth_fmt_message_8((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                                    <span>");
         if (_jspx_meth_c_out_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
           return true;
-        out.write("</span>\n");
-        out.write("                                </div>\n");
+        out.write("</span>\r\n");
+        out.write("                                </div>\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1370,18 +1371,18 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
     int _jspx_eval_c_when_2 = _jspx_th_c_when_2.doStartTag();
     if (_jspx_eval_c_when_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
-        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\n");
-        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n");
+        out.write("\r\n");
+        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\r\n");
+        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n");
         out.write("                                    ");
         if (_jspx_meth_fmt_message_9((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_2, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                                    <span>");
         if (_jspx_meth_c_out_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_2, _jspx_page_context))
           return true;
-        out.write("</span>\n");
-        out.write("                                </div>\n");
+        out.write("</span>\r\n");
+        out.write("                                </div>\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_when_2.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1445,18 +1446,18 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
     int _jspx_eval_c_when_3 = _jspx_th_c_when_3.doStartTag();
     if (_jspx_eval_c_when_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
-        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\n");
-        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n");
+        out.write("\r\n");
+        out.write("                                <div class=\"alert alert-success alert-dismissible\" style=\"width: 100%;margin: 0 auto; float: none;\">\r\n");
+        out.write("                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n");
         out.write("                                    ");
         if (_jspx_meth_fmt_message_10((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_3, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                                    <span>");
         if (_jspx_meth_c_out_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_3, _jspx_page_context))
           return true;
-        out.write("</span>\n");
-        out.write("                                </div>\n");
+        out.write("</span>\r\n");
+        out.write("                                </div>\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_when_3.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1595,11 +1596,11 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
       int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
       if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\n");
+          out.write("\r\n");
           out.write("                                <option>");
           if (_jspx_meth_c_out_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
-          out.write("</option>\n");
+          out.write("</option>\r\n");
           out.write("                            ");
           int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1671,11 +1672,11 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
       int _jspx_eval_c_forEach_2 = _jspx_th_c_forEach_2.doStartTag();
       if (_jspx_eval_c_forEach_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\n");
+          out.write("\r\n");
           out.write("                                <option>");
           if (_jspx_meth_c_out_8((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_2, _jspx_page_context, _jspx_push_body_count_c_forEach_2))
             return true;
-          out.write("</option>\n");
+          out.write("</option>\r\n");
           out.write("                            ");
           int evalDoAfterBody = _jspx_th_c_forEach_2.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1981,53 +1982,53 @@ public final class Mantenimiento_005fEmpleado_jsp extends org.apache.jasper.runt
       int _jspx_eval_c_forEach_3 = _jspx_th_c_forEach_3.doStartTag();
       if (_jspx_eval_c_forEach_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\n");
-          out.write("                                            <tr>\n");
+          out.write("\r\n");
+          out.write("                                            <tr>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_9((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_10((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_11((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_12((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_13((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_14((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_15((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_16((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_17((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_18((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
+          out.write("</td>\r\n");
           out.write("                                                <td align=\"center\">");
           if (_jspx_meth_c_out_19((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_3, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
             return true;
-          out.write("</td>\n");
-          out.write("                                            </tr>\n");
+          out.write("</td>\r\n");
+          out.write("                                            </tr>\r\n");
           out.write("                                        ");
           int evalDoAfterBody = _jspx_th_c_forEach_3.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
