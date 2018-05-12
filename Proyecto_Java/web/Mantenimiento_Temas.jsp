@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Mantenimiento_Autor
-    Created on : 10-may-2018, 14:08:15
+    Document   : Mantenimiento_Temas
+    Created on : 12-may-2018, 10:08:15
     Author     : karin
 --%>
 <%@page import="java.sql.ResultSet"%>
@@ -18,10 +18,21 @@
 
 <!--Consulta SQL para alimentar el select-->
 <sql:query dataSource="jdbc/mysql" var="consulta">
-    select * from autor
+    select * from temas
 </sql:query>
     
-
+<%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
+<%@ page session="true" %>
+<jsp:scriptlet>
+    HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("usuario") == null){
+</jsp:scriptlet>        
+<jsp:forward page="index.jsp">
+    <jsp:param name="error" value="Es obligatorio identificarse"/>
+</jsp:forward>
+<jsp:scriptlet>
+    } 
+</jsp:scriptlet>
 <%----------------------------------------------------------------------------%>
 
 <!DOCTYPE html>
@@ -100,13 +111,15 @@
                 var b_nuevo = document.getElementById('btn_guardar');
                 var b_modificar = document.getElementById('btn_modificar');
                 var b_eliminar = document.getElementById('btn_eliminar');
-                var txt_autor = document.getElementById('txt_autor');
-                var select = document.getElementById('select_autor');
+                var txt_temas = document.getElementById('txt_temas');
+                //var txt_cod_mat = document.getElementById('txt_cod_mat');
+                var select = document.getElementById('select_temas');
                 
                 b_nuevo.disabled = false;
                 b_modificar.disabled = true;
                 b_eliminar.disabled = true;
-                txt_autor.style.display = 'block';
+                txt_temas.style.display = 'block';
+                //txt_cod_mat.style.display = 'block';
                 select.style.display = 'none';
                 document.datos.txt_cod_mat.value = "";
                 
@@ -117,22 +130,24 @@
                 var b_nuevo = document.getElementById('btn_guardar');
                 var b_modificar = document.getElementById('btn_modificar');
                 var b_eliminar = document.getElementById('btn_eliminar');
-                var txt_autor = document.getElementById('txt_autor');
-                var select = document.getElementById('select_autor');
+                var txt_temas = document.getElementById('txt_temas');
+                //var txt_cod_mat = document.getElementById('txt_cod_mat');
+                var select = document.getElementById('select_temas');
                 b_nuevo.disabled = true;
                 b_modificar.disabled = false;
                 b_eliminar.disabled = false;
-                txt_autor.style.display = 'block';
+                txt_temas.style.display = 'block';
+                //txt_cod_mat.style.display = 'none';
                 select.style.display = 'block';
                 document.datos.txt_cod_mat.value = "";
             }
 
             function seleccionar() {
-                var cmb_autor= document.getElementById("select_autor");
-                if (cmb_autor.value != "") {
+                var cmb_temas = document.getElementById("select_temas");
+                if (cmb_temas.value != "") {
             <c:forEach var="name" items="${consulta.rows}">
-                    var nombre = '<c:out value="${name.Nombre_Autor}"/>';
-                    if (nombre == cmb_autor.value) {
+                    var nombre = '<c:out value="${name.Nombre_Tema}"/>';
+                    if (nombre == cmb_temas.value) {
                         //colocar valores en los imput 
                         document.datos.txt_cod_mat.value = '<c:out value="${name.Codigo_Material}"/>';
                     }
@@ -153,22 +168,22 @@
        
             function guardar() {
                 
-                $("#txt_autor").attr("required");
+                $("#txt_temas").attr("required");
                 $("#txt_cod_mat").attr("required");
-                $("#select_autor").removeAttr("required");
+                $("#select_temas").removeAttr("required");
                 
             }
 
             function actualizar() {
-                $("#txt_autor").attr("required");
-                $("#select_autor").attr("required");
+                $("#txt_temas").attr("required");
+                $("#select_temas").attr("required");
                 $("#txt_cod_mat").removeAttr("required");
                 
             }
 
             function eliminar() {
-                $("#select_autor").attr("required");
-                $("#txt_autor").removeAttr("required");
+                $("#select_temas").attr("required");
+                $("#txt_temas").removeAttr("required");
                 $("#txt_cod_mat").removeAttr("required");
 
             }
@@ -179,7 +194,7 @@
         <%@include file="Estructura_plantilla/header.jsp"%>
 
         <!--contenedor-->
-        <form name="datos" role="form" action="Consultas_Autor.jsp" method="POST" accept-charset="ISO-8859-1">
+        <form name="datos" role="form" action="Consultas_Temas.jsp" method="POST" accept-charset="ISO-8859-1">
             <div style="width:95%; height:auto; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; z-index:10;">
                 
                 <a href="menu_empleado.jsp" class="btn btn-info" role="button" id="regresar">
@@ -187,7 +202,7 @@
                 </a>
                 
                 <div style="width:32%; margin:0 auto;">
-                    <h1 style="text-align:center;"><b><fmt:message key="autor_lbl_autor"/></b></h1>
+                    <h1 style="text-align:center;"><b><fmt:message key="temas_lbl_temas"/></b></h1>
                     <hr style="border:2px solid grey;">
 
                     <%-- Area de mensaje o avisos --%>
@@ -196,28 +211,28 @@
                             <c:when test='${param.resultado=="Registro_existente"}'>
                                 <div class="alert alert-danger alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="autor_mensaje_registro_repetido" var="mensaje"/>
+                                    <fmt:message key="temas_mensaje_registro_repetido" var="mensaje"/>
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
                             <c:when test='${param.resultado=="datos_ingresados"}'>
                                 <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="autor_mensaje_ingreso" var="mensaje"/>
+                                    <fmt:message key="temas_mensaje_ingreso" var="mensaje"/>
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
                             <c:when test='${param.resultado=="datos_actualizados"}'>
                                 <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="autor_mensaje_actualizacion" var="mensaje"/>
+                                    <fmt:message key="temas_mensaje_actualizacion" var="mensaje"/>
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
                             <c:when test='${param.resultado=="datos_eliminados"}'>
                                 <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="autor_mensaje_eliminacion" var="mensaje"/>
+                                    <fmt:message key="temas_mensaje_eliminacion" var="mensaje"/>
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
@@ -226,15 +241,15 @@
                     <br>
                     <div>
                         <fieldset>
-                            <legend style="font-size: smaller;"><b><fmt:message key="autor_lbl_control"/></b></legend>
+                            <legend style="font-size: smaller;"><b><fmt:message key="temas_lbl_control"/></b></legend>
                             <table style="width: 100%;">
                                 <tr>
                                     <td align="center">
-                                        <input type="radio" name="control" value="" onclick="nuevo();"> <fmt:message key="autor_rbtn_nuevo"/>
+                                        <input type="radio" name="control" value="" onclick="nuevo();"> <fmt:message key="temas_rbtn_nuevo"/>
                                     </td>
 
                                     <td align="center">
-                                        <input type="radio" name="control" value="" onclick="editar();"> <fmt:message key="autor_rbtn_editar"/>
+                                        <input type="radio" name="control" value="" onclick="editar();"> <fmt:message key="temas_rbtn_editar"/>
                                     </td>
                                 </tr>
                             </table>
@@ -242,25 +257,25 @@
 
                     </div>
                     <br>
-                    <b><fmt:message key="autor_lbl_autor"/>:</b>
+                    <b><fmt:message key="temas_lbl_temas"/>:</b>
                     <div class="input-group">
-                        <input type="text" class="form-control"  placeholder="<fmt:message key="autor_placeholder_autor"/>" id="txt_autor" name="txt_autor" required="">
-                        <select class="form-control selector" name="cmb_autor" id="select_autor" onchange="seleccionar();" required="">
-                            <option value=""><fmt:message key="autor_select_autor"/></option>
+                        <input type="text" class="form-control"  placeholder="<fmt:message key="temas_placeholder_temas"/>" id="txt_temas" name="txt_temas" required="">
+                        <select class="form-control selector" name="cmb_temas" id="select_temas" onchange="seleccionar();" required="">
+                            <option value=""><fmt:message key="temas_select_temas"/></option>
 
                             <c:forEach var="name" items="${consulta.rows}">
-                                <option><c:out value="${name.Nombre_Autor}"/></option>
+                                <option><c:out value="${name.Nombre_Tema}"/></option>
                             </c:forEach>
 
                         </select>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-text-width"></i></span>
                     </div>      
                             
                     <br>
                             
-                    <b><fmt:message key="autor_lbl_cod_mat"/>:</b>
+                    <b><fmt:message key="temas_lbl_cod_mat"/>:</b>
                     <div class="input-group">
-                        <input rows="5" class="form-control" placeholder="<fmt:message key="autor_placeholder_cod_mat"/>" id="txt_cod_mat" name="txt_cod_mat" value="" required=""></input>
+                        <input rows="5" class="form-control" placeholder="<fmt:message key="temas_placeholder_cod_mat"/>" id="txt_cod_mat" name="txt_cod_mat" value="" required=""></input>
                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                     </div>        
                             
@@ -269,13 +284,13 @@
                     <table style="width:100%;">
                         <tr>
                             <td align="center">
-                                <button type="submit" class="btn btn-primary" id="btn_guardar" name="Guardar" onclick="guardar();"><fmt:message key="autor_btn_guardar"/></button>
+                                <button type="submit" class="btn btn-primary" id="btn_guardar" name="Guardar" onclick="guardar();"><fmt:message key="temas_btn_guardar"/></button>
                             </td>
                             <td align="center">
-                                <button type="submit" class="btn btn-warning" id="btn_modificar" name="Modificar" onclick="actualizar();"><fmt:message key="autor_btn_modificar"/></button>
+                                <button type="submit" class="btn btn-warning" id="btn_modificar" name="Modificar" onclick="actualizar();"><fmt:message key="temas_btn_modificar"/></button>
                             </td>
                             <td align="center">
-                                <button type="submit" class="btn btn-danger" id="btn_eliminar" name="Eliminar" onclick="eliminar();"><fmt:message key="autor_btn_eliminar"/></button>
+                                <button type="submit" class="btn btn-danger" id="btn_eliminar" name="Eliminar" onclick="eliminar();"><fmt:message key="temas_btn_eliminar"/></button>
                             </td>
                         </tr>
                     </table>
@@ -287,7 +302,7 @@
                         <a data-toggle="collapse" href="#collapse1" style="text-decoration: none;">
                             <div class="panel-heading">
                                 <h4 class="panel-title" style="text-align:center;color:black;">
-                                    <b><fmt:message key="autor_lbl_tabla_registro_tema"/></b>
+                                    <b><fmt:message key="temas_lbl_tabla_registro_tema"/></b>
                                 </h4>
                             </div>
                         </a>
@@ -297,15 +312,15 @@
                                     <thead>
                                         <tr>
                                             <td align="center"><b>ID</b></td>
-                                            <td align="center"><b><fmt:message key="autor_thead_tabla_nombre"/></b></td>
-                                            <td align="center"><b><fmt:message key="autor_thead_tabla_Cod_Mat"/></b></td>
+                                            <td align="center"><b><fmt:message key="temas_thead_tabla_nombre"/></b></td>
+                                            <td align="center"><b><fmt:message key="temas_thead_tabla_Cod_Mat"/></b></td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <c:forEach var="name" items="${consulta.rows}">
                                             <tr>
-                                                <td align="center"><c:out value="${name.idAutor}"/></td>
-                                                <td align="center"><c:out value="${name.Nombre_Autor}"/></td>
+                                                <td align="center"><c:out value="${name.idTemas}"/></td>
+                                                <td align="center"><c:out value="${name.Nombre_Tema}"/></td>
                                                 <td align="center"><c:out value="${name.Codigo_Material}"/></td>
                                             </tr>
                                         </c:forEach>

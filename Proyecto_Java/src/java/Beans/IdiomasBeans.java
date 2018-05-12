@@ -41,4 +41,5 @@ public class IdiomasBeans {
     public void setTxt_idiomas(String txt_idiomas) {
         this.txt_idiomas = txt_idiomas;
     }    
+    
 }

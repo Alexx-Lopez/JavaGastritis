@@ -9,38 +9,37 @@ package Beans;
  *
  * @author karin
  */
-public class AutorBeans {
+public class ClasificacionBeans {
 
-    private String cmb_autor;
-    private String txt_autor;
+    private String txt_clasificacion;
+    private String cmb_clasificacion;
     
     /**
-     * @return the cmb_autor
+     * @return the txt_clasificacion
      */
-    public String getCmb_autor() {
-        return cmb_autor;
+    public String getTxt_clasificacion() {
+        return txt_clasificacion;
     }
 
     /**
-     * @param cmb_autor the cmb_autor to set
+     * @param txt_clasificacion the txt_clasificacion to set
      */
-    public void setCmb_autor(String cmb_autor) {
-        this.cmb_autor = cmb_autor;
+    public void setTxt_clasificacion(String txt_clasificacion) {
+        this.txt_clasificacion = txt_clasificacion;
     }
 
     /**
-     * @return the txt_autor
+     * @return the cmb_clasificacion
      */
-    public String getTxt_autor() {
-        return txt_autor;
+    public String getCmb_clasificacion() {
+        return cmb_clasificacion;
     }
 
     /**
-     * @param txt_autor the txt_autor to set
+     * @param cmb_clasificacion the cmb_clasificacion to set
      */
-    public void setTxt_autor(String txt_autor) {
-        this.txt_autor = txt_autor;
+    public void setCmb_clasificacion(String cmb_clasificacion) {
+        this.cmb_clasificacion = cmb_clasificacion;
     }
     
 }
-

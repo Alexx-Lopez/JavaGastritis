@@ -13,6 +13,7 @@ public class AutorBeans {
 
     private String cmb_autor;
     private String txt_autor;
+    private String txt_cod_mat;
     
     /**
      * @return the cmb_autor
@@ -41,6 +42,19 @@ public class AutorBeans {
     public void setTxt_autor(String txt_autor) {
         this.txt_autor = txt_autor;
     }
+
+    /**
+     * @return the txt_cod_mat
+     */
+    public String getTxt_cod_mat() {
+        return txt_cod_mat;
+    }
+
+    /**
+     * @param txt_cod_mat the txt_cod_mat to set
+     */
+    public void setTxt_cod_mat(String txt_cod_mat) {
+        this.txt_cod_mat = txt_cod_mat;
+    }   
     
 }
-
