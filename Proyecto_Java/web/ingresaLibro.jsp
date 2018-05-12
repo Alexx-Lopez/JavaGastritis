@@ -32,6 +32,13 @@
         <c:set var="fecha" value="${param.Fecha}"/>
         <c:set var="volumen" value="${param.Volumen}"/>
         <c:set var="notas" value="${param.Notas}"/>
+        <c:set var="codDisco" value="${param.txt_coddisco}"/>
+        <c:set var="tipoDisco" value="${param.tipodisco}"/>
+        <c:set var="codTesis" value="${param.tesis_codigo}"/>
+        <c:set var="tipoTesis" value="${param.tesis_tipo}"/>
+        <c:set var="placeTesis" value="${param.tesis_lugar}"/>
+        <c:set var="gradeTesis" value="${param.tesis_grado}"/>
+        <c:set var="insTesis" value="${param.tesis_institucion}"/>
         
     <sql:update var="ingresaMaterial" dataSource="jdbc/mysql">
             INSERT INTO material(Codigo_Material,Titulo,Edicion,Descripcion,Tipo_Material,Precio,Fecha_Entrada,Volumen,Notas) values (?,?,?,?,?,?,?,?,?)
@@ -61,7 +68,7 @@
                 <sql:param value="${isbn}"/>
                 <sql:param value="${codigo}"/>  
             </sql:update>
-            <h1>Completo</h1>
+            <h1>Completo Libro</h1>
      </c:if>
      <c:if test="${selectValor == 'Revista' || selectValor == 'Magazine'}">
             <sql:update var="ingresaLibro" dataSource="jdbc/mysql">
@@ -69,13 +76,28 @@
                 <sql:param value="${issn}"/>
                 <sql:param value="${codigo}"/>  
             </sql:update>
-            <h1>Completo</h1>
+            <h1>Completo Revista</h1>
      </c:if>
      <c:if test="${selectValor == 'Tesis' || selectValor == 'Thesis'}">
-     <h1><%=request.getParameter("tesis_codigo")%></h1>
+            <sql:update var="ingresaTesis" dataSource="jdbc/mysql">
+                INSERT INTO tesis(cod_tesis,Tipo_de_investigacion,Lugar_investigacion,Grado_academico,Institucion,Cod_Material) values (?,?,?,?,?,?)
+                <sql:param value="${codTesis}"/>
+                <sql:param value="${tipoTesis}"/>  
+                <sql:param value="${placeTesis}"/>
+                <sql:param value="${gradeTesis}"/>
+                <sql:param value="${insTesis}"/>
+                <sql:param value="${codigo}"/>
+            </sql:update>
+                <h1>Completo Tesis</h1>
      </c:if>
      <c:if test="${selectValor == 'Disco' || selectValor == 'Disk'}">
-     <h1><%=request.getParameter("txt_coddisco")%></h1>
+         <sql:update var="ingresaDisco" dataSource="jdbc/mysql">
+                INSERT INTO discos(Codigo,Tipo_de_disco,Codigo_Material) values (?,?,?)
+                <sql:param value="${codDisco}"/>
+                <sql:param value="${tipoDisco}"/>
+                <sql:param value="${codigo}"/>  
+            </sql:update>
+            <h1>Completo Disco</h1>
      </c:if>
  
 

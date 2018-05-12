@@ -20,6 +20,16 @@
 <sql:query dataSource="jdbc/mysql" var="consulta">
     select * from idiomas
 </sql:query>
+<sql:query dataSource="jdbc/mysql" var="consulta1">
+    select * from autor
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consulta2">
+    select * from clasificacion
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consulta3">
+    select * from temas
+</sql:query>
+    
 <%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
 <%@ page session="true" %>
 <jsp:scriptlet>
@@ -238,7 +248,7 @@
         <%@include file="Estructura_plantilla/header.jsp"%>
  
         <!--contenedor-->
-        <form name="datos" role="form" action="ingresaLibro.jsp" method="POST" accept-charset="ISO-8859-1">
+        <form name="datos" role="form" action="Mantenimiento_Material_extra.jsp" method="POST" accept-charset="ISO-8859-1">
             <div style="width:95%; height:auto; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; z-index:10;">
             
                 <a href="menu_empleado.jsp" class="btn btn-info" role="button" id="regresar">
@@ -417,9 +427,76 @@
                                                 </span>
                                             </span>
                                         </div>
-                                </div>
+                                </div> 
+                            </div>
                             </div>
                        </fieldset>
+                        <fieldset style="position: absolute; left: 50px; top: 627px; display: block; width: 30%;">
+                            <h5 style="text-align:center;"><b><fmt:message key="material_lbl_Odatos"/></b></h5>
+                            <hr style="border:2px solid grey;">
+                            <div class="col-md-10" style=" position: relative; left: 30px;">
+                               <div class="form-group">
+                                   <label for="telefono"><fmt:message key="idioma_lbl_tema"/></label>
+                                        <div class="input-group">
+                                            <select class="form-control selector" name="cmb_idiomas" id="select_idiomas" onchange="seleccionar();" required="">
+                                                <option value="0"><fmt:message key="idiomas_select_idiomas"/></option>
+                                                    <c:forEach var="name" items="${consulta.rows}">
+                                                        <option value="${name.id_idioma}"><c:out value="${name.nombre_idioma}"/></option>
+                                                    </c:forEach>
+                                            </select>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-list">                                
+                                                </span>
+                                            </span>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                   <label for="telefono"><fmt:message key="autor_lbl_autor"/></label>
+                                        <div class="input-group">
+                                            <select class="form-control selector" name="cmb_autor" id="select_idiomas" onchange="seleccionar();" required="">
+                                                <option value="0"><fmt:message key="in_autor"/></option>
+                                                    <c:forEach var="name" items="${consulta1.rows}">
+                                                        <option value="${name.idAutor}"><c:out value="${name.Nombre_Autor}"/></option>
+                                                    </c:forEach>
+                                            </select>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-list">                                
+                                                </span>
+                                            </span>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                   <label for="telefono"><fmt:message key="clasi_lbl_clasi"/></label>
+                                        <div class="input-group">
+                                            <select class="form-control selector" name="cmb_clasi" id="select_idiomas" onchange="seleccionar();" required="">
+                                                <option value="0"><fmt:message key="in_clasi"/></option>
+                                                    <c:forEach var="name" items="${consulta2.rows}">
+                                                        <option value="${name.id_clasificacion}"><c:out value="${name.nombre}"/></option>
+                                                    </c:forEach>
+                                            </select>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-list">                                
+                                                </span>
+                                            </span>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                   <label for="telefono"><fmt:message key="tema_lbl_tema"/></label>
+                                        <div class="input-group">
+                                            <select class="form-control selector" name="cmb_tema" id="select_idiomas" onchange="seleccionar();" required="">
+                                                <option value="0"><fmt:message key="in_tema"/></option>
+                                                    <c:forEach var="name" items="${consulta3.rows}">
+                                                        <option value="${name.idTemas}"><c:out value="${name.Nombre_Tema}"/></option>
+                                                    </c:forEach>
+                                            </select>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-list">                                
+                                                </span>
+                                            </span>
+                                        </div>
+                                </div>  
+                            </div>
+                        </fieldset>
                        <fieldset style=" position: absolute; top: 290px; width: 30%; left: 900px; display: none;" id="f_tesis">
 
                                         <h3 style="text-align:center;"><b><fmt:message key="material_lbl_datatesis"/></b></h3>
