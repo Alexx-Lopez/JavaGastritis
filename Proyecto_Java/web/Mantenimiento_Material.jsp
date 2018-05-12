@@ -248,7 +248,7 @@
         <%@include file="Estructura_plantilla/header.jsp"%>
  
         <!--contenedor-->
-        <form name="datos" role="form" action="Mantenimiento_Material_extra.jsp" method="POST" accept-charset="ISO-8859-1">
+        <form name="datos" role="form" action="ingresaLibro.jsp" method="POST" accept-charset="ISO-8859-1">
             <div style="width:95%; height:auto; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; z-index:10;">
             
                 <a href="menu_empleado.jsp" class="btn btn-info" role="button" id="regresar">
