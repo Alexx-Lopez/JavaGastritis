@@ -366,10 +366,14 @@ public final class menu_005fadmin_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                            <div class=\"handle\">\r\n");
       out.write("                                <span class=\"material-icons\">open_with</span>\r\n");
       out.write("                            </div>\r\n");
-      out.write("                            <h4><strong>Empleados</strong></h4>\r\n");
-      out.write("                            <div class=\"con_div\">\r\n");
-      out.write("                                <img src=\"imagenes/usuario.png\" class=\"icono_cuadro\">\r\n");
-      out.write("                            </div>\r\n");
+      out.write("                            <a href=\"Mantenimiento_Empleado.jsp\" style=\"text-decoration:none;color:white;\">\r\n");
+      out.write("                                <div style=\"height:100%;width:100%;\">\r\n");
+      out.write("                                    <h4><strong>Empleados</strong></h4>\r\n");
+      out.write("                                    <div class=\"con_div\">\r\n");
+      out.write("                                        <img src=\"imagenes/usuario.png\" class=\"icono_cuadro\">\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                </div>\r\n");
+      out.write("                            </a>\r\n");
       out.write("\r\n");
       out.write("                        </div>\r\n");
       out.write("                    </div>\r\n");

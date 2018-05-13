@@ -180,11 +180,14 @@
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <h4><strong>Empleados</strong></h4>
-                            <div class="con_div">
-                                <img src="imagenes/usuario.png" class="icono_cuadro">
-                            </div>
-
+                            <a href="Mantenimiento_Empleado.jsp" style="text-decoration:none;color:white;">
+                                <div style="height:100%;width:100%;">
+                                    <h4><strong>Empleados</strong></h4>
+                                    <div class="con_div">
+                                        <img src="imagenes/usuario.png" class="icono_cuadro">
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class='cell size22' style="background-color:blue;" data-position="0-3" data-handle=".handle">
