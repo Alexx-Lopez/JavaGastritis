@@ -21,19 +21,8 @@
     select * from turno
 </sql:query>
     
-<%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
-<%@ page session="true" %>
-<jsp:scriptlet>
-    HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null){
-</jsp:scriptlet>        
-<jsp:forward page="index.jsp">
-    <jsp:param name="error" value="Es obligatorio identificarse"/>
-</jsp:forward>
-<jsp:scriptlet>
-    } 
-</jsp:scriptlet>
-<%----------------------------------------------------------------------------%>
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_admin.jsp"%>
 
 <!DOCTYPE html>
 

@@ -12,15 +12,18 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(3);
+    _jspx_dependants = new java.util.ArrayList<String>(4);
+    _jspx_dependants.add("/Sesion/scriptlet_sesion_empleado.jsp");
     _jspx_dependants.add("/Estructura_plantilla/head.jsp");
     _jspx_dependants.add("/Estructura_plantilla/header.jsp");
     _jspx_dependants.add("/Estructura_plantilla/footer.jsp");
   }
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_out_value_nobody;
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_fmt_message_key_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_catch_var;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_fmt_message_key_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_sql_query_var_dataSource;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -30,14 +33,18 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
 
   public void _jspInit() {
     _jspx_tagPool_c_out_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _jspx_tagPool_fmt_message_key_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_catch_var = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_fmt_message_key_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_sql_query_var_dataSource = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_out_value_nobody.release();
-    _jspx_tagPool_fmt_message_key_nobody.release();
+    _jspx_tagPool_c_catch_var.release();
     _jspx_tagPool_c_if_test.release();
+    _jspx_tagPool_fmt_message_key_nobody.release();
+    _jspx_tagPool_sql_query_var_dataSource.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -71,27 +78,169 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("<!-- scriptlet para mantener la pagina con sesión-->\r\n");
+      out.write('\n');
+      out.write('\n');
+      out.write('\n');
 
     HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null){
+    if (sesionOk.getAttribute("usuario") == null) {
 
-      out.write("        \r\n");
+      out.write("        \n");
       if (true) {
         _jspx_page_context.forward("index.jsp" + "?" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("error", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Es obligatorio identificarse", request.getCharacterEncoding()));
         return;
       }
-      out.write('\r');
+      out.write('\n');
+
+} else {
+
+      out.write('\n');
+      //  c:catch
+      org.apache.taglibs.standard.tag.common.core.CatchTag _jspx_th_c_catch_0 = (org.apache.taglibs.standard.tag.common.core.CatchTag) _jspx_tagPool_c_catch_var.get(org.apache.taglibs.standard.tag.common.core.CatchTag.class);
+      _jspx_th_c_catch_0.setPageContext(_jspx_page_context);
+      _jspx_th_c_catch_0.setParent(null);
+      _jspx_th_c_catch_0.setVar("error_sql");
+      int[] _jspx_push_body_count_c_catch_0 = new int[] { 0 };
+      try {
+        int _jspx_eval_c_catch_0 = _jspx_th_c_catch_0.doStartTag();
+        if (_jspx_eval_c_catch_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+          do {
+            out.write("\n");
+            out.write("    ");
+            //  sql:query
+            org.apache.taglibs.standard.tag.rt.sql.QueryTag _jspx_th_sql_query_0 = (org.apache.taglibs.standard.tag.rt.sql.QueryTag) _jspx_tagPool_sql_query_var_dataSource.get(org.apache.taglibs.standard.tag.rt.sql.QueryTag.class);
+            _jspx_th_sql_query_0.setPageContext(_jspx_page_context);
+            _jspx_th_sql_query_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_catch_0);
+            _jspx_th_sql_query_0.setDataSource(new String("jdbc/mysql"));
+            _jspx_th_sql_query_0.setVar("consulta");
+            int[] _jspx_push_body_count_sql_query_0 = new int[] { 0 };
+            try {
+              int _jspx_eval_sql_query_0 = _jspx_th_sql_query_0.doStartTag();
+              if (_jspx_eval_sql_query_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                if (_jspx_eval_sql_query_0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                  out = _jspx_page_context.pushBody();
+                  _jspx_push_body_count_sql_query_0[0]++;
+                  _jspx_th_sql_query_0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                  _jspx_th_sql_query_0.doInitBody();
+                }
+                do {
+                  out.write("\n");
+                  out.write("        select * from empleado where idEmpleado=");
+                  out.print(sesionOk.getAttribute("usuario"));
+                  out.write("\n");
+                  out.write("    ");
+                  int evalDoAfterBody = _jspx_th_sql_query_0.doAfterBody();
+                  if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                    break;
+                } while (true);
+                if (_jspx_eval_sql_query_0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE)
+                  out = _jspx_page_context.popBody();
+                  _jspx_push_body_count_sql_query_0[0]--;
+              }
+              if (_jspx_th_sql_query_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                return;
+              }
+            } catch (Throwable _jspx_exception) {
+              while (_jspx_push_body_count_sql_query_0[0]-- > 0)
+                out = _jspx_page_context.popBody();
+              _jspx_th_sql_query_0.doCatch(_jspx_exception);
+            } finally {
+              _jspx_th_sql_query_0.doFinally();
+              _jspx_tagPool_sql_query_var_dataSource.reuse(_jspx_th_sql_query_0);
+            }
+            out.write('\n');
+            int evalDoAfterBody = _jspx_th_c_catch_0.doAfterBody();
+            if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+              break;
+          } while (true);
+        }
+        if (_jspx_th_c_catch_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+          return;
+        }
+      } catch (Throwable _jspx_exception) {
+        while (_jspx_push_body_count_c_catch_0[0]-- > 0)
+          out = _jspx_page_context.popBody();
+        _jspx_th_c_catch_0.doCatch(_jspx_exception);
+      } finally {
+        _jspx_th_c_catch_0.doFinally();
+        _jspx_tagPool_c_catch_var.reuse(_jspx_th_c_catch_0);
+      }
+      out.write('\n');
+      //  c:if
+      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+      _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+      _jspx_th_c_if_0.setParent(null);
+      _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty error_sql}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+      int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+      if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("    ");
+
+        sesionOk.invalidate();
+    
+          out.write("\n");
+          out.write("    ");
+          if (true) {
+            _jspx_page_context.forward("index.jsp" + "?" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("error", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Acceso no permitido", request.getCharacterEncoding()));
+            return;
+          }
+          out.write('\n');
+          int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+        return;
+      }
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      out.write('\n');
+      //  c:if
+      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+      _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+      _jspx_th_c_if_1.setParent(null);
+      _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${consulta.rowCount == 0}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+      int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+      if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("    ");
+
+        sesionOk.invalidate();
+    
+          out.write("\n");
+          out.write("    ");
+          if (true) {
+            _jspx_page_context.forward("index.jsp" + "?" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("error", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Acceso no permitido", request.getCharacterEncoding()));
+            return;
+          }
+          out.write('\n');
+          int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+        return;
+      }
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
       out.write('\n');
 
     }
 
+      out.write('\n');
+      out.write('\n');
       out.write("\r\n");
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("        <!--freewall-->\r\n");
       out.write("        <script type=\"text/javascript\" src=\"freewall/jquery-1.10.2.min.js\"></script>\r\n");
       out.write("        <script type=\"text/javascript\" src=\"freewall/freewall.js\"></script>\r\n");
@@ -104,7 +253,7 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <link href=\"https://fonts.googleapis.com/css?family=Marck+Script\" rel=\"stylesheet\">\r\n");
       out.write("\r\n");
       out.write("        <!--<script src=\"js/vendor/modernizr-2.8.3-respond-1.4.2.min.js\"></script>-->\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("        <!-- css y js a ocupar-->\r\n");
       out.write("        ");
       out.write("\r\n");
@@ -275,24 +424,24 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            .cover{\r\n");
       out.write("                height: 100%;\r\n");
       out.write("            }\r\n");
-      out.write("            \r\n");
+      out.write("\r\n");
       out.write("            .cell:hover{\r\n");
       out.write("                box-shadow: inset 0px 0px 220px black;\r\n");
       out.write("                transform: scale(1.1);\r\n");
       out.write("            }\r\n");
       out.write("            /*termina estilos freewall*/\r\n");
       out.write("        </style>\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("        <script>\r\n");
-      out.write("             /*funcion para cerrar la ventana de aviso*/\r\n");
+      out.write("            /*funcion para cerrar la ventana de aviso*/\r\n");
       out.write("            window.setTimeout(function () {\r\n");
       out.write("                $(\".alert\").fadeTo(500, 0).slideUp(500, function () {\r\n");
       out.write("                    $(this).remove();\r\n");
       out.write("                });\r\n");
       out.write("            }, 4000);\r\n");
-      out.write("            \r\n");
+      out.write("\r\n");
       out.write("        </script>\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <!--codigo del header-->\r\n");
@@ -300,12 +449,27 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      Beans.sesionBeans c_sesion = null;
+      synchronized (session) {
+        c_sesion = (Beans.sesionBeans) _jspx_page_context.getAttribute("c_sesion", PageContext.SESSION_SCOPE);
+        if (c_sesion == null){
+          c_sesion = new Beans.sesionBeans();
+          _jspx_page_context.setAttribute("c_sesion", c_sesion, PageContext.SESSION_SCOPE);
+        }
+      }
+      out.write("\r\n");
+      out.write("\r\n");
 
     String usuario = "";
+    String nombre = "";
+    
+    //se crea una variable de sesion para almacenar el id de la persona que ingreso
     HttpSession sesion_u = request.getSession();
-    usuario = (String) sesion_u.getAttribute("usuario");
+    usuario =(String)sesion_u.getAttribute("usuario");
 
-      out.write("        \r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("<header style=\"position:fixed; width: 100%;top:0; z-index: 3;\">\r\n");
       out.write("        <nav class=\"navbar navbar-expand-lg navbar-light bg-light\" style=\"background-color: black !important; height: 90px;\">\r\n");
@@ -340,7 +504,8 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
         return;
       out.write(':');
       out.write(' ');
-      out.print(usuario);
+      if (_jspx_meth_c_out_0(_jspx_page_context))
+        return;
       out.write("\r\n");
       out.write("                        </p>\r\n");
       out.write("                    </li>\r\n");
@@ -374,12 +539,12 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("\r\n");
       out.write("        <div style=\"width:95%; min-height:550px; background-color:#f3e8e8ab; margin:0 auto; margin-top:110px; padding: 10px; color:white;\">\r\n");
-      out.write("            \r\n");
+      out.write("\r\n");
       out.write("            ");
-      if (_jspx_meth_c_if_0(_jspx_page_context))
+      if (_jspx_meth_c_if_2(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("            \r\n");
+      out.write("\r\n");
       out.write("            <div class=\"layout\" style=\"margin: 0 auto;\">\r\n");
       out.write("                <div id=\"freewall\" class=\"free-wall\">\r\n");
       out.write("\r\n");
@@ -432,13 +597,17 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                            <div class=\"handle\">\r\n");
       out.write("                                <span class=\"material-icons\">open_with</span>\r\n");
       out.write("                            </div>\r\n");
-      out.write("                            <h4>\r\n");
-      out.write("                                <strong>Roles</strong>\r\n");
-      out.write("                            </h4>\r\n");
-      out.write("                            <br>\r\n");
-      out.write("                            <div class=\"con_div\">\r\n");
-      out.write("                                <img src=\"imagenes/cliente.png\" class=\"icono_cuadro\">\r\n");
-      out.write("                            </div>\r\n");
+      out.write("                            <a href=\"Mantenimiento_Rol.jsp\" style=\"text-decoration:none;color:white;\">\r\n");
+      out.write("                                <div style=\"height:100%;width:100%;\">\r\n");
+      out.write("                                    <h4>\r\n");
+      out.write("                                        <strong>Roles</strong>\r\n");
+      out.write("                                    </h4>\r\n");
+      out.write("                                    <br>\r\n");
+      out.write("                                    <div class=\"con_div\">\r\n");
+      out.write("                                        <img src=\"imagenes/cliente.png\" class=\"icono_cuadro\">\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                </div>\r\n");
+      out.write("                            </a>\r\n");
       out.write("\r\n");
       out.write("                        </div>\r\n");
       out.write("                    </div>\r\n");
@@ -657,6 +826,24 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
     return false;
   }
 
+  private boolean _jspx_meth_c_out_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:out
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_0 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_0.setParent(null);
+    _jspx_th_c_out_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${c_sesion.user}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_0 = _jspx_th_c_out_0.doStartTag();
+    if (_jspx_th_c_out_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_0);
+      return true;
+    }
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_0);
+    return false;
+  }
+
   private boolean _jspx_meth_fmt_message_3(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -711,55 +898,55 @@ public final class menu_005fempleado_jsp extends org.apache.jasper.runtime.HttpJ
     return false;
   }
 
-  private boolean _jspx_meth_c_if_0(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_if_2(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:if
-    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
-    _jspx_th_c_if_0.setParent(null);
-    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.inicio!=null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
-    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_2.setParent(null);
+    _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.inicio!=null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_2 = _jspx_th_c_if_2.doStartTag();
+    if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
         out.write("                <div class=\"alert alert-info alert-dismissible\" style=\"width: 30%;margin: 0 auto; float: none;font-size: initial;text-align: center;\">\r\n");
         out.write("                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n");
         out.write("                    <span>");
-        if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
+        if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_2, _jspx_page_context))
           return true;
         out.write("</span>\r\n");
         out.write("                </div>\r\n");
         out.write("            ");
-        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
       } while (true);
     }
-    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    if (_jspx_th_c_if_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
       return true;
     }
-    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
     return false;
   }
 
-  private boolean _jspx_meth_c_out_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_if_0, PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_out_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_if_2, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_0 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_0.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
-    _jspx_th_c_out_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.inicio}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_0 = _jspx_th_c_out_0.doStartTag();
-    if (_jspx_th_c_out_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_0);
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_1 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_2);
+    _jspx_th_c_out_1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.inicio}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_1 = _jspx_th_c_out_1.doStartTag();
+    if (_jspx_th_c_out_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_1);
       return true;
     }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_0);
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_1);
     return false;
   }
 

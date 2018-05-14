@@ -6,20 +6,12 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@ page session="true"%>
-<jsp:scriptlet>
-    HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null){
-</jsp:scriptlet>        
-<jsp:forward page="index.jsp">
-    <jsp:param name="error" value="Es obligatorio identificarse"/>
-</jsp:forward>
-<jsp:scriptlet>
-    }
-</jsp:scriptlet>
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_usuario.jsp"%>
 
 <!DOCTYPE html>
 <html>

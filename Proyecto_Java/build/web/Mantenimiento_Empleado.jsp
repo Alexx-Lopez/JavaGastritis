@@ -35,19 +35,9 @@
     select * from cargo
 </sql:query>   
     
-<%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
-<%@ page session="true" %>
-<jsp:scriptlet>
-    HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null){
-</jsp:scriptlet>        
-<jsp:forward page="index.jsp">
-    <jsp:param name="error" value="Es obligatorio identificarse"/>
-</jsp:forward>
-<jsp:scriptlet>
-    } 
-</jsp:scriptlet>
-<%----------------------------------------------------------------------------%>
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_admin.jsp"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -553,12 +543,12 @@
                         <tr>
                             <td align="center">
                                 <div class="radio">
-                                    <label><input type="radio" id="r_estado1" name="r_estado" required="" value="1">Activo</label>
+                                    <label><input type="radio" id="r_estado1" name="r_estado" required="" value="1"><fmt:message key="empleado_rbtn_activo"/></label>
                                 </div>
                             </td>
                             <td align="center">
                                 <div class="radio">
-                                    <label><input type="radio" id="r_estado2" name="r_estado" required="" value="0">Inactivo</label>
+                                    <label><input type="radio" id="r_estado2" name="r_estado" required="" value="0"><fmt:message key="empleado_rbtn_inactivo"/></label>
                                 </div>
                             </td>
                         </tr>

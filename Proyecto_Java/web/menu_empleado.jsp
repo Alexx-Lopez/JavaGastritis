@@ -5,20 +5,12 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@ page session="true"%>
-<jsp:scriptlet>
-    HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null) {
-</jsp:scriptlet>        
-<jsp:forward page="index.jsp">
-    <jsp:param name="error" value="Es obligatorio identificarse"/>
-</jsp:forward>
-<jsp:scriptlet>
-    }
-</jsp:scriptlet>
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_empleado.jsp"%>
 
 <!DOCTYPE html>
 <html>
@@ -202,13 +194,17 @@
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <h4>
-                                <strong>Usuario</strong>
-                            </h4>
-                            <br>
-                            <div class="con_div">
-                                <img src="imagenes/usuario.png" class="icono_cuadro">
-                            </div>
+                            <a href="Mantenimiento_Usuarioadmon.jsp" style="text-decoration:none;color:white;">
+                                <div style="height:100%;width:100%;">
+                                    <h4>
+                                        <strong>Usuario</strong>
+                                    </h4>
+                                    <br>
+                                    <div class="con_div">
+                                        <img src="imagenes/usuario.png" class="icono_cuadro">
+                                    </div>
+                                </div>
+                            </a>
 
                         </div>
                     </div>

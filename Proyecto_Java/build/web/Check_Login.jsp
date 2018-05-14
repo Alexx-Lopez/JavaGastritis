@@ -7,6 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<jsp:useBean id="c_sesion" scope="session" class="Beans.sesionBeans"/>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +27,7 @@
         </sql:query>
             <%-- Consulta Empleados --%>
         <sql:query dataSource="jdbc/mysql" var="consulta1">
-            select * from empleado where Nombre='<%=usuario%>' and Clave='<%=clave%>'
+            select * from empleado where idEmpleado='<%=usuario%>' and Clave='<%=clave%>'
         </sql:query>
             <%-- Consulta Usuarios --%>
         <sql:query dataSource="jdbc/mysql" var="consulta2">
@@ -40,8 +41,12 @@
                 sesionOk = request.getSession();
                 sesionOk.setAttribute("usuario", usuario);
             </jsp:scriptlet>
+            
+            <%--Uso el beans para almacenar el nombre de la persona que ingreso--%>
+            <jsp:setProperty name="c_sesion" property="user" value="${consulta.rows[0].nombre}"/>
+            
             <jsp:forward page="menu_admin.jsp">
-                <jsp:param name="inicio" value="Bienvenido Administrador ${consulta.rows[0].nombre}"/> 
+                <jsp:param name="inicio" value="Bienvenido Administrador ${consulta.rows[0].nombre}"/>
             </jsp:forward> 
         </c:if>
             <%-- Acceso Empleado --%>
@@ -50,6 +55,10 @@
                 sesionOk = request.getSession();
                 sesionOk.setAttribute("usuario", usuario);
             </jsp:scriptlet>
+            
+             <%--Uso el beans para almacenar el nombre de la persona que ingreso--%>
+            <jsp:setProperty name="c_sesion" property="user" value="${consulta1.rows[0].Nombre}"/>
+            
             <jsp:forward page="menu_empleado.jsp">
                 <jsp:param name="inicio" value="Bienvenido Empleado ${consulta1.rows[0].Nombre}"/> 
             </jsp:forward> 
@@ -60,6 +69,10 @@
                 sesionOk = request.getSession();
                 sesionOk.setAttribute("usuario",usuario);
             </jsp:scriptlet>
+            
+             <%--Uso el beans para almacenar el nombre de la persona que ingreso--%>
+            <jsp:setProperty name="c_sesion" property="user" value="${consulta2.rows[0].Usuario}"/>
+            
             <jsp:forward page="menu_usuario.jsp">
                 <jsp:param name="inicio" value="Bienvenido Usuario ${consulta2.rows[0].Usuario}"/> 
             </jsp:forward> 
