@@ -18,16 +18,56 @@
 
 <!--Consulta SQL para alimentar el select-->
 <sql:query dataSource="jdbc/mysql" var="consulta">
-    select * from idiomas
+    select * from material
+    where Codigo_Material = ${param.CodigoL}
 </sql:query>
 <sql:query dataSource="jdbc/mysql" var="consulta1">
-    select * from autor
+    select * from discos
+    where Codigo_Material = ${param.CodigoL}
 </sql:query>
 <sql:query dataSource="jdbc/mysql" var="consulta2">
-    select * from clasificacion
+    select * from editorial
+    where Cod_Material = ${param.CodigoL}
 </sql:query>
 <sql:query dataSource="jdbc/mysql" var="consulta3">
+    select * from tesis
+    where Codigo_Material = ${param.CodigoL}
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consulta4">
+    select * from autor
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consulta5">
     select * from temas
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consulta6">
+    select * from autor
+    where Codigo_Material = ${param.CodigoL}
+</sql:query>
+    <sql:query dataSource="jdbc/mysql" var="consulta7">
+    select * from temas
+    where Codigo_Material = ${param.CodigoL}
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consulta8">
+    select * from idiomas
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consulta10">
+    select * from libros
+    where Codigo_Material = ${param.CodigoL}
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consulta11">
+    select * from revistas
+    where Codigo_Material = ${param.CodigoL}
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consultaMI">
+    select * from material_idiomas
+    where Codigo_Material = ${param.CodigoL}
+</sql:query>
+    <sql:query dataSource="jdbc/mysql" var="consulta9">
+    select * from clasificacion
+</sql:query>
+<sql:query dataSource="jdbc/mysql" var="consultaMC">
+    select * from material_clasificacion
+    where Codigo_Material = ${param.CodigoL}
 </sql:query>
     
 <%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
@@ -42,6 +82,30 @@
 <jsp:scriptlet>
     } 
 </jsp:scriptlet>
+
+<c:forEach var="name" items="${consulta6.rows}">
+    <c:set var="SetAutor" value="${name.Nombre_Autor}"/>
+</c:forEach>
+<c:forEach var="name" items="${consulta7.rows}">
+    <c:set var="SetTema" value="${name.Nombre_Tema}"/>
+</c:forEach>
+<c:forEach var="name" items="${consulta.rows}">
+    <c:if test="${name.Estado == 'Activo' || name.Estado == 'Active'}">
+        <c:set var="SetEstado" value="0"/>
+        <c:set var="REstado" value="true"/>
+    </c:if>
+    <c:if test="${name.Estado == 'Inactivo' || name.Estado == 'Inactive'}">
+        <c:set var="SetEstado" value="1"/>
+        <c:set var="REstado" value="false"/>
+    </c:if>
+</c:forEach>
+<c:forEach var="name" items="${consultaMI.rows}">
+        <c:set var="idiomaCode" value="${name.id_idioma}"/>
+</c:forEach>
+<c:forEach var="name" items="${consultaMC.rows}">
+        <c:set var="clasiCode" value="${name.id_clasificacion}"/>
+</c:forEach>
+
 <%----------------------------------------------------------------------------%>
 
 <!DOCTYPE html>
@@ -144,75 +208,6 @@
                 document.datos.txt_descripcion.value = "";
             }
             
-            function changeFunc() 
-            {
-                var selectBox = document.getElementById("selectBox");
-                var p_issn = document.getElementById('p_issn');
-                var p_isbn = document.getElementById('p_isbn');
-                var f_tesis = document.getElementById('f_tesis');
-                var p_coddisco = document.getElementById('p_coddisco');
-                var p_tipodisco = document.getElementById('p_tipodisco');
-                var z = 1, x= 2, c = 3, v = 4, b = 0;
-                if("Book" == selectBox.value || "Libro" == selectBox.value)
-                {
-                    p_issn.style.display = 'none';
-                    p_isbn.style.display = 'block';
-                    f_tesis.style.display = 'none';
-                    p_coddisco.style.display = 'none';
-                    p_tipodisco.style.display = 'none';
-                    $("#txt_isbn").attr("required");
-                    $("#txt_issn").removeAttr("required");
-                    $("#txt_coddisco").removeAttr("required");
-                    $("#tesis_codigo").removeAttr("required");
-                }
-                if("Revista" == selectBox.value || "Magazine" == selectBox.value)
-                {
-                    p_issn.style.display = 'block';
-                    p_isbn.style.display = 'none';
-                    f_tesis.style.display = 'none';
-                    p_coddisco.style.display = 'none';
-                    p_tipodisco.style.display = 'none';
-                    $("#txt_isbn").removeAttr("required");
-                    $("#txt_issn").attr("required");
-                    $("#txt_coddisco").removeAttr("required");
-                    $("#tesis_codigo").removeAttr("required");
-                   
-                }
-                if("Tesis" == selectBox.value || "Thesis" == selectBox.value)
-                {
-                    p_issn.style.display = 'none';
-                    p_isbn.style.display = 'none';
-                    f_tesis.style.display = 'block';
-                    p_coddisco.style.display = 'none';
-                    p_tipodisco.style.display = 'none';
-                    $("#txt_isbn").removeAttr("required");
-                    $("#txt_issn").removeAttr("required");
-                    $("#txt_coddisco").removeAttr("required");
-                    $("#tesis_codigo").attr("required");
-                }
-                if("Disco" == selectBox.value || "Disk" == selectBox.value)
-                {
-                    p_issn.style.display = 'none';
-                    p_isbn.style.display = 'none';
-                    f_tesis.style.display = 'none';
-                    p_coddisco.style.display = 'block';
-                    p_tipodisco.style.display = 'block';
-                    $("#txt_isbn").removeAttr("required");
-                    $("#txt_issn").removeAttr("required");
-                    $("#txt_coddisco").attr("required");
-                    $("#tesis_codigo").removeAttr("required");
-
-                }
-                if(b == selectBox.value)
-                {
-                    p_issn.style.display = 'none';
-                    p_isbn.style.display = 'none';
-                    f_tesis.style.display = 'none';
-                    p_coddisco.style.display = 'none';
-                    p_tipodisco.style.display = 'none';
-                    $("#selectBox").attr("required");
-                }
-           }
 
             /*funcion para cerrar la ventana de aviso*/
             window.setTimeout(function () {
@@ -241,6 +236,21 @@
                 
                 //alert("hola");
             }
+            $(function() {
+                $("#select_autor").val('${SetAutor}');
+                $("#select_tema").val('${SetTema}');
+                $("#select_clasi").val('${clasiCode}');
+                $("#select_idiomas").val('${idiomaCode}');
+                document.getElementById('select_estado').selectedIndex = ${SetEstado};
+                if(${REstado == true})
+                {
+                    $("#select_estado").attr("readonly",true);
+                }
+                else
+                {
+                    $("#select_estado").removeAttr("readonly");
+                }
+            });
         </script>
     </head>
     <body onload="iniciar();">
@@ -260,7 +270,7 @@
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <span><c:out value="${param.error}"/></span>
                     </div>
-                </c:if>
+                </c:if> 
                 
                 <div style="width:32%; margin:0 auto;">
                     <h1 style="text-align:center;"><b><fmt:message key="material_lbl_material"/></b></h1>
@@ -306,7 +316,7 @@
                                 <div class="form-group">
                                    <label for="nombre"><fmt:message key="material_lbl_codigo"/></label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control" name="CodigoL" id="CodigoL" placeholder="<fmt:message key="in_codigo"/>" onKeyPress="return soloNumeros(event)" required>
+                                            <input type="number" class="form-control" name="CodigoL" id="CodigoL" value="${param.CodigoL}" readonly="readonly" placeholder="<fmt:message key="in_codigo"/>" onKeyPress="return soloNumeros(event)" required>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-book">
                                                 </span>
@@ -316,7 +326,9 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="material_lbl_titulo"/></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="titulo" name="Titulo" placeholder="<fmt:message key="in_titulo"/>">
+                                            <c:forEach var="name" items="${consulta.rows}">
+                                                <input type="text" class="form-control" id="titulo" name="Titulo" value="${name.Titulo}" placeholder="<fmt:message key="in_titulo"/>">
+                                            </c:forEach>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-tag">                                
                                                 </span>
@@ -326,7 +338,9 @@
                                 <div class="form-group">
                                    <label for="apellido"><fmt:message key="material_lbl_edicion"/></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="edicion" name="Edicion" placeholder="<fmt:message key="in_edicion"/>">
+                                            <c:forEach var="name" items="${consulta.rows}">
+                                                <input type="text" class="form-control" id="edicion" name="Edicion" value="${name.Edicion}" placeholder="<fmt:message key="in_edicion"/>">
+                                            </c:forEach>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-bookmark">   
                                                 </span>      
@@ -336,12 +350,11 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="material_select_material"/></label>
                                         <div class="input-group">
-                                            <select class="form-control selector" name="selectBox" id="selectBox" onchange="changeFunc();" required>
-                                                <option value="0"><fmt:message key="material_select_material"/></option>
-                                                    <option value="<fmt:message key="material_lbl_libro"/>"><fmt:message key="material_lbl_libro"/></option>
-                                                    <option value="<fmt:message key="material_lbl_revista"/>"><fmt:message key="material_lbl_revista"/></option>
-                                                    <option value="<fmt:message key="material_lbl_tesis"/>"><fmt:message key="material_lbl_tesis"/></option>
-                                                    <option value="<fmt:message key="material_lbl_disco"/>"><fmt:message key="material_lbl_disco"/></option>
+                                            <select class="form-control selector" readonly="readonly" name="selectBox" id="selectBox" onchange="" required>
+                                                <c:forEach var="name" items="${consulta.rows}">
+                                                    <c:set var="selectValor" value="${name.Tipo_Material}"/>
+                                                        <option value="${name.Tipo_Material}"><c:out value="${name.Tipo_Material}"/></option>
+                                                    </c:forEach>
                                             </select>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-list">                                
@@ -352,7 +365,9 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="material_lbl_descripcion"/></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="descripcion" name="Descripcion" placeholder="<fmt:message key="in_descripcion"/>" >
+                                            <c:forEach var="name" items="${consulta.rows}">
+                                                <input type="text" class="form-control" id="descripcion" name="Descripcion" value="${name.Descripcion}" placeholder="<fmt:message key="in_descripcion"/>" >
+                                            </c:forEach>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-pencil">                                
                                                 </span>
@@ -362,7 +377,9 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="material_lbl_precio"/></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="precio" name="Precio" placeholder="<fmt:message key="in_precio"/>">
+                                            <c:forEach var="name" items="${consulta.rows}">
+                                                <input type="text" class="form-control" id="precio" name="Precio" value="${name.Precio}" placeholder="<fmt:message key="in_precio"/>">
+                                            </c:forEach>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-usd">                                
                                                 </span>
@@ -372,7 +389,9 @@
                                 <div class="form-group">
                                   <label for="telefono"><fmt:message key="material_lbl_fecha"/></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="fecha" name="Fecha" placeholder="<fmt:message key="in_fecha"/>" pattern="^((1?[0-9]{2}|2?[0-9]{2})\d{2})[\/-](0?[1-9]|1[012])[\/-](0?[1-9]|[12][0-9]|3[01])$" title="yyyy/mm/dd">
+                                            <c:forEach var="name" items="${consulta.rows}">
+                                                <input type="text" class="form-control" id="fecha" name="Fecha" value="${name.Fecha_Entrada}" placeholder="<fmt:message key="in_fecha"/>" pattern="^((1?[0-9]{2}|2?[0-9]{2})\d{2})[\/-](0?[1-9]|1[012])[\/-](0?[1-9]|[12][0-9]|3[01])$" title="yyyy/mm/dd">
+                                            </c:forEach>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar">                                
                                                 </span>
@@ -382,7 +401,9 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="material_lbl_volumen"/></label>
                                       <div class="input-group">
-                                          <input type="text" class="form-control" id="volumen" name="Volumen" placeholder="<fmt:message key="in_volumen"/>">
+                                          <c:forEach var="name" items="${consulta.rows}">
+                                              <input type="text" class="form-control" id="volumen" name="Volumen" value="${name.Volumen}" placeholder="<fmt:message key="in_volumen"/>">
+                                          </c:forEach>
                                           <span class="input-group-addon">
                                               <span class="glyphicon glyphicon-sound-5-1">                                
                                               </span>
@@ -392,7 +413,9 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="material_lbl_notas"/></label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="notas" name="Notas" placeholder="<fmt:message key="in_notas"/>">
+                                        <c:forEach var="name" items="${consulta.rows}">
+                                            <input type="text" class="form-control" id="notas" name="Notas" value="${name.Notas}" placeholder="<fmt:message key="in_notas"/>">
+                                        </c:forEach>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-font">                                
                                             </span>
@@ -401,21 +424,6 @@
                                 </div>
                             </div>
                        </fieldset>
-                       <fieldset style=" position: absolute; top: 290px; width: 30%; left: 900px; display: block;" id="f_estado">
-                            <h5 style="text-align:center;"><b><fmt:message key="material_lbl_estado"/></b></h5>
-                            <hr style="border:2px solid grey;">
-                            <div class="col-md-10" style=" position: relative; left: 30px;">
-                               <div class="form-group">
-                                   <label for="telefono"><fmt:message key="material_lbl_estado"/></label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" readonly="readonly" id="editorial" value="<fmt:message key="material_lbl_estado_a"/>">
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-ok-circle">                                
-                                                </span>
-                                            </span>
-                                        </div>
-                                </div>       
-                        </fieldset>
                        <fieldset style="position: absolute; left: 50px; top: 290px; display: block; width: 30%;">
                             <h3 style="text-align:center;"><b>Editorial</b></h3>
                             <hr style="border:2px solid grey;">
@@ -423,7 +431,9 @@
                                 <div class="form-group">
                                     <label for="telefono"><fmt:message key="material_lbl_editorial"/></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="editorial" name="editorial" placeholder="<fmt:message key="in_editorial"/>">
+                                            <c:forEach var="name" items="${consulta2.rows}">
+                                                <input type="text" class="form-control" id="editorial" name="editorial" value="${name.nombre_editorial}" placeholder="<fmt:message key="in_editorial"/>">
+                                            </c:forEach>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-font">                                
                                                 </span>
@@ -433,7 +443,9 @@
                                 <div class="form-group">
                                     <label for="telefono"><fmt:message key="material_lbl_ubicacion"/></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="editorial_place" name="editorial_place" placeholder="<fmt:message key="in_ubicacion"/>">
+                                            <c:forEach var="name" items="${consulta2.rows}">
+                                                <input type="text" class="form-control" id="editorial_place" name="editorial_place" value="${name.lugar}" placeholder="<fmt:message key="in_ubicacion"/>">
+                                            </c:forEach>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-globe">                                
                                                 </span>
@@ -443,7 +455,9 @@
                                 <div class="form-group">
                                     <label for="telefono"><fmt:message key="material_lbl_anio"/></label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="editorial_anio" name="editorial_anio" placeholder="<fmt:message key="in_anio"/>">
+                                            <c:forEach var="name" items="${consulta2.rows}">
+                                                <input type="number" class="form-control" id="editorial_anio" value="${name.año}" name="editorial_anio" placeholder="<fmt:message key="in_anio"/>">
+                                            </c:forEach>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar">                                
                                                 </span>
@@ -451,8 +465,26 @@
                                         </div>
                                 </div> 
                             </div>
-                            </div>
-                       </fieldset>
+                            
+                        </fieldset>
+                        <fieldset style=" position: absolute; top: 290px; width: 30%; left: 900px; display: block;" id="f_estado">
+                            <h5 style="text-align:center;"><b><fmt:message key="material_lbl_estado"/></b></h5>
+                            <hr style="border:2px solid grey;">
+                            <div class="col-md-10" style=" position: relative; left: 30px;">
+                               <div class="form-group">
+                                   <label for="telefono"><fmt:message key="material_lbl_estado"/></label>
+                                        <div class="input-group">
+                                            <select class="form-control selector" name="cmb_estado" id="select_estado" required="">
+                                                        <option value="<fmt:message key="material_lbl_estado_a"/>"><fmt:message key="material_lbl_estado_a"/></option>
+                                                        <option value="<fmt:message key="material_lbl_estado_i"/>"><fmt:message key="material_lbl_estado_i"/></option>
+                                            </select>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-list">                                
+                                                </span>
+                                            </span>
+                                        </div>
+                                </div>       
+                        </fieldset>
                         <fieldset style="position: absolute; left: 50px; top: 627px; display: block; width: 30%;">
                             <h5 style="text-align:center;"><b><fmt:message key="material_lbl_Odatos"/></b></h5>
                             <hr style="border:2px solid grey;">
@@ -460,9 +492,9 @@
                                <div class="form-group">
                                    <label for="telefono"><fmt:message key="idioma_lbl_tema"/></label>
                                         <div class="input-group">
-                                            <select class="form-control selector" name="cmb_idiomas" id="select_idiomas" onchange="seleccionar();" required="">
+                                            <select class="form-control selector" name="cmb_idiomas" id="select_idiomas" required="">
                                                 <option value="0"><fmt:message key="idiomas_select_idiomas"/></option>
-                                                    <c:forEach var="name" items="${consulta.rows}">
+                                                    <c:forEach var="name" items="${consulta8.rows}">
                                                         <option value="${name.id_idioma}"><c:out value="${name.nombre_idioma}"/></option>
                                                     </c:forEach>
                                             </select>
@@ -475,9 +507,9 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="autor_lbl_autor"/></label>
                                         <div class="input-group">
-                                            <select class="form-control selector" name="cmb_autor" id="select_idiomas" onchange="seleccionar();" required="">
+                                            <select class="form-control selector" name="cmb_autor" id="select_autor" required="">
                                                 <option value="0"><fmt:message key="in_autor"/></option>
-                                                    <c:forEach var="name" items="${consulta1.rows}">
+                                                    <c:forEach var="name" items="${consulta4.rows}">
                                                         <option value="${name.Nombre_Autor}"><c:out value="${name.Nombre_Autor}"/></option>
                                                     </c:forEach>
                                             </select>
@@ -490,9 +522,9 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="clasi_lbl_clasi"/></label>
                                         <div class="input-group">
-                                            <select class="form-control selector" name="cmb_clasi" id="select_idiomas" onchange="seleccionar();" required="">
+                                            <select class="form-control selector" name="cmb_clasi" id="select_clasi" required="">
                                                 <option value="0"><fmt:message key="in_clasi"/></option>
-                                                    <c:forEach var="name" items="${consulta2.rows}">
+                                                    <c:forEach var="name" items="${consulta9.rows}">
                                                         <option value="${name.id_clasificacion}"><c:out value="${name.nombre}"/></option>
                                                     </c:forEach>
                                             </select>
@@ -505,9 +537,9 @@
                                 <div class="form-group">
                                    <label for="telefono"><fmt:message key="tema_lbl_tema"/></label>
                                         <div class="input-group">
-                                            <select class="form-control selector" name="cmb_tema" id="select_idiomas" onchange="seleccionar();" required="">
+                                            <select class="form-control selector" name="cmb_tema" id="select_tema" required="">
                                                 <option value="0"><fmt:message key="in_tema"/></option>
-                                                    <c:forEach var="name" items="${consulta3.rows}">
+                                                    <c:forEach var="name" items="${consulta5.rows}">
                                                         <option value="${name.Nombre_Tema}"><c:out value="${name.Nombre_Tema}"/></option>
                                                     </c:forEach>
                                             </select>
@@ -519,14 +551,16 @@
                                 </div>  
                             </div>
                         </fieldset>
-                       <fieldset style=" position: absolute; top: 490px; width: 30%; left: 900px; display: none;" id="f_tesis">
-
+                       <c:if test="${selectValor == 'Tesis' || selectValor == 'Thesis'}">
+                       <fieldset style=" position: absolute; top: 490px; width: 30%; left: 900px; display: block;" id="f_tesis">
                                         <h3 style="text-align:center;"><b><fmt:message key="material_lbl_datatesis"/></b></h3>
                                     <hr style="border:2px solid grey;">
                                 <div class="form-group">
                                     <label for="telefono"><fmt:message key="material_lbl_codtesis"/></label>
                                     <div class="input-group">
-                                        <input type="number" class="form-control" id="tesis_codigo" name="tesis_codigo" placeholder="<fmt:message key="in_codtesis"/>" required>
+                                        <c:forEach var="name" items="${consulta3.rows}">
+                                            <input type="number" class="form-control" value="${name.Cod_tesis}" id="tesis_codigo" name="tesis_codigo" placeholder="<fmt:message key="in_codtesis"/>" required>
+                                        </c:forEach>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-barcode">                                
                                             </span>
@@ -536,7 +570,9 @@
                                         <div class="form-group">
                                     <label for="telefono"><fmt:message key="material_lbl_tipoinves"/></label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="tesis_tipo" name="tesis_tipo" placeholder="<fmt:message key="in_tipoinves"/>">
+                                        <c:forEach var="name" items="${consulta3.rows}">
+                                            <input type="text" class="form-control" value="${name.Tipo_de_investigacion}" id="tesis_tipo" name="tesis_tipo" placeholder="<fmt:message key="in_tipoinves"/>">
+                                        </c:forEach>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-tasks">                                
                                             </span>
@@ -546,7 +582,9 @@
                                         <div class="form-group">
                                     <label for="telefono"><fmt:message key="material_lbl_lugar"/></label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="tesis_lugar" name="tesis_lugar" placeholder="<fmt:message key="in_lugar"/>">
+                                        <c:forEach var="name" items="${consulta3.rows}">
+                                            <input type="text" class="form-control" value="${name.Lugar_investigacion}" id="tesis_lugar" name="tesis_lugar" placeholder="<fmt:message key="in_lugar"/>">
+                                        </c:forEach>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-globe">                                
                                             </span>
@@ -556,7 +594,9 @@
                                         <div class="form-group">
                                     <label for="telefono"><fmt:message key="material_lbl_grado"/></label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="tesis_grado" name="tesis_grado" placeholder="<fmt:message key="in_grado"/>">
+                                        <c:forEach var="name" items="${consulta3.rows}">
+                                            <input type="text" class="form-control" value="${name.Grado_academico}" id="tesis_grado" name="tesis_grado" placeholder="<fmt:message key="in_grado"/>">
+                                        </c:forEach>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-education">                                
                                             </span>
@@ -566,58 +606,77 @@
                                         <div class="form-group">
                                     <label for="telefono"><fmt:message key="material_lbl_institucion"/></label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="tesis_institucion" name="tesis_institucion" placeholder="<fmt:message key="in_institucion"/>">
+                                        <c:forEach var="name" items="${consulta3.rows}">
+                                            <input type="text" class="form-control" value="${name.Institución}" id="tesis_institucion" name="tesis_institucion" placeholder="<fmt:message key="in_institucion"/>">
+                                        </c:forEach>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-home">                                
                                             </span>
                                         </span>
                                     </div>
-                                </div>         
+                                </div>
+                            </c:if>
                         </fieldset>
                         <fieldset>
-                        <div class="form-group" id="p_isbn" style="display: none">
-                            <label id="lbl_isbn"><fmt:message key="material_lbl_isbn"/>:</label>
-                                <div class="input-group" id="div_isbn" >
-                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_isbn"/>" id="txt_isbn" name="txt_isbn" pattern="^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$" required>
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+                            <c:if test="${selectValor == 'Book' || selectValor == 'Libro'}">
+                                <div class="form-group" id="p_isbn" style="display: block">
+                                    <label id="lbl_isbn"><fmt:message key="material_lbl_isbn"/>:</label>
+                                        <div class="input-group" id="div_isbn" >
+                                            <c:forEach var="name" items="${consulta10.rows}">
+                                                <input type="text" class="form-control"  placeholder="<fmt:message key="in_isbn"/>" id="txt_isbn" name="txt_isbn" value="${name.ISBN}" pattern="^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$" required>
+                                            </c:forEach>
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+                                        </div>
                                 </div>
-                        </div>
-                        <div class="form-group" id="p_issn" style="display: none">
-                            <label id="lbl_issn" ><fmt:message key="material_lbl_issn"/>:</label>
-                                <div class="input-group" id="div_issn" >
-                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_issn"/>" id="txt_issn" name="txt_issn" pattern="^([-0-9X]){9}$" required>
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+                            </c:if>
+                            <c:if test="${selectValor == 'Magazine' || selectValor == 'Revista'}">
+                                <div class="form-group" id="p_issn" style="display: block">
+                                    <label id="lbl_issn" ><fmt:message key="material_lbl_issn"/>:</label>
+                                        <div class="input-group" id="div_issn" >
+                                            <c:forEach var="name" items="${consulta11.rows}">
+                                                <input type="text" class="form-control"  placeholder="<fmt:message key="in_issn"/>" id="txt_issn" name="txt_issn" value="${name.ISSN}" pattern="^([-0-9X]){9}$" required>
+                                            </c:forEach>
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+                                        </div>
+                                </div> 
+                            </c:if>  
+                            <c:if test="${selectValor == 'Disco' || selectValor == 'Disk'}">
+                                <div class="form-group" id="p_coddisco" style="display: block">
+                                    <label id="lbl_coddisco"><fmt:message key="material_lbl_coddisco"/>:</label>
+                                        <div class="input-group" id="div_coddisco" >
+                                            <c:forEach var="name" items="${consulta1.rows}">
+                                                <input type="number" class="form-control"  placeholder="<fmt:message key="in_coddisco"/>" id="txt_coddisco" name="txt_coddisco" value="${name.Codigo}" required>
+                                            </c:forEach>
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+                                        </div>
                                 </div>
-                        </div> 
-                        <div class="form-group" id="p_coddisco" style="display: none">
-                            <label id="lbl_coddisco"><fmt:message key="material_lbl_coddisco"/>:</label>
-                                <div class="input-group" id="div_coddisco" >
-                                    <input type="number" class="form-control"  placeholder="<fmt:message key="in_coddisco"/>" id="txt_coddisco" name="txt_coddisco" required>
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+                                <div class="form-group" id="p_tipodisco" style="display: block">
+                                    <label id="lbl_tipodisco" ><fmt:message key="material_lbl_tipodisco"/>:</label>
+                                        <div class="input-group" id="div_tipodisco" >
+                                            <c:forEach var="name" items="${consulta1.rows}">
+                                                <input type="text" class="form-control"  placeholder="<fmt:message key="in_tipodisco"/>" id="tipodisco" name="tipodisco" value="${name.Tipo_de_disco}">
+                                            </c:forEach>
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-tasks"></i></span>
+                                        </div>
                                 </div>
-                        </div>
-                                    <div class="form-group" id="p_tipodisco" style="display: none">
-                            <label id="lbl_tipodisco" ><fmt:message key="material_lbl_tipodisco"/>:</label>
-                                <div class="input-group" id="div_tipodisco" >
-                                    <input type="text" class="form-control"  placeholder="<fmt:message key="in_tipodisco"/>" id="tipodisco" name="tipodisco">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-tasks"></i></span>
-                                </div>
-                        </div>
+                            </c:if>
                         </fieldset>
                         <br>
                         <table style="width:100%;">
                         <tr>
                             <td align="center">
-                                <button type="submit" class="btn btn-primary" id="btn_guardar" name="Guardar" onclick="guardar();" style=" width: 300px;"><fmt:message key="idiomas_btn_guardar"/></button>
+                                <button style=" width: 200px;" type="submit" class="btn btn-warning" id="btn_modificar" name="Modificar" onclick="actualizar();"><fmt:message key="idiomas_btn_modificar"/></button>
                             </td>
-                            
+                            <td align="center">
+                                <button style=" width: 200px;" type="submit" class="btn btn-danger" id="btn_eliminar" name="Eliminar" onclick="eliminar();"><fmt:message key="idiomas_btn_eliminar"/></button>
+                            </td>
                         </tr>
                     </table>
                     </div>
                 </div>
             </div>
         </form>
-        <!--codigo del footer-->
-        <%@include file="Estructura_plantilla/footer.jsp"%>
+        <%--codigo del footer
+        <%@include file="Estructura_plantilla/footer.jsp"%> --%>
     </body>
 </html>

@@ -277,7 +277,7 @@
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <a href="Mantenimiento_Material.jsp" style="text-decoration:none;color:white;">
+                            <a href="Menu_Material.jsp" style="text-decoration:none;color:white;">
                             <h4>
                                 <strong>Ejemplares</strong>
                             </h4>
