@@ -15,10 +15,7 @@
  <title>Ingresar libro</title>
  
  <script type="text/javascript">
-     function error()
-     {
-         alert("¡Datos Incorrectos, No fue posible guardar!");
-     }
+     
 </script>
  </head>
  <body>
@@ -110,7 +107,6 @@
                            <sql:param value="${isbn}"/>
                            <sql:param value="${codigo}"/>  
                        </sql:update>
-                       <h1>Completo Libro</h1>
                 </c:if>
                 <c:if test="${selectValor == 'Revista' || selectValor == 'Magazine'}">
                        <sql:update var="ingresaLibro" dataSource="jdbc/mysql">
@@ -118,7 +114,6 @@
                            <sql:param value="${issn}"/>
                            <sql:param value="${codigo}"/>  
                        </sql:update>
-                       <h1>Completo Revista</h1>
                 </c:if>
                 <c:if test="${selectValor == 'Tesis' || selectValor == 'Thesis'}">
                        <sql:update var="ingresaTesis" dataSource="jdbc/mysql">
@@ -130,7 +125,6 @@
                            <sql:param value="${insTesis}"/>
                            <sql:param value="${codigo}"/>
                        </sql:update>
-                           <h1>Completo Tesis</h1>
                 </c:if>
                 <c:if test="${selectValor == 'Disco' || selectValor == 'Disk'}">
                     <sql:update var="ingresaDisco" dataSource="jdbc/mysql">
@@ -139,7 +133,6 @@
                            <sql:param value="${tipoDisco}"/>
                            <sql:param value="${codigo}"/>  
                        </sql:update>
-                       <h1>Completo Disco</h1>
                 </c:if>
             </c:when>
             <c:when test="${param.Modificar != null}">
@@ -194,7 +187,6 @@
                            <sql:param value="${isbn}"/>
                            <sql:param value="${codigo}"/>  
                        </sql:update>
-                       <h1>Completo Libro</h1>
                 </c:if>
                 <c:if test="${selectValor == 'Revista' || selectValor == 'Magazine'}">
                        <sql:update var="modificaRevista" dataSource="jdbc/mysql">
@@ -202,7 +194,6 @@
                            <sql:param value="${issn}"/>
                            <sql:param value="${codigo}"/>  
                        </sql:update>
-                       <h1>Completo Revista</h1>
                 </c:if>
                 <c:if test="${selectValor == 'Tesis' || selectValor == 'Thesis'}">
                        <sql:update var="modificaaTesis" dataSource="jdbc/mysql">
@@ -214,7 +205,6 @@
                            <sql:param value="${insTesis}"/>
                            <sql:param value="${codigo}"/>
                        </sql:update>
-                           <h1>Completo Tesis</h1>
                 </c:if>
                 <c:if test="${selectValor == 'Disco' || selectValor == 'Disk'}">
                     <sql:update var="modificaDisco" dataSource="jdbc/mysql">
@@ -223,34 +213,36 @@
                            <sql:param value="${tipoDisco}"/>
                            <sql:param value="${codigo}"/>  
                        </sql:update>
-                       <h1>Completo Disco</h1>
                 </c:if>
             </c:when>
         </c:choose>
     </c:catch>
     <c:if test = "${catchException != null && param.Modificar != null}">
         <jsp:forward page="SUD_Material.jsp">
-                <jsp:param name="error" value="Se han encontraron datos incorrectos."/>
+                <jsp:param name="resultado" value="error_modificar"/>
          </jsp:forward> 
      </c:if>
     <c:if test = "${catchException != null && param.Guardar != null}">
         <jsp:forward page="Mantenimiento_Material.jsp">
-                <jsp:param name="error" value="Datos incorrectos, Imposible guardar!."/>
+                <jsp:param name="resultado" value="error_guardar"/>
          </jsp:forward> 
      </c:if>
     <c:if test = "${catchException == null && param.Eliminar != null}">
         <jsp:forward page="Menu_Material.jsp">
-                <jsp:param name="inicio" value="Se ha dado de baja al registro ${codigo}"/> 
+                <jsp:param name="resultado" value="eliminado"/> 
+                <jsp:param name="valorCodigo" value="${codigo}"/> 
         </jsp:forward>
      </c:if>
     <c:if test = "${catchException == null && param.Modificar != null}">
         <jsp:forward page="Menu_Material.jsp">
-                <jsp:param name="inicio" value="Se ha actualizado el registro ${codigo}"/> 
+                <jsp:param name="resultado" value="modificado"/> 
+                <jsp:param name="valorCodigo" value="${codigo}"/> 
         </jsp:forward>
      </c:if>
     <c:if test = "${catchException == null && param.Guardar != null}">
         <jsp:forward page="Menu_Material.jsp">
-                <jsp:param name="inicio" value="Se ha Guardado el registro ${codigo}"/> 
+                <jsp:param name="resultado" value="guardado"/> 
+                <jsp:param name="valorCodigo" value="${codigo}"/>
         </jsp:forward>
      </c:if>
  </body>

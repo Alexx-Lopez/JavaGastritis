@@ -172,13 +172,6 @@
                     <img alt="Regresar" width="40px" height="30px" onmouseout="this.src='imagenes/flecha-de-deshacer.png';" onmouseover="this.src='imagenes/flecha_azul.png';" src="imagenes/flecha-de-deshacer.png"/>
                 </a>
                 
-                <c:if test='${param.inicio!=null}'>
-                    <div class="alert alert-info alert-dismissible" style="width: 30%;margin: 0 auto; float: none;font-size: initial;text-align: center;">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <span><c:out value="${param.inicio}"/></span>
-                    </div>
-                </c:if>
-                
                 <div style="width:52%; margin:0 auto;">
                     <h1 style="text-align:center;"><b><fmt:message key="material_lbl_material"/></b></h1>
                     <hr style="border:2px solid grey;">
@@ -186,31 +179,24 @@
                     <%-- Area de mensaje o avisos --%>
                     <c:if test="${param.resultado!=null}">
                         <c:choose>
-                            <c:when test='${param.resultado=="Registro_existente"}'>
-                                <div class="alert alert-danger alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
+                            <c:when test='${param.resultado=="guardado"}'>
+                                <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="idioma_mensaje_registro_repetido" var="mensaje"/>
+                                    <fmt:message key="msj_guardar_ok" var="mensaje"/>${param.valorCodigo}
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
-                            <c:when test='${param.resultado=="datos_ingresados"}'>
+                            <c:when test='${param.resultado=="modificado"}'>
                                 <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="idiomas_mensaje_ingreso" var="mensaje"/>
+                                    <fmt:message key="msj_modificar_ok" var="mensaje"/>${param.valorCodigo}
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
-                            <c:when test='${param.resultado=="datos_actualizados"}'>
+                            <c:when test='${param.resultado=="eliminado"}'>
                                 <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="idiomas_mensaje_actualizacion" var="mensaje"/>
-                                    <span><c:out value="${mensaje}"/></span>
-                                </div>
-                            </c:when>
-                            <c:when test='${param.resultado=="datos_eliminados"}'>
-                                <div class="alert alert-success alert-dismissible" style="width: 100%;margin: 0 auto; float: none;">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <fmt:message key="idiomas_mensaje_eliminacion" var="mensaje"/>
+                                    <fmt:message key="msj_eliminar_ok" var="mensaje"/>${param.valorCodigo}
                                     <span><c:out value="${mensaje}"/></span>
                                 </div>
                             </c:when>
