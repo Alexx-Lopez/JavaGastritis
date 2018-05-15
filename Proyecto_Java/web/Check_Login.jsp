@@ -46,7 +46,7 @@
             <jsp:setProperty name="c_sesion" property="user" value="${consulta.rows[0].nombre}"/>
             
             <jsp:forward page="menu_admin.jsp">
-                <jsp:param name="inicio" value="Bienvenido Administrador ${consulta.rows[0].nombre}"/>
+                <jsp:param name="inicio" value="${consulta.rows[0].nombre}"/>
             </jsp:forward> 
         </c:if>
             <%-- Acceso Empleado --%>
@@ -60,7 +60,7 @@
             <jsp:setProperty name="c_sesion" property="user" value="${consulta1.rows[0].Nombre}"/>
             
             <jsp:forward page="menu_empleado.jsp">
-                <jsp:param name="inicio" value="Bienvenido Empleado ${consulta1.rows[0].Nombre}"/> 
+                <jsp:param name="inicio" value="${consulta1.rows[0].Nombre}"/> 
             </jsp:forward> 
         </c:if>
             <%-- Acceso Usuario --%>
@@ -74,7 +74,7 @@
             <jsp:setProperty name="c_sesion" property="user" value="${consulta2.rows[0].Usuario}"/>
             
             <jsp:forward page="menu_usuario.jsp">
-                <jsp:param name="inicio" value="Bienvenido Usuario ${consulta2.rows[0].Usuario}"/> 
+                <jsp:param name="inicio" value="${consulta2.rows[0].Usuario}"/> 
             </jsp:forward> 
         </c:if>
             

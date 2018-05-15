@@ -7,6 +7,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 
+<!--Seleccion de idioma del usuario-->
+<c:if test="${param.locale!=null}">
+    <fmt:setLocale value="${param.locale}" scope="session"/>
+</c:if>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!-- scriptlet para mantener la pagina con sesión-->
@@ -182,7 +187,7 @@
             <c:if test='${param.inicio!=null}'>
                 <div class="alert alert-info alert-dismissible" style="width: 30%;margin: 0 auto; float: none;font-size: initial;text-align: center;">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <span><c:out value="${param.inicio}"/></span>
+                    <span><fmt:message key="menu_empleado_mensaje_bienvenido"/>&nbsp;<c:out value="${param.inicio}"/></span>
                 </div>
             </c:if>
 
@@ -197,7 +202,7 @@
                             <a href="Mantenimiento_Usuarioadmon.jsp" style="text-decoration:none;color:white;">
                                 <div style="height:100%;width:100%;">
                                     <h4>
-                                        <strong>Usuario</strong>
+                                        <strong><fmt:message key="menu_empleado_lbl_usuario"/></strong>
                                     </h4>
                                     <br>
                                     <div class="con_div">
@@ -214,14 +219,14 @@
                                 <span class="material-icons">open_with</span>
                             </div>
                             <h4>
-                                <strong>Restablecer Contraseña</strong>
+                                <strong><fmt:message key="menu_empleado_lbl_restablecer_contraseña"/></strong>
                             </h4>
                             <br>
                             <div class="con_div">
                                 <img src="imagenes/llave-de-una-casa.png" class="icono_cuadro">
                             </div>
 
-                        </div>
+                        </div> 
                     </div>
                     <div class='cell size11' style="background-color:green;" data-position="1-6" data-handle=".handle">
                         <div class='cover'>
@@ -229,7 +234,7 @@
                                 <span class="material-icons">open_with</span>
                             </div>
                             <h4>
-                                <strong style="font-size:small;">Categorías</strong>
+                                <strong style="font-size:small;"><fmt:message key="menu_empleado_lbl_categorias"/></strong>
                             </h4>
                             <br>
                             <div class="con_div">
@@ -245,7 +250,7 @@
                             <a href="Mantenimiento_Rol.jsp" style="text-decoration:none;color:white;">
                                 <div style="height:100%;width:100%;">
                                     <h4>
-                                        <strong>Roles</strong>
+                                        <strong><fmt:message key="menu_empleado_lbl_roles"/></strong>
                                     </h4>
                                     <br>
                                     <div class="con_div">
@@ -262,7 +267,7 @@
                                 <span class="material-icons">open_with</span>
                             </div>
                             <h4>
-                                <strong>Idiomas</strong>
+                                <strong><fmt:message key="menu_empleado_lbl_idiomas"/></strong>
                             </h4>
                             <br>
                             <div class="con_div">
@@ -277,7 +282,7 @@
                                 <span class="material-icons">open_with</span>
                             </div>
                             <h4>
-                                <strong>Ejemplares</strong>
+                                <strong><fmt:message key="menu_empleado_lbl_ejemplares"/></strong>
                             </h4>
                             <br>
                             <div class="con_div">
@@ -292,7 +297,7 @@
                                 <span class="material-icons">open_with</span>
                             </div>
                             <h4>
-                                <strong>Estadística</strong>
+                                <strong><fmt:message key="menu_empleado_lbl_estadistica"/></strong>
                             </h4>
                             <br>
                             <div class="con_div">
@@ -307,7 +312,7 @@
                                 <span class="material-icons">open_with</span>
                             </div>
                             <h4>
-                                <strong>Préstamos a usuarios</strong>
+                                <strong><fmt:message key="menu_empleado_lbl_prestamos_a_usuarios"/></strong>
                             </h4>
                             <br>
                             <div class="con_div">
@@ -322,7 +327,7 @@
                                 <span class="material-icons">open_with</span>
                             </div>
                             <h4>
-                                <strong>Devoluciones</strong>
+                                <strong><fmt:message key="menu_empleado_lbl_devoluciones"/></strong>
                             </h4>
                             <br>
                             <div class="con_div">
@@ -337,7 +342,7 @@
                                 <span class="material-icons">open_with</span>
                             </div>
                             <h4>
-                                <strong>Mora</strong>
+                                <strong><fmt:message key="menu_empleado_lbl_mora"/></strong>
                             </h4>
                             <br>
                             <div class="con_div">
