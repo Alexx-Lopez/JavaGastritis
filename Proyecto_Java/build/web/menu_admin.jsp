@@ -5,20 +5,17 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
+<!--Seleccion de idioma del usuario-->
+<c:if test="${param.locale!=null}">
+    <fmt:setLocale value="${param.locale}" scope="session"/>
+</c:if>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@ page session="true"%>
-<jsp:scriptlet>
-    HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null) {
-</jsp:scriptlet>        
-<jsp:forward page="index.jsp">
-    <jsp:param name="error" value="Es obligatorio identificarse"/>
-</jsp:forward>
-<jsp:scriptlet>
-    }
-</jsp:scriptlet>
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_admin.jsp"%>
 
 <!DOCTYPE html>
 <html>
@@ -168,7 +165,7 @@
             <c:if test='${param.inicio!=null}'>
                 <div class="alert alert-info alert-dismissible" style="width: 30%;margin: 0 auto; float: none;font-size: initial;text-align: center;">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <span><c:out value="${param.inicio}"/></span>
+                    <span><fmt:message key="menu_admin_mensaje_bienvenido"/>&nbsp;<c:out value="${param.inicio}"/></span>
                 </div>
             </c:if>
 
@@ -180,11 +177,14 @@
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <h4><strong>Empleados</strong></h4>
-                            <div class="con_div">
-                                <img src="imagenes/usuario.png" class="icono_cuadro">
-                            </div>
-
+                            <a href="Mantenimiento_Empleado.jsp" style="text-decoration:none;color:white;">
+                                <div style="height:100%;width:100%;">
+                                    <h4><strong><fmt:message key="menu_admin_lbl_empledos"/></strong></h4>
+                                    <div class="con_div">
+                                        <img src="imagenes/usuario.png" class="icono_cuadro">
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class='cell size22' style="background-color:blue;" data-position="0-3" data-handle=".handle">
@@ -195,7 +195,7 @@
                             </div>
                             <a href="Mantenimiento_Turno.jsp" style="text-decoration:none;color:white;">
                                 <div style="height:100%;width:100%;">
-                                    <h4><strong>Turnos</strong></h4>
+                                    <h4><strong><fmt:message key="menu_admin_lbl_turnos"/></strong></h4>
                                     <div class="con_div">
                                         <img src="imagenes/reloj-con-esfera-blanca.png" class="icono_cuadro">
                                     </div>
@@ -210,7 +210,7 @@
                             </div>
                             <a href="Mantenimiento_Cargo.jsp" style="text-decoration:none;color:white;">
                                 <div style="height:100%;width:100%;">
-                                    <h4><strong>Cargos</strong></h4>
+                                    <h4><strong><fmt:message key="menu_admin_lbl_cargos"/></strong></h4>
                                     <div class="con_div">
                                         <img src="imagenes/collaboration.png" class="icono_cuadro">
                                     </div>

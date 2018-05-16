@@ -21,18 +21,8 @@
     select * from clasificacion
 </sql:query>
     
-<%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
-<%@ page session="true" %>
-<jsp:scriptlet>
-    HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null){
-</jsp:scriptlet>        
-<jsp:forward page="index.jsp">
-    <jsp:param name="error" value="Es obligatorio identificarse"/>
-</jsp:forward>
-<jsp:scriptlet>
-    } 
-</jsp:scriptlet>
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_empleado.jsp"%>
 <%----------------------------------------------------------------------------%>
 
 <!DOCTYPE html>
@@ -244,7 +234,7 @@
                     <br>
                     <b><fmt:message key="clasificacion_lbl_clasificacion"/>:</b>
                     <div class="input-group">
-                        <input type="text" class="form-control"  placeholder="<fmt:message key="clasificacion_placeholder_clasificacion"/>" id="txt_clasificacion" name="txt_clasificacion" required="">
+                        <input type="text" class="form-control"  placeholder="<fmt:message key="clasificacion_placeholder_clasificacion"/>" id="txt_clasificacion" name="txt_clasificacion" pattern="[A-Za-z]+" required="" title="Solo se permiten letras. ">
                         <select class="form-control selector" name="cmb_clasificacion" id="select_clasificacion" onchange="seleccionar();" required="">
                             <option value=""><fmt:message key="clasificacion_select_clasificacion"/></option>
 

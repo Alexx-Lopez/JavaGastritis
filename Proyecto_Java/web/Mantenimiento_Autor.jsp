@@ -21,7 +21,8 @@
     select * from autor
 </sql:query>
     
-
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_empleado.jsp"%>
 <%----------------------------------------------------------------------------%>
 
 <!DOCTYPE html>
@@ -173,6 +174,16 @@
 
             }
         </script>
+        
+        <script type="text/javascript">
+        // Solo permite ingresar numeros.
+        function soloNumeros(e){
+                var key = window.Event ? e.which : e.keyCode;
+                return (key >= 48 && key <= 57)
+        }
+
+        </script>
+        
     </head>
     <body onload="iniciar();">
         <!--codigo del header-->
@@ -244,7 +255,7 @@
                     <br>
                     <b><fmt:message key="autor_lbl_autor"/>:</b>
                     <div class="input-group">
-                        <input type="text" class="form-control"  placeholder="<fmt:message key="autor_placeholder_autor"/>" id="txt_autor" name="txt_autor" required="">
+                        <input type="text" class="form-control"  placeholder="<fmt:message key="autor_placeholder_autor"/>" id="txt_autor" name="txt_autor" pattern="[A-Za-z]+" required="" title="Solo se permiten letras. ">
                         <select class="form-control selector" name="cmb_autor" id="select_autor" onchange="seleccionar();" required="">
                             <option value=""><fmt:message key="autor_select_autor"/></option>
 
@@ -260,7 +271,7 @@
                             
                     <b><fmt:message key="autor_lbl_cod_mat"/>:</b>
                     <div class="input-group">
-                        <input rows="5" class="form-control" placeholder="<fmt:message key="autor_placeholder_cod_mat"/>" id="txt_cod_mat" name="txt_cod_mat" value="" required=""></input>
+                        <input type="number" rows="5" class="form-control" placeholder="<fmt:message key="autor_placeholder_cod_mat"/>" id="txt_cod_mat" name="txt_cod_mat" value="" onKeyPress="return soloNumeros(event)" required="" title="Solo se permiten números. "></input>
                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                     </div>        
                             

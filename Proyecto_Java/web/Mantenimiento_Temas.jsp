@@ -21,18 +21,8 @@
     select * from temas
 </sql:query>
     
-<%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
-<%@ page session="true" %>
-<jsp:scriptlet>
-    HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null){
-</jsp:scriptlet>        
-<jsp:forward page="index.jsp">
-    <jsp:param name="error" value="Es obligatorio identificarse"/>
-</jsp:forward>
-<jsp:scriptlet>
-    } 
-</jsp:scriptlet>
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_empleado.jsp"%>
 <%----------------------------------------------------------------------------%>
 
 <!DOCTYPE html>
@@ -189,6 +179,16 @@
             }
         </script>
     </head>
+    
+    <script type="text/javascript">
+    // Solo permite ingresar numeros.
+    function soloNumeros(e){
+            var key = window.Event ? e.which : e.keyCode;
+            return (key >= 48 && key <= 57)
+    }
+
+    </script>
+
     <body onload="iniciar();">
         <!--codigo del header-->
         <%@include file="Estructura_plantilla/header.jsp"%>
@@ -259,7 +259,7 @@
                     <br>
                     <b><fmt:message key="temas_lbl_temas"/>:</b>
                     <div class="input-group">
-                        <input type="text" class="form-control"  placeholder="<fmt:message key="temas_placeholder_temas"/>" id="txt_temas" name="txt_temas" required="">
+                        <input type="text" class="form-control"  placeholder="<fmt:message key="temas_placeholder_temas"/>" id="txt_temas" name="txt_temas" pattern="[A-Za-z0-9]+" required="" title="Solo se permiten letras y números. ">
                         <select class="form-control selector" name="cmb_temas" id="select_temas" onchange="seleccionar();" required="">
                             <option value=""><fmt:message key="temas_select_temas"/></option>
 
@@ -275,7 +275,7 @@
                             
                     <b><fmt:message key="temas_lbl_cod_mat"/>:</b>
                     <div class="input-group">
-                        <input rows="5" class="form-control" placeholder="<fmt:message key="temas_placeholder_cod_mat"/>" id="txt_cod_mat" name="txt_cod_mat" value="" required=""></input>
+                        <input type="number" minlength="8" rows="5" class="form-control" placeholder="<fmt:message key="temas_placeholder_cod_mat"/>" id="txt_cod_mat" name="txt_cod_mat" value="" onKeyPress="return soloNumeros(event)" required="" title="Solo se permiten números. "></input>
                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                     </div>        
                             

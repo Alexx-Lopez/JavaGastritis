@@ -21,18 +21,9 @@
     select * from idiomas
 </sql:query>
     
-<%-- Scriptlet para que la página trabaje con la sesión iniciada en el login --%>
-<%@ page session="true" %>
-<jsp:scriptlet>
-    HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null){
-</jsp:scriptlet>        
-<jsp:forward page="index.jsp">
-    <jsp:param name="error" value="Es obligatorio identificarse"/>
-</jsp:forward>
-<jsp:scriptlet>
-    } 
-</jsp:scriptlet>
+    
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_empleado.jsp"%>
 <%----------------------------------------------------------------------------%>
 
 <!DOCTYPE html>
@@ -247,7 +238,7 @@
                     <br>
                     <b><fmt:message key="idiomas_lbl_idiomas"/>:</b>
                     <div class="input-group">
-                        <input type="text" class="form-control"  placeholder="<fmt:message key="idiomas_placeholder_idiomas"/>" id="txt_idiomas" name="txt_idiomas" required="">
+                        <input type="text" class="form-control"  placeholder="<fmt:message key="idiomas_placeholder_idiomas"/>" id="txt_idiomas" name="txt_idiomas" pattern="[A-Za-z]+" required="" title="Solo se permiten letras. ">
                         <select class="form-control selector" name="cmb_idiomas" id="select_idiomas" onchange="seleccionar();" required="">
                             <option value=""><fmt:message key="idiomas_select_idiomas"/></option>
 

@@ -6,20 +6,17 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
+<!--Seleccion de idioma del usuario-->
+<c:if test="${param.locale!=null}">
+    <fmt:setLocale value="${param.locale}" scope="session"/>
+</c:if>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@ page session="true"%>
-<jsp:scriptlet>
-    HttpSession sesionOk = request.getSession();
-    if (sesionOk.getAttribute("usuario") == null){
-</jsp:scriptlet>        
-<jsp:forward page="index.jsp">
-    <jsp:param name="error" value="Es obligatorio identificarse"/>
-</jsp:forward>
-<jsp:scriptlet>
-    }
-</jsp:scriptlet>
+<!-- scriptlet para mantener la pagina con sesión-->
+<%@include file="Sesion/scriptlet_sesion_usuario.jsp"%>
 
 <!DOCTYPE html>
 <html>
@@ -181,7 +178,7 @@
             <c:if test='${param.inicio!=null}'>
                 <div class="alert alert-info alert-dismissible" style="width: 50%;margin: 0 auto; float: none;font-size: initial;text-align: center;">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <span><c:out value="${param.inicio}"/></span>
+                    <span><fmt:message key="menu_usuario_mensaje_bienvenido"/>&nbsp;<c:out value="${param.inicio}"/></span>
                 </div>
             </c:if>
             
@@ -193,11 +190,12 @@
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <h4><strong>Consultar</strong></h4>
+                            <a href="realizar_consulta_1.jsp" style="text-decoration:none;color:white;">
+                            <h4><strong><fmt:message key="menu_usuario_lbl_consultar"/></strong></h4>
                             <div class="con_div">
                                 <img src="imagenes/busqueda.png" class="icono_cuadro">
                             </div>
-
+                            </a>
                         </div>
                     </div>
                     <div class='cell size22' style="background-color:#a53319;" data-position="0-3" data-handle=".handle">
@@ -205,10 +203,12 @@
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <h4><strong>Reservar</strong></h4>
+                            <a href="Reserva.jsp" style="text-decoration:none;color:white;">
+                            <h4><strong><fmt:message key="menu_usuario_lbl_reservar"/></strong></h4>
                             <div class="con_div">
                                 <img src="imagenes/calendar-with-a-clock-time-tools.png" class="icono_cuadro">
                             </div>
+                            </a>
 
                         </div>
                     </div>
@@ -217,10 +217,12 @@
                             <div class="handle">
                                 <span class="material-icons">open_with</span>
                             </div>
-                            <h4><strong>Estatus de Biblioteca</strong></h4>
+                            <a href="Estatus_usuario.jsp" style="text-decoration:none;color:white;">
+                            <h4><strong><fmt:message key="menu_usuario_lbl_estatus"/></strong></h4>
                             <div class="con_div">
                                 <img src="imagenes/presentacion-de-informes.png" class="icono_cuadro">
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>

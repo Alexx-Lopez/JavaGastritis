@@ -4,12 +4,19 @@
     Author     : Alexx
 --%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<jsp:useBean id="c_sesion" scope="session" class="Beans.sesionBeans"/>
 
 <jsp:scriptlet>
     String usuario = "";
+    String nombre = "";
+    
+    //se crea una variable de sesion para almacenar el id de la persona que ingreso
     HttpSession sesion_u = request.getSession();
-    usuario = (String) sesion_u.getAttribute("usuario");
-</jsp:scriptlet>        
+    usuario =(String)sesion_u.getAttribute("usuario");
+</jsp:scriptlet>
+
 
 <header style="position:fixed; width: 100%;top:0; z-index: 3;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black !important; height: 90px;">
@@ -33,7 +40,7 @@
                     </li>
                     <li class="nav-item">
                         <p style="color: white; font-size: small; margin-top: 20px;">
-                            <span class="glyphicon glyphicon-user"></span> <fmt:message key="header_lbl_usuario"/>: <%=usuario%>
+                            <span class="glyphicon glyphicon-user"></span> <fmt:message key="header_lbl_usuario"/>: <c:out value="${c_sesion.user}"/>
                         </p>
                     </li>
                     <li class="nav-item" style="margin-left:5px; margin-top: 15px;">
